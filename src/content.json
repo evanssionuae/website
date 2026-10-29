@@ -1,0 +1,4129 @@
+[
+ {
+  "n": 1,
+  "name": "Home",
+  "spec": {
+   "URL": "/",
+   "Page type": "Home",
+   "Title tag": "Evanssion | Cybersecurity & AI Security Distributor, MEA",
+   "Meta description": "Dubai-based value-added distributor of cybersecurity and AI security, serving partners and enterprises in the UAE, Saudi Arabia, Bahrain and across MEA.",
+   "H1": "Cybersecurity and AI security, distributed across the Middle East and Africa",
+   "Schema": "Organization, WebSite, FAQPage",
+   "Primary CTA": "Explore vendors / Become a partner"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "Evanssion is a value-added distributor of network, cloud and AI security. We find specialist vendors early, adapt them to the region, and take them to market with registered partners and directly with enterprises in the UAE, Saudi Arabia and Bahrain."
+     },
+     {
+      "t": "cta",
+      "labels": [
+       "Explore vendors",
+       "Become a partner"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "What does Evanssion do?",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "A value-added distributor (VAD) does more than ship licences. We select and contract vendors, provide presales and technical enablement, help partners register and win deals, and handle regional commercial and support work. Evanssion has done this for 15+ years across the Middle East and Africa."
+     }
+    ]
+   },
+   {
+    "title": "Three ways to work with us",
+    "blocks": [
+     {
+      "t": "cards",
+      "items": [
+       {
+        "title": "Partners",
+        "text": [
+         "Resellers, systems integrators and managed security providers get vendor access, deal registration, training and incentives. Join the Evanssion partner programme."
+        ]
+       },
+       {
+        "title": "Vendors",
+        "text": [
+         "Security innovators get a regional distributor with partner reach, local presales and a route to market in the Gulf and Africa. Talk to us about the region."
+        ]
+       },
+       {
+        "title": "Enterprises",
+        "text": [
+         "Security and technology leaders can brief us on a problem and we will bring the right vendor, with a partner or directly."
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Our portfolio: 10 specialist vendors",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Cybersecurity (6): Silent Push (preemptive threat intelligence), ReversingLabs (malware analysis and software supply chain security), DefectDojo (unified vulnerability management), Operlity (GRC and compliance automation), Illumio (breach containment) and Bright Security (application and API security testing)."
+     },
+     {
+      "t": "p",
+      "text": "AI security and agentic AI (4): WitnessAI (AI security and governance), Onyx Security (control plane for AI agents), Backflipt (agent-to-agent governance) and Arambh Labs (agentic AI for security operations)."
+     }
+    ]
+   },
+   {
+    "title": "Find the right solution by problem",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Secure how your company uses AI: AI security and governance.",
+       "Find and fix flaws in applications and APIs: application security.",
+       "See attacker infrastructure before it is used: threat intelligence.",
+       "Trust the software you build and buy: software supply chain security.",
+       "Close vulnerabilities faster: vulnerability and exposure management.",
+       "Make the SOC faster and cheaper: security operations and data.",
+       "Prove compliance with regional regulations: governance, risk and compliance.",
+       "Limit the damage when attackers get in: breach containment."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Why work with a specialist distributor",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Early access: we sign innovators before they are widely known in the region, so customers and partners get new capability first.",
+       "Local focus: UAE, Saudi Arabia and Bahrain are our home markets, with reach across the wider Middle East and Africa.",
+       "Support from the start: briefings, proof-of-concept help, partner training and deal registration.",
+       "One relationship: contracting, pricing and enablement for ten vendors through a single team."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Where we work",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Our focus markets are the UAE, Saudi Arabia and Bahrain. We also support partners and customers across the wider Middle East and Africa. See our regional pages for local regulation, partners and contacts."
+     }
+    ]
+   },
+   {
+    "title": "Evanssion at a glance",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "15+ Years in the Middle",
+       "100+ Partners across the MEA",
+       "20+ Managed Partners",
+       "100+ Enterprise Customers",
+       "20+ Directly Managed Large Customers"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Latest insights",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Three most recent articles, pulled from the Insights section."
+     }
+    ]
+   },
+   {
+    "title": "Frequently asked questions",
+    "blocks": [
+     {
+      "t": "cta",
+      "labels": [
+       "Talk to us",
+       "sales@evanssion.com",
+       "+971 58 606 1121"
+      ]
+     },
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "What is a value-added distributor?",
+        "a": "A value-added distributor sells technology through channel partners and adds services such as technical enablement, presales, training and local support. It is different from a box-moving distributor that only supplies product."
+       },
+       {
+        "q": "Which countries does Evanssion serve?",
+        "a": "We focus on the UAE, Saudi Arabia and Bahrain, with a broader mandate across the Middle East and Africa."
+       },
+       {
+        "q": "Does Evanssion sell directly to enterprises?",
+        "a": "We engage directly with enterprises on focused opportunities. However, we work through registered partners. Contact us and we will route you."
+       },
+       {
+        "q": "How do I become an Evanssion partner?",
+        "a": "Apply through the Become a partner page. We review each application for fit, then sign a partner agreement and give you access to the partner portal."
+       },
+       {
+        "q": "Which security vendors does Evanssion represent?",
+        "a": "Silent Push, ReversingLabs, DefectDojo, Operlity, Illumio, Bright Security, WitnessAI, Onyx Security, Backflipt and Arambh Labs."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 2,
+  "name": "About",
+  "spec": {
+   "URL": "/about/",
+   "Page type": "Company",
+   "Title tag": "About Evanssion | Value-Added Distributor, Dubai",
+   "Meta description": "Evanssion is a Dubai-based value-added distributor of cybersecurity and AI security for the UAE, Saudi Arabia, Bahrain and the wider Middle East and Africa.",
+   "H1": "About Evanssion",
+   "Schema": "AboutPage, Organization (with address, sameAs, founder)",
+   "Primary CTA": "Contact us"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "Evanssion is a value-added distributor headquartered in Dubai. We bring specialist cybersecurity and AI security vendors to the Middle East and Africa, and help partners and enterprises put them to work."
+     }
+    ]
+   },
+   {
+    "title": "What we do",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "We select vendors with strong technology and a real need for regional help, then provide what a young vendor cannot build alone: local contracts, presales, partner enablement, deal support and commercial management. For partners, we are the way to a portfolio of vendors they would otherwise take months to sign. For enterprises, we are a route to technology that is new to the region."
+     }
+    ]
+   },
+   {
+    "title": "How we choose vendors",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "We re-assess our portfolio regularly and add vendors that meet clear tests."
+     },
+     {
+      "t": "ul",
+      "items": [
+       "Solves a problem our regional customers have today, not a category in a slide deck.",
+       "Strong product evidence: references, independent recognition or a working proof of concept.",
+       "Willing to invest in the region through training, leads and joint selling.",
+       "Fits the portfolio without duplicating a vendor we already represent."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "How we work with partners",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Partners are central to how Evanssion goes to market. We sign formal partner agreements, give registered partners access to training, resources and deal registration through the partner portal, and plan accounts jointly with our most active partners. We aim for consistency and trust, and for profit that is shared fairly."
+     }
+    ]
+   },
+   {
+    "title": "Our story and leadership",
+    "blocks": [
+     {
+      "t": "leader",
+      "text": "Ashok Chakravarthi Arulmozhi, Managing Director: Ashok, serial entrepreneur, built multimillion dollar businesses."
+     },
+     {
+      "t": "leader",
+      "text": "Dilip Kalliyat, President: 20+ years in the UAE: Dilip, comes with a strong system integration experience, solid cybersecurity background. 20+ years in the UAE"
+     },
+     {
+      "t": "leader",
+      "text": "Mohan Krishnamurthy, General Manager: Mohan comes from a strong techno-commercial background, a published author, and has 30+ years of industry experience."
+     }
+    ]
+   },
+   {
+    "title": "Where we are",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Evanssion FZCO, Dubai, United Arab Emirates."
+     },
+     {
+      "t": "p",
+      "text": "201, Techno Hub 2, Dubai Silicon Oasis, Dubai, UAE"
+     },
+     {
+      "t": "cta",
+      "labels": [
+       "Contact us",
+       "Become a partner",
+       "See our vendors"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 3,
+  "name": "Contact",
+  "spec": {
+   "URL": "/contact/",
+   "Page type": "Contact",
+   "Title tag": "Contact Evanssion | Partners, Vendors, Enterprises",
+   "Meta description": "Contact Evanssion in Dubai for partner enquiries, vendor introductions and enterprise security briefings. sales@evanssion.com, +971 58 606 1121.",
+   "H1": "Talk to Evanssion",
+   "Schema": "ContactPage, Organization (contactPoint)",
+   "Primary CTA": "Send enquiry"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "Tell us who you are and what you need, and the right person will reply. Most enquiries get an answer within one working day."
+     }
+    ]
+   },
+   {
+    "title": "Choose your enquiry",
+    "blocks": [
+     {
+      "t": "cards",
+      "items": [
+       {
+        "title": "I want to become a partner",
+        "text": [
+         "Fields: name, work email, company, country, partner type (reseller, systems integrator, managed security provider), vendors of interest, message."
+        ]
+       },
+       {
+        "title": "I am a vendor",
+        "text": [
+         "Fields: name, work email, company, website, product and category, regions you want to cover, message."
+        ]
+       },
+       {
+        "title": "I am an enterprise buyer",
+        "text": [
+         "Fields: name, work email, company, country, area of interest (select from solutions), message."
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Direct contacts",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Email: sales@evanssion.com",
+       "Phone: +971 58 606 1121",
+       "Website: www.evanssion.com",
+       "Office: 201, Techno Hub 2, Dubai Silicon Oasis, Dubai, UAE.",
+       "Location: https://maps.app.goo.gl/4DN5GKFSHXBSQBLT7",
+       "Working Hours: Mon-Fri 9.00 am to 6.00 pm"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Frequently asked questions",
+    "blocks": [
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "Do you work with companies outside the UAE?",
+        "a": "Yes. Our focus is the UAE, Saudi Arabia and Bahrain, and we support partners and customers across the Middle East and Africa."
+       },
+       {
+        "q": "Can I get a demo of a vendor's product?",
+        "a": "Yes. Tell us which vendor and we will arrange a briefing or demonstration with the vendor and our presales team."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 4,
+  "name": "Vendors directory",
+  "spec": {
+   "URL": "/vendors/",
+   "Page type": "Hub",
+   "Title tag": "Cybersecurity & AI Security Vendors | Evanssion",
+   "Meta description": "Ten specialist cybersecurity and AI security vendors available through Evanssion in the UAE, Saudi Arabia, Bahrain and across the Middle East and Africa.",
+   "H1": "Our vendors",
+   "Schema": "CollectionPage, ItemList (10 vendors), BreadcrumbList",
+   "Primary CTA": "Request a briefing"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "Evanssion represents ten specialist vendors in cybersecurity and AI security. Each one solves a specific problem and is backed by local presales, enablement and commercial support."
+     }
+    ]
+   },
+   {
+    "title": "Cybersecurity",
+    "blocks": [
+     {
+      "t": "table",
+      "head": [
+       "Vendor",
+       "What it does"
+      ],
+      "rows": [
+       [
+        "Silent Push",
+        "Preemptive cyber intelligence with Indicators of Future Attack"
+       ],
+       [
+        "ReversingLabs",
+        "Malware analysis and software supply chain security"
+       ],
+       [
+        "DefectDojo",
+        "Risk-based unified vulnerability management"
+       ],
+       [
+        "Operlity",
+        "AI-powered governance, risk and compliance automation"
+       ],
+       [
+        "Illumio",
+        "Breach containment platform"
+       ],
+       [
+        "Bright Security",
+        "Application and API security testing"
+       ]
+      ]
+     }
+    ]
+   },
+   {
+    "title": "AI security and agentic AI",
+    "blocks": [
+     {
+      "t": "table",
+      "head": [
+       "Vendor",
+       "What it does"
+      ],
+      "rows": [
+       [
+        "WitnessAI",
+        "AI security and governance"
+       ],
+       [
+        "Onyx Security",
+        "Secure control plane for AI agents and models"
+       ],
+       [
+        "Backflipt",
+        "Governance for AI agents and agent-to-agent traffic"
+       ],
+       [
+        "Arambh Labs",
+        "Agentic AI for the security operations centre"
+       ]
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Not sure which vendor fits?",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Start from the problem: browse our solutions, or tell us what you are trying to fix and we will suggest a shortlist."
+     },
+     {
+      "t": "cta",
+      "labels": [
+       "Browse solutions",
+       "Request a briefing"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 5,
+  "name": "Silent Push",
+  "spec": {
+   "URL": "/vendors/silent-push/",
+   "Page type": "Vendor page",
+   "Title tag": "Silent Push UAE, Saudi Arabia & Bahrain | Evanssion",
+   "Meta description": "Silent Push finds attacker infrastructure before it is used, with Indicators of Future Attack. Available in the UAE, Saudi Arabia and Bahrain through Evanssion.",
+   "H1": "Silent Push: preemptive cyber intelligence",
+   "Schema": "Organization (vendor), Service or Product, FAQPage, BreadcrumbList",
+   "Primary CTA": "Request a briefing"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "Silent Push is a preemptive cyber defence platform that maps attacker infrastructure before it is used in an attack. Its Indicators of Future Attack (IOFA) are built from DNS, web content, certificate and WHOIS data, so security teams can block threats earlier. Evanssion distributes Silent Push across the Middle East and Africa."
+     }
+    ]
+   },
+   {
+    "title": "What Silent Push does",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Most threat feeds report infrastructure after an attack has already used it. Silent Push looks at how attackers build and configure their servers, then flags matching infrastructure that has been set up but not yet used. Teams get that intelligence through a console, feeds and an API."
+     },
+     {
+      "t": "ul",
+      "items": [
+       "Threat hunting: pivot from one indicator to related attacker infrastructure using live and historic DNS, web content and certificate data.",
+       "Indicators of Future Attack (IOFA) feeds for blocking and enrichment in existing security tools.",
+       "Brand protection: find and counter impersonation domains aimed at your customers or staff.",
+       "Tracking of command-and-control infrastructure and advanced persistent threat (APT) activity.",
+       "Automated intelligence delivered by API for SIEM, SOAR and TIP integration."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Who it is for",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "SOC managers, incident response teams and cyber threat intelligence analysts. The vendor lists financial services firms, national CERT teams, defence contractors and ISAC intelligence teams among its customers. In our region the natural fit is banks, telecoms, government-linked entities and large enterprises with a dedicated security operations team."
+     }
+    ]
+   },
+   {
+    "title": "Where it fits: typical use cases",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Block adversary infrastructure before the first phishing email or malware callback.",
+       "Detect lookalike domains and fake login pages targeting your brand.",
+       "Enrich SIEM and SOAR alerts with infrastructure context during triage.",
+       "Hunt for related servers and campaigns starting from a single indicator."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Proof points",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Built on live and historic DNS, web content scanning, certificate and WHOIS data, plus first-party enrichment.",
+       "IOFA Feed available for direct ingestion into security controls."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Buying Silent Push in the UAE, Saudi Arabia and Bahrain",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Evanssion is the authorised regional distributor for Silent Push MEA region. Enterprises can engage us directly or through a registered Evanssion partner. Partners get deal registration, vendor training, demo support and commercial terms through the Evanssion partner portal."
+     }
+    ]
+   },
+   {
+    "title": "Frequently asked questions",
+    "blocks": [
+     {
+      "t": "cta",
+      "labels": [
+       "Request a briefing",
+       "Become a partner",
+       "Back to all vendors"
+      ]
+     },
+     {
+      "t": "related",
+      "text": "Related solution pages: Threat intelligence; Security operations. Vendor directory. Region pages (UAE, Saudi Arabia, Bahrain)."
+     },
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "What is an Indicator of Future Attack?",
+        "a": "An Indicator of Future Attack (IOFA) is a signal that a piece of internet infrastructure, such as a domain or IP address, matches the pattern attackers use to prepare an attack, before any attack has used it. Silent Push uses IOFA so that defenders can block infrastructure ahead of time."
+       },
+       {
+        "q": "How is this different from an indicator of compromise feed?",
+        "a": "Indicators of compromise usually describe infrastructure already seen in an attack. Silent Push aims to identify attacker-built infrastructure earlier, from how it is configured, so the block can come before the first hit."
+       },
+       {
+        "q": "Which teams use Silent Push?",
+        "a": "Mainly SOC, incident response and threat intelligence teams. Brand protection and fraud teams also use it to find impersonation domains."
+       },
+       {
+        "q": "How do I buy Silent Push in the UAE, Saudi Arabia or Bahrain?",
+        "a": "Contact Evanssion for a briefing and a trial discussion. We work directly with enterprises and through registered partners."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 6,
+  "name": "ReversingLabs",
+  "spec": {
+   "URL": "/vendors/reversinglabs/",
+   "Page type": "Vendor page",
+   "Title tag": "ReversingLabs UAE, Saudi Arabia & Bahrain | Evanssion",
+   "Meta description": "ReversingLabs finds malware, tampering and secrets in software and files. Supply chain security via Evanssion in the UAE, KSA and Bahrain.",
+   "H1": "ReversingLabs: software supply chain security and malware analysis",
+   "Schema": "Organization (vendor), Service or Product, FAQPage, BreadcrumbList",
+   "Primary CTA": "Request a briefing"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "ReversingLabs is a software supply chain security and malware analysis company. Its Spectra platform inspects binaries and files to find malware, tampering, exposed secrets and vulnerabilities, and its threat intelligence draws on a corpus of more than 422 billion samples. Evanssion distributes ReversingLabs across the Middle East and Africa."
+     }
+    ]
+   },
+   {
+    "title": "What ReversingLabs does",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Software now arrives from many suppliers, open-source projects and AI coding tools. ReversingLabs inspects the final build, not only the source or the component list, so it can find threats that component scanners miss. The same engine also powers file analysis, threat intelligence and a private malware lab."
+     },
+     {
+      "t": "ul",
+      "items": [
+       "Spectra Assure: software supply chain security for development workflows, containers and release packages, covering malware, secrets, tampering and vulnerabilities.",
+       "Spectra Intelligence: file and network threat intelligence for lookups, enrichment and hunting.",
+       "Spectra Detect: file analysis at enterprise scale for web, email, endpoint, file share and cloud storage traffic.",
+       "Spectra Analyze: a private malware analysis workbench with static and dynamic analysis."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Who it is for",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Application security and development teams that ship or buy software, SOC and malware analysis teams, and organisations that must assess third-party software before deployment. Banks, government-linked entities, energy and critical infrastructure operators are natural fits in our region."
+     }
+    ]
+   },
+   {
+    "title": "Where it fits: typical use cases",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Check software from vendors and open-source packages before it enters your environment.",
+       "Gate releases in CI/CD for malware, tampering and hard-coded secrets.",
+       "Scan high-volume file flows for malware without sending files outside your control.",
+       "Give malware analysts a private lab for fast triage and threat hunting."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Proof points",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "More than 422 billion samples in its goodware and malware corpus (vendor figure).",
+       "Static binary analysis designed to reduce false positives and speed up threat convictions."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Buying ReversingLabs in the UAE, Saudi Arabia and Bahrain",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Evanssion is the authorised regional distributor for MEA region. Enterprises can engage us directly or through a registered Evanssion partner. Partners get deal registration, vendor training, demo support and commercial terms through the Evanssion partner portal."
+     }
+    ]
+   },
+   {
+    "title": "Frequently asked questions",
+    "blocks": [
+     {
+      "t": "cta",
+      "labels": [
+       "Request a briefing",
+       "Become a partner",
+       "Back to all vendors"
+      ]
+     },
+     {
+      "t": "related",
+      "text": "Related solution pages: Software supply chain security; Application security; Threat intelligence. Vendor directory. Region pages (UAE, Saudi Arabia, Bahrain)."
+     },
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "What is software supply chain security?",
+        "a": "It is the practice of verifying that the software you build or buy has not been tampered with and does not contain malware, secrets or exploitable flaws. It covers your own builds, third-party software and open-source dependencies."
+       },
+       {
+        "q": "How is Spectra Assure different from a software composition analysis tool?",
+        "a": "Component scanners mainly match libraries against lists of known vulnerabilities. According to ReversingLabs, Spectra Assure also analyses the compiled build for active threats such as malware, tampering and exposed secrets."
+       },
+       {
+        "q": "Can ReversingLabs run in our own environment?",
+        "a": "For CNI customers, we can offer an on-prem airgapped implementation."
+       },
+       {
+        "q": "How do I buy ReversingLabs in the Gulf?",
+        "a": "Contact Evanssion. We support enterprises directly and through registered partners, including presales and proof-of-concept help."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 7,
+  "name": "DefectDojo",
+  "spec": {
+   "URL": "/vendors/defectdojo/",
+   "Page type": "Vendor page",
+   "Title tag": "DefectDojo UAE, Saudi Arabia & Bahrain | Evanssion",
+   "Meta description": "DefectDojo merges findings from 500+ security tools, removes duplicates and ranks risk. Open-source and Pro via Evanssion in the UAE, KSA and Bahrain.",
+   "H1": "DefectDojo: risk-based unified vulnerability management",
+   "Schema": "Organization (vendor), Service or Product, FAQPage, BreadcrumbList",
+   "Primary CTA": "Request a briefing"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "DefectDojo is an open-source vulnerability management and application security posture management (ASPM) platform. It imports findings from more than 500 security tools, removes duplicates, ranks what matters and routes fixes into ticketing. A Community Edition and a commercial Pro edition are available through Evanssion in the Middle East and Africa."
+     }
+    ]
+   },
+   {
+    "title": "What DefectDojo does",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Security teams run many scanners, and each produces its own list. DefectDojo gathers every list in one place, matches duplicates across tools, applies exploit and severity data, and tracks each finding through to a fix. It started in the OWASP community and is still developed in the open."
+     },
+     {
+      "t": "ul",
+      "items": [
+       "More than 500 parsers and integrations, including GitHub, Snyk, SonarQube, Trivy, Burp Suite and AWS.",
+       "De-duplication across overlapping scanners, so one flaw is one finding.",
+       "Risk ranking that applies NVD, EPSS and CISA KEV data automatically.",
+       "Asset hierarchy that mirrors your organisation, with SLAs measured per team.",
+       "Automatic ticket creation in Jira and similar tools, plus formal risk-acceptance workflows."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Who it is for",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Application security teams, security engineers, penetration testers and security leaders who need one defensible view of risk across many tools. Suited to regulated sectors that must show auditors how findings are triaged and closed."
+     }
+    ]
+   },
+   {
+    "title": "Where it fits: typical use cases",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Replace spreadsheets as the system of record for vulnerabilities.",
+       "Show auditors measured remediation SLAs and documented risk acceptances.",
+       "Cut noise by merging findings from SAST, DAST, SCA, cloud and infrastructure scanners.",
+       "Route the right fix to the right developer through the ticketing tool they already use."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Proof points",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "More than 10,000 organisations and 50 million downloads (vendor figures).",
+       "Over 500 supported tools (vendor figure).",
+       "Open-source Community Edition lets teams start without a licence."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Buying DefectDojo in the UAE, Saudi Arabia and Bahrain",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Evanssion is the authorised regional distributor for DefectDojo for MEA region. Enterprises can engage us directly or through a registered Evanssion partner. Partners get deal registration, vendor training, demo support and commercial terms through the Evanssion partner portal."
+     }
+    ]
+   },
+   {
+    "title": "Frequently asked questions",
+    "blocks": [
+     {
+      "t": "cta",
+      "labels": [
+       "Request a briefing",
+       "Become a partner",
+       "Back to all vendors"
+      ]
+     },
+     {
+      "t": "related",
+      "text": "Related solution pages: Vulnerability and exposure management; Application security. Vendor directory. Region pages (UAE, Saudi Arabia, Bahrain)."
+     },
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "What is application security posture management?",
+        "a": "ASPM brings findings from code, build, cloud and runtime scanners into one view, ranks them by real risk and tracks them to closure. DefectDojo is one of the longest-running open-source platforms in this space."
+       },
+       {
+        "q": "Is DefectDojo free?",
+        "a": "The Community Edition is open source. DefectDojo Pro is the commercial edition with additional features and vendor support. Ask Evanssion for a comparison and pricing."
+       },
+       {
+        "q": "Does it replace our scanners?",
+        "a": "No. It sits above them and consolidates their output. Teams keep the scanners they already use."
+       },
+       {
+        "q": "How do I buy DefectDojo Pro in the region?",
+        "a": "Contact Evanssion. We support enterprises directly and through registered partners."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 9,
+  "name": "Operlity",
+  "spec": {
+   "URL": "/vendors/operlity/",
+   "Page type": "Vendor page",
+   "Title tag": "Operlity UAE, Saudi Arabia & Bahrain | Evanssion",
+   "Meta description": "Operlity unifies GRC, AI governance, identity and data governance, with SAMA, NCA ECC and UAE PDPL mappings. Available through Evanssion in the Gulf.",
+   "H1": "Operlity: AI-powered governance, risk and compliance",
+   "Schema": "Organization (vendor), Service or Product, FAQPage, BreadcrumbList",
+   "Primary CTA": "Request a briefing"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "Operlity is an AI-powered governance, risk and compliance (GRC) platform that also covers AI governance, identity and data governance. It maps more than 20 frameworks, including SAMA, Saudi ECC, Saudi PDPL, UAE PDPL and UAE Information Assurance Standards, with over 1,000 cross-mapped controls. Evanssion distributes Operlity in the Middle East and Africa. ["
+     }
+    ]
+   },
+   {
+    "title": "What Operlity does",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Compliance work is usually spread across spreadsheets, shared drives and separate tools. Operlity brings risk, controls, policies, audits, third-party risk and evidence into one platform, and monitors controls continuously so teams stay ready for audits rather than preparing for them."
+     },
+     {
+      "t": "ul",
+      "items": [
+       "GRC and security: risk management, compliance programmes, audit management, policy governance, third-party risk and business resilience.",
+       "AI governance: AI model inventory, risk assessment and alignment with the EU AI Act, ISO 42001 and NIST AI RMF.",
+       "Identity access management: user lifecycle, privileged identity and access governance.",
+       "Data governance: unified data layer and cross-platform reporting.",
+       "An AI assistant that supports assessments, reporting and remediation planning."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Who it is for",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "CISOs, chief risk officers, compliance and risk managers in regulated sectors such as banking and finance, insurance, healthcare, government, telecom and technology. The platform lists regional frameworks natively, which suits Gulf organisations."
+     }
+    ]
+   },
+   {
+    "title": "Where it fits: typical use cases",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Map one control to many frameworks and answer several regulators with the same evidence.",
+       "Prepare for SAMA, NCA ECC and UAE IA audits with continuous control monitoring.",
+       "Build an AI model inventory and risk register ahead of AI regulation.",
+       "Manage third-party and supplier risk in one place."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Proof points",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "More than 20 global frameworks and over 1,000 cross-mapped controls (vendor figures).",
+       "Configurable data residency and options for self-hosted models, per the vendor.",
+       "Proof of concept measured in days, not weeks (vendor claim)."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Buying Operlity in the UAE, Saudi Arabia and Bahrain",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Evanssion is the authorised regional distributor for Operlity for the MEA region. Enterprises can engage us directly or through a registered Evanssion partner. Partners get deal registration, vendor training, demo support and commercial terms through the Evanssion partner portal."
+     }
+    ]
+   },
+   {
+    "title": "Frequently asked questions",
+    "blocks": [
+     {
+      "t": "cta",
+      "labels": [
+       "Request a briefing",
+       "Become a partner",
+       "Back to all vendors"
+      ]
+     },
+     {
+      "t": "related",
+      "text": "Related solution pages: Governance, risk and compliance; AI security and governance. Vendor directory. Region pages (UAE, Saudi Arabia, Bahrain)."
+     },
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "Does Operlity support Saudi and UAE regulations?",
+        "a": "The vendor lists SAMA, Saudi ECC, Saudi PDPL, UAE PDPL and UAE Information Assurance Standards among its supported frameworks."
+       },
+       {
+        "q": "Can we keep data in the region?",
+        "a": "The vendor describes configurable data residency."
+       },
+       {
+        "q": "Does it cover AI governance?",
+        "a": "Yes. It includes AI model inventory, risk assessment and alignment with the EU AI Act, ISO 42001 and NIST AI RMF."
+       },
+       {
+        "q": "How do I buy Operlity in the Gulf?",
+        "a": "Contact Evanssion. We support enterprises directly and through registered partners."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 11,
+  "name": "Illumio",
+  "spec": {
+   "URL": "/vendors/illumio/",
+   "Page type": "Vendor page",
+   "Title tag": "Illumio UAE, Saudi Arabia & Bahrain | Evanssion",
+   "Meta description": "Illumio contains breaches with segmentation and cloud detection, so one compromised workload cannot spread. Via Evanssion in the UAE, KSA and Bahrain.",
+   "H1": "Illumio: breach containment",
+   "Schema": "Organization (vendor), Service or Product, FAQPage, BreadcrumbList",
+   "Primary CTA": "Request a briefing"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "Illumio is a breach containment platform. It combines segmentation, which limits what each workload and device can talk to, with detection and response based on an AI security graph, so an attacker who gets in cannot move freely. Evanssion distributes Illumio in the Middle East and Africa."
+     }
+    ]
+   },
+   {
+    "title": "What Illumio does",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Prevention will not stop every attack, so the aim is to limit the damage. Illumio maps how workloads communicate across data centres, cloud and endpoints, then applies policy that blocks the paths an attacker would use for lateral movement."
+     },
+     {
+      "t": "ul",
+      "items": [
+       "Illumio Segmentation: protect critical assets, workloads and devices across hybrid and multi-cloud environments.",
+       "Illumio Insights: hybrid multi-cloud detection and response built on an AI-powered security graph.",
+       "One console and one policy model across environments.",
+       "Designed to support Zero Trust programmes."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Who it is for",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Security leadership, infrastructure security and security operations teams in organisations with sensitive data centres, hybrid cloud estates or operational environments where ransomware spread is a board-level concern."
+     }
+    ]
+   },
+   {
+    "title": "Where it fits: typical use cases",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Stop ransomware spreading from one compromised server to the rest of the estate.",
+       "Ring-fence crown-jewel applications and regulated data.",
+       "See real traffic flows between workloads before writing policy.",
+       "Provide evidence of segmentation for audits and Zero Trust programmes."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Proof points",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Named a Leader in The Forrester Wave: Microsegmentation Solutions, Q3 2026 (vendor-stated).",
+       "Customers' Choice in the 2026 Gartner Peer Insights Voice of the Customer report for Network Security Microsegmentation (vendor-stated)."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Buying Illumio in the UAE, Saudi Arabia and Bahrain",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Evanssion is the authorised services partner for Illumio. Enterprises can engage us directly or through a registered Evanssion partner. Partners get deal registration, vendor training, demo support and commercial terms through the Evanssion partner portal."
+     }
+    ]
+   },
+   {
+    "title": "Frequently asked questions",
+    "blocks": [
+     {
+      "t": "cta",
+      "labels": [
+       "Request a briefing",
+       "Become a partner",
+       "Back to all vendors"
+      ]
+     },
+     {
+      "t": "related",
+      "text": "Related solution pages: Breach containment and Zero Trust segmentation. Vendor directory. Region pages (UAE, Saudi Arabia, Bahrain)."
+     },
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "What is microsegmentation?",
+        "a": "Microsegmentation divides a network into small zones with their own rules, down to individual workloads, so that a compromised system cannot freely reach others."
+       },
+       {
+        "q": "How does segmentation help against ransomware?",
+        "a": "Ransomware depends on lateral movement. Blocking unneeded connections between systems shrinks the area an attacker can reach."
+       },
+       {
+        "q": "Does Illumio work across cloud and data centre?",
+        "a": "The vendor describes one platform for hybrid and multi-cloud environments."
+       },
+       {
+        "q": "How do I buy Illumio in the region?",
+        "a": "Contact Evanssion. We support enterprises directly and through registered partners."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 12,
+  "name": "Bright Security",
+  "spec": {
+   "URL": "/vendors/bright-security/",
+   "Page type": "Vendor page",
+   "Title tag": "Bright Security UAE, Saudi Arabia & Bahrain | Evanssion",
+   "Meta description": "Bright Security tests apps, APIs and LLM features for exploitable flaws and verifies fixes. Available via Evanssion in the UAE, KSA and Bahrain.",
+   "H1": "Bright Security: agentic application and API security testing",
+   "Schema": "Organization (vendor), Service or Product, FAQPage, BreadcrumbList",
+   "Primary CTA": "Request a briefing"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "Bright Security is an application security platform that tests applications, APIs and LLM features for vulnerabilities that can actually be exploited, helps AI agents and developers fix them, and verifies the fix. It started in dynamic application security testing (DAST). Evanssion distributes Bright in the Middle East and Africa."
+     }
+    ]
+   },
+   {
+    "title": "What Bright Security does",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Scanners that flag everything create noise, and teams waste time on issues that cannot be exploited. Bright tests live behaviour and exploit paths, passes the proven findings to developers or AI coding agents with context, then retests to confirm the fix works."
+     },
+     {
+      "t": "ul",
+      "items": [
+       "AI DAST and AI penetration testing for web applications and APIs.",
+       "Plugins and harnesses that bring testing into IDEs, CI/CD and MCP workflows.",
+       "Integrations with GitHub, GitLab and Bitbucket.",
+       "Validation of exploitability and of AI-generated fixes before deployment."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Who it is for",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Security teams and developers building web applications, APIs and AI features, especially teams adopting AI coding assistants and needing to check what those tools produce."
+     }
+    ]
+   },
+   {
+    "title": "Where it fits: typical use cases",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Test APIs and web applications in CI/CD without drowning developers in false positives.",
+       "Check AI-generated code before it ships.",
+       "Test LLM-powered features for security flaws.",
+       "Re-test automatically to prove that a fix closed the hole."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Proof points",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Under 3% false positives on findings validated against your real environment (vendor claim).",
+       "Findings carry proven exploitability data that tools and agents can read."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Buying Bright Security in the UAE, Saudi Arabia and Bahrain",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Evanssion is the authorised regional distributor for Bright Security for the MEA region. Enterprises can engage us directly or through a registered Evanssion partner. Partners get deal registration, vendor training, demo support and commercial terms through the Evanssion partner portal."
+     }
+    ]
+   },
+   {
+    "title": "Frequently asked questions",
+    "blocks": [
+     {
+      "t": "cta",
+      "labels": [
+       "Request a briefing",
+       "Become a partner",
+       "Back to all vendors"
+      ]
+     },
+     {
+      "t": "related",
+      "text": "Related solution pages: Application security; Vulnerability and exposure management. Vendor directory. Region pages (UAE, Saudi Arabia, Bahrain)."
+     },
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "What is DAST?",
+        "a": "Dynamic application security testing probes a running application the way an attacker would, looking for flaws that only show up at runtime."
+       },
+       {
+        "q": "Does Bright test APIs and AI features?",
+        "a": "Yes. The vendor describes testing for applications, APIs and LLM features."
+       },
+       {
+        "q": "Where does it fit in the pipeline?",
+        "a": "It plugs into IDEs, CI/CD systems and MCP, with source integrations for GitHub, GitLab and Bitbucket."
+       },
+       {
+        "q": "How do I buy Bright Security in the region?",
+        "a": "Contact Evanssion. We support enterprises directly and through registered partners."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 13,
+  "name": "WitnessAI",
+  "spec": {
+   "URL": "/vendors/witnessai/",
+   "Page type": "Vendor page",
+   "Title tag": "WitnessAI UAE, Saudi Arabia & Bahrain | Evanssion",
+   "Meta description": "WitnessAI gives visibility, policy and runtime protection for employee AI use, AI apps and agents. Available via Evanssion in the UAE, KSA and Bahrain.",
+   "H1": "WitnessAI: AI security and governance",
+   "Schema": "Organization (vendor), Service or Product, FAQPage, BreadcrumbList",
+   "Primary CTA": "Request a briefing"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "WitnessAI is an AI security and governance platform. It shows how employees, applications and AI agents use AI, enforces policy on that use, and protects models and agents at runtime against attacks such as prompt injection and data leakage. Evanssion distributes WitnessAI in the Middle East and Africa."
+     }
+    ]
+   },
+   {
+    "title": "What WitnessAI does",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Staff are already using public AI tools, and teams are building AI features and agents. WitnessAI works in three steps: observe who uses what, control the use with policy, and protect models and agents from attack."
+     },
+     {
+      "t": "ul",
+      "items": [
+       "Observe: discover AI use across employees and agents, inventory AI applications and MCP servers, and view prompts, responses and agent activity.",
+       "Control: policies by department, role and intent, approved MCP servers and tools, real-time redaction of sensitive data and detailed audit trails.",
+       "Protect: runtime guardrails against jailbreaks and prompt injection, filtering of harmful responses and automated AI red-teaming.",
+       "Packaged for employees, developers, applications, compliance and AI cost management."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Who it is for",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "CISOs, security, privacy, data-loss prevention and compliance teams, and developers building AI applications. Relevant to any organisation that has to explain and control how AI is used with company data."
+     }
+    ]
+   },
+   {
+    "title": "Where it fits: typical use cases",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Find out which AI tools staff use and what data goes into them.",
+       "Allow approved AI use while blocking risky prompts and data leaks.",
+       "Keep audit records of AI interactions for regulators.",
+       "Protect internal AI applications and agents against jailbreaks and prompt injection."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Proof points",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Single-tenant deployment with data sovereignty options, per the vendor.",
+       "Intent-based machine learning engines that read context, not only keywords (vendor description)."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Buying WitnessAI in the UAE, Saudi Arabia and Bahrain",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Evanssion is the authorised regional distributor for WitnessAI for the MEA region. Enterprises can engage us directly or through a registered Evanssion partner. Partners get deal registration, vendor training, demo support and commercial terms through the Evanssion partner portal."
+     }
+    ]
+   },
+   {
+    "title": "Frequently asked questions",
+    "blocks": [
+     {
+      "t": "cta",
+      "labels": [
+       "Request a briefing",
+       "Become a partner",
+       "Back to all vendors"
+      ]
+     },
+     {
+      "t": "related",
+      "text": "Related solution pages: AI security and governance. Vendor directory. Region pages (UAE, Saudi Arabia, Bahrain)."
+     },
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "What is AI security and governance?",
+        "a": "It is the set of controls that show how AI is used in an organisation, enforce rules on that use, and protect AI systems from attack. It covers employees using public tools, internal AI applications and autonomous agents."
+       },
+       {
+        "q": "Can WitnessAI stop sensitive data going into public AI tools?",
+        "a": "The vendor describes policy enforcement and real-time redaction of sensitive data in prompts."
+       },
+       {
+        "q": "Does it cover AI agents?",
+        "a": "Yes. The vendor describes visibility and control for agents and MCP servers as well as human users."
+       },
+       {
+        "q": "How do I buy WitnessAI in the region?",
+        "a": "Contact Evanssion. We support enterprises directly and through registered partners."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 14,
+  "name": "Onyx Security",
+  "spec": {
+   "URL": "/vendors/onyx-security/",
+   "Page type": "Vendor page",
+   "Title tag": "Onyx Security UAE, Saudi Arabia & Bahrain | Evanssion",
+   "Meta description": "Onyx Security discovers, protects and governs AI agents and models across the enterprise. Available via Evanssion in the UAE, KSA and Bahrain.",
+   "H1": "Onyx Security: the secure control plane for AI agents",
+   "Schema": "Organization (vendor), Service or Product, FAQPage, BreadcrumbList",
+   "Primary CTA": "Request a briefing"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "Onyx Security is a secure control plane for AI agents and models. It discovers sanctioned and shadow AI, protects AI systems from misuse, applies governance policies written in plain language, and measures adoption and return. Evanssion distributes Onyx in the Middle East and Africa."
+     }
+    ]
+   },
+   {
+    "title": "What Onyx Security does",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "As agents gain tools and access, security teams need to see them, limit them and prove what they did. Onyx covers agents across SaaS, cloud, endpoints and code, and uses a supervisory agent to watch the others and act on risks."
+     },
+     {
+      "t": "ul",
+      "items": [
+       "AI observability: find sanctioned and shadow AI, with visibility into prompts, responses and agent actions.",
+       "AI security: strengthen posture, find vulnerabilities and enforce real-time safeguards.",
+       "AI governance: meet standards and regulatory requirements, with policy controls defined in natural language.",
+       "AI orchestration and AI ROI: set up agents and MCPs with cost, accuracy and latency in view, and measure adoption by department.",
+       "Guardian Agent: a supervisory AI that identifies risks, remediates issues and manages agents at scale."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Who it is for",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "CISOs and security, governance and AI teams in enterprises that are rolling out AI agents and need control and evidence."
+     }
+    ]
+   },
+   {
+    "title": "Where it fits: typical use cases",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Build an inventory of every agent and the tools it can reach.",
+       "Enforce least-privilege on agents and flag excessive permissions.",
+       "Write governance rules in plain language and apply them automatically.",
+       "Report AI adoption and value to the board."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Proof points",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Reports more than 1.1 million agents secured and 66.2 million sessions analysed for threats (vendor figures)."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Buying Onyx Security in the UAE, Saudi Arabia and Bahrain",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Evanssion is the authorised regional distributor for Onyx Security for the MEA region. Enterprises can engage us directly or through a registered Evanssion partner. Partners get deal registration, vendor training, demo support and commercial terms through the Evanssion partner portal."
+     }
+    ]
+   },
+   {
+    "title": "Frequently asked questions",
+    "blocks": [
+     {
+      "t": "cta",
+      "labels": [
+       "Request a briefing",
+       "Become a partner",
+       "Back to all vendors"
+      ]
+     },
+     {
+      "t": "related",
+      "text": "Related solution pages: AI security and governance. Vendor directory. Region pages (UAE, Saudi Arabia, Bahrain)."
+     },
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "What is an AI control plane?",
+        "a": "A control plane is the layer that sets and enforces rules for a system. For AI, it governs which agents and models exist, what they can access, and how they behave."
+       },
+       {
+        "q": "Does it find shadow AI?",
+        "a": "Yes. The vendor lists discovery of sanctioned and shadow AI as a core capability."
+       },
+       {
+        "q": "How do I buy Onyx in the region?",
+        "a": "Contact Evanssion. We support enterprises directly and through registered partners."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 15,
+  "name": "Backflipt",
+  "spec": {
+   "URL": "/vendors/backflipt/",
+   "Page type": "Vendor page",
+   "Title tag": "Backflipt UAE, Saudi Arabia & Bahrain | Evanssion",
+   "Meta description": "Backflipt Lumen discovers AI agents, governs their intent and credentials, and runs inside your own VPC. Available via Evanssion in the UAE, KSA and Bahrain.",
+   "H1": "Backflipt: governance for AI agents and agent-to-agent traffic",
+   "Schema": "Organization (vendor), Service or Product, FAQPage, BreadcrumbList",
+   "Primary CTA": "Request a briefing"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "Backflipt Lumen is a platform that governs enterprise AI agents. It discovers every agent and the resources it can reach, decides what each agent may do at the moment it acts, and issues short-lived credentials so agents never hold permanent secrets. It deploys in your own VPC or on-premises. Evanssion distributes Backflipt in the Middle East and Africa."
+     }
+    ]
+   },
+   {
+    "title": "What Backflipt does",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Agents talk to each other and to tools through protocols such as A2A and MCP. Backflipt treats the problem as two decisions made in the path of the traffic: intent, checked by the Lumen A2A Gateway, and credentials, handled by the POET Credential Broker."
+     },
+     {
+      "t": "ul",
+      "items": [
+       "Agent discovery with risk scores, including agents nobody registered.",
+       "Lumen A2A Gateway: inline inspection of agent-to-agent and agent-to-MCP traffic, with Smart Policies and PeerGroups.",
+       "POET Credential Broker: time-bound, workload-bound tokens in place of standing secrets.",
+       "Agent-ready applications: generate MCP servers and A2A agents from existing APIs (OpenAPI, Swagger, RAML) without code.",
+       "Lumen AI TransferView with Galileo: visibility and SLA alerts for governed file transfers."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Who it is for",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Enterprises that are deploying agents from several platforms and need identity, authorisation and audit for non-human actors. Security architects, identity teams and platform teams are the main buyers."
+     }
+    ]
+   },
+   {
+    "title": "Where it fits: typical use cases",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Find and score every AI agent in the environment.",
+       "Block agents that try to act outside their approved intent.",
+       "Retire standing service-account secrets for agents.",
+       "Expose existing business applications to agents safely."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Proof points",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Deploys with Helm or Terraform in your VPC, on AWS, Azure, GCP, on-premises or air-gapped, with no external egress (vendor statement).",
+       "Works alongside agents from Microsoft, AWS, Google, Salesforce, ServiceNow and Snowflake platforms (vendor statement)."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Buying Backflipt in the UAE, Saudi Arabia and Bahrain",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Evanssion is the authorised regional distributor for Backflipt for the MEA region. Enterprises can engage us directly or through a registered Evanssion partner. Partners get deal registration, vendor training, demo support and commercial terms through the Evanssion partner portal."
+     }
+    ]
+   },
+   {
+    "title": "Frequently asked questions",
+    "blocks": [
+     {
+      "t": "cta",
+      "labels": [
+       "Request a briefing",
+       "Become a partner",
+       "Back to all vendors"
+      ]
+     },
+     {
+      "t": "related",
+      "text": "Related solution pages: AI security and governance. Vendor directory. Region pages (UAE, Saudi Arabia, Bahrain)."
+     },
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "What is agent-to-agent security?",
+        "a": "It is control over how AI agents communicate with each other and with tools, including who they are, what they intend to do and which credentials they use."
+       },
+       {
+        "q": "What are A2A and MCP?",
+        "a": "Agent2Agent (A2A) is a protocol for agents to talk to each other. Model Context Protocol (MCP) is a protocol that lets agents call tools and data sources."
+       },
+       {
+        "q": "Can it run in our own cloud?",
+        "a": "Yes. The vendor describes deployment in your VPC, on-premises or in air-gapped environments."
+       },
+       {
+        "q": "How do I buy Backflipt in the region?",
+        "a": "Contact Evanssion. We support enterprises directly and through registered partners."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 16,
+  "name": "Arambh Labs",
+  "spec": {
+   "URL": "/vendors/arambh-labs/",
+   "Page type": "Vendor page",
+   "Title tag": "Arambh Labs UAE, Saudi Arabia & Bahrain | Evanssion",
+   "Meta description": "Arambh Labs' Armor OS uses AI agents to investigate alerts, hunt threats and tune detections. SaaS, VPC or on-prem via Evanssion in the UAE, KSA and Bahrain.",
+   "H1": "Arambh Labs: agentic AI for the security operations centre",
+   "Schema": "Organization (vendor), Service or Product, FAQPage, BreadcrumbList",
+   "Primary CTA": "Request a briefing"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "Arambh Labs builds Armor OS, an AI security operations platform. Its agents investigate every alert to a verdict, hunt for threats and keep detections sharp, working with your existing SIEM, EDR and identity tools. It can run as SaaS, in your VPC or on-premises. Evanssion distributes Arambh Labs in the Middle East and Africa."
+     }
+    ]
+   },
+   {
+    "title": "What Arambh Labs does",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Most SOCs cannot investigate every alert. Armor OS treats detection engineering, alert investigation and threat hunting as one system. Its agents reason about each alert instead of following fixed playbooks, and attach their evidence so an analyst can review the result."
+     },
+     {
+      "t": "ul",
+      "items": [
+       "Armor Investigate: works every alert through to a verdict, with evidence attached.",
+       "Armor Hunt: looks for threats before they become incidents.",
+       "Armor Detect: keeps detections tuned and current.",
+       "More than 100 integrations across identity, cloud, endpoint, network and data security tools (vendor figure).",
+       "Deployment as SaaS, in your VPC or on-premises."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Who it is for",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "SOC managers and security teams, from cloud-native scale-ups to regulated enterprises, that have more alerts than analysts. Also relevant to managed security providers."
+     }
+    ]
+   },
+   {
+    "title": "Where it fits: typical use cases",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Clear the alert backlog without adding analysts.",
+       "Give analysts evidence-backed verdicts instead of raw alerts.",
+       "Improve detection quality as the environment changes.",
+       "Run threat hunts on a schedule without manual effort."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Proof points",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "More than 1 million alerts investigated in production and 25+ production deployments (vendor figures).",
+       "The vendor reports that 5 to 10 per cent of alerts need a human decision.",
+       "Founded by former Google and Fortinet security and AI leaders (vendor statement)."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Buying Arambh Labs in the UAE, Saudi Arabia and Bahrain",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Evanssion is the authorised regional distributor for Arambh Labs for the MEA region. Enterprises can engage us directly or through a registered Evanssion partner. Partners get deal registration, vendor training, demo support and commercial terms through the Evanssion partner portal."
+     }
+    ]
+   },
+   {
+    "title": "Frequently asked questions",
+    "blocks": [
+     {
+      "t": "cta",
+      "labels": [
+       "Request a briefing",
+       "Become a partner",
+       "Back to all vendors"
+      ]
+     },
+     {
+      "t": "related",
+      "text": "Related solution pages: Security operations. Vendor directory. Region pages (UAE, Saudi Arabia, Bahrain)."
+     },
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "What is an AI SOC?",
+        "a": "An AI SOC uses AI agents to do work that analysts do by hand, such as triaging alerts, investigating them and hunting for threats, while people review and decide on the important cases."
+       },
+       {
+        "q": "Does Armor OS replace our SIEM or EDR?",
+        "a": "No. It works with your existing SIEM, EDR and identity tools through integrations."
+       },
+       {
+        "q": "Can we keep data in our own environment?",
+        "a": "The vendor offers SaaS, VPC and on-premises deployment."
+       },
+       {
+        "q": "How do I buy Arambh Labs in the region?",
+        "a": "Contact Evanssion. We support enterprises directly and through registered partners."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 17,
+  "name": "Become a vendor",
+  "spec": {
+   "URL": "/vendors/become-a-vendor/",
+   "Page type": "Landing (vendor audience)",
+   "Title tag": "Become an Evanssion Vendor | MEA Distribution",
+   "Meta description": "Bring your security product to the Middle East and Africa. Evanssion offers partner reach, local presales and market entry in the UAE, KSA and Bahrain.",
+   "H1": "Take your security product to the Middle East and Africa",
+   "Schema": "WebPage, FAQPage",
+   "Primary CTA": "Talk to us about the region"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "If you build security or AI security technology and want to sell in the Gulf and across Africa, Evanssion can be your regional distributor: market entry, partner reach, local presales and commercial management in one team."
+     }
+    ]
+   },
+   {
+    "title": "What a vendor gets",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Market entry in the UAE, Saudi Arabia and Bahrain, with a wider mandate across the Middle East and Africa.",
+       "Access to a growing network of 100+ regional resellers, systems integrators and managed security providers.",
+       "Local presales, demonstrations and proof-of-concept support.",
+       "Partner training, webinars and joint account planning.",
+       "Deal registration and pipeline visibility through the partner portal.",
+       "Regional contracting, invoicing and credit management."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "What we look for",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "A product that solves a clear problem and can show customer evidence.",
+       "Commitment to the region: training, marketing support and a named contact.",
+       "Fit with our portfolio and no overlap with an existing vendor.",
+       "Terms that reward partners enough to prioritise the product."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "How it works",
+    "blocks": [
+     {
+      "t": "ol",
+      "items": [
+       "Introduction call: product, customers and regional goals.",
+       "Fit assessment: portfolio, competitors and partner demand.",
+       "Commercial terms: territories, margins, registration and support model.",
+       "Launch plan: partner enablement, first webinars and first target accounts."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Frequently asked questions",
+    "blocks": [
+     {
+      "t": "cta",
+      "labels": [
+       "Talk to us about the region"
+      ]
+     },
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "Why use a distributor to enter the Middle East?",
+        "a": "A distributor brings existing partner relationships, local contracts and support, so a vendor can start selling without building a regional company first."
+       },
+       {
+        "q": "Which countries can you cover?",
+        "a": "We focus on the UAE, Saudi Arabia and Bahrain and can support the wider Middle East and Africa. Territories are agreed per vendor."
+       },
+       {
+        "q": "Do you work with early-stage vendors?",
+        "a": "Yes, when the product has clear value and customer evidence. Many of our vendors are early in the region."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 18,
+  "name": "Solutions hub",
+  "spec": {
+   "URL": "/solutions/",
+   "Page type": "Hub",
+   "Title tag": "Cybersecurity & AI Security Solutions | Evanssion",
+   "Meta description": "Find cybersecurity and AI security solutions by problem: AI governance, application security, threat intelligence, compliance and more, through Evanssion.",
+   "H1": "Security solutions, organised by the problem you need to solve",
+   "Schema": "CollectionPage, ItemList, BreadcrumbList",
+   "Primary CTA": "Request a briefing"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "Start with the problem. Each solution page explains the issue in plain language, shows what a good answer looks like, and names the Evanssion vendors that deliver it."
+     },
+     {
+      "t": "table",
+      "head": [
+       "Solution",
+       "The problem it addresses",
+       "Vendors"
+      ],
+      "rows": [
+       [
+        "AI security and governance",
+        "Staff, applications and agents use AI without visibility or control",
+        "WitnessAI, Onyx Security, Backflipt, Operlity"
+       ],
+       [
+        "Application security",
+        "Flaws in applications and APIs reach production",
+        "Bright Security, DefectDojo, ReversingLabs"
+       ],
+       [
+        "Threat intelligence",
+        "Attackers prepare infrastructure before they strike",
+        "Silent Push, ReversingLabs"
+       ],
+       [
+        "Software supply chain security",
+        "You cannot see inside the software you build and buy",
+        "ReversingLabs, DefectDojo"
+       ],
+       [
+        "Vulnerability and exposure management",
+        "Findings pile up faster than fixes",
+        "DefectDojo"
+       ],
+       [
+        "Security operations",
+        "Too many alerts, too much log cost",
+        "Arambh Labs, Silent Push"
+       ],
+       [
+        "Governance, risk and compliance",
+        "Proving compliance with several regulators at once",
+        "Operlity"
+       ],
+       [
+        "Breach containment",
+        "Attackers move freely once they are inside",
+        "Illumio"
+       ]
+      ]
+     },
+     {
+      "t": "cta",
+      "labels": [
+       "Not sure where to start? Talk to us"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 19,
+  "name": "AI security and governance",
+  "spec": {
+   "URL": "/solutions/ai-security/",
+   "Page type": "Solution page",
+   "Title tag": "AI Security & Governance Solutions | Evanssion",
+   "Meta description": "Secure how your organisation uses AI: visibility, policy control and protection for employees, applications and AI agents. Solutions via Evanssion in the Gulf.",
+   "H1": "AI security and governance",
+   "Schema": "WebPage, FAQPage, BreadcrumbList, DefinedTerm",
+   "Primary CTA": "Request a briefing"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "AI security and governance is the set of controls that show how AI is used in your organisation, apply policy to that use, and protect AI systems from attack. It covers staff using public AI tools, AI applications you build, and autonomous agents that act on your behalf."
+     }
+    ]
+   },
+   {
+    "title": "Why this matters now",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "AI adoption usually starts in the business, not in security. Employees paste company data into public tools, teams connect agents to internal systems, and developers add language models to applications. Each of these creates data, access and compliance risk, and most organisations cannot yet say what AI is in use or what it can reach."
+     }
+    ]
+   },
+   {
+    "title": "What good looks like",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "A live inventory of AI tools, models, applications, agents and MCP servers.",
+       "Policies by role and intent that allow approved use and block risky use.",
+       "Protection against prompt injection, jailbreaks and data leakage at runtime.",
+       "Identity and least-privilege access for agents, with short-lived credentials.",
+       "Audit trails and reports that stand up to regulators."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Vendors that deliver this through Evanssion",
+    "blocks": [
+     {
+      "t": "table",
+      "head": [
+       "Vendor",
+       "Role in this solution"
+      ],
+      "rows": [
+       [
+        "WitnessAI",
+        "Visibility, policy and runtime protection for employees, applications and agents"
+       ],
+       [
+        "Onyx Security",
+        "Control plane for agents and models, with a supervisory Guardian Agent"
+       ],
+       [
+        "Backflipt",
+        "Agent identity, intent and credentials for agent-to-agent and MCP traffic"
+       ],
+       [
+        "Operlity",
+        "AI model inventory, risk assessment and alignment with the EU AI Act, ISO 42001 and NIST AI RMF"
+       ]
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Questions to ask when choosing a solution",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Can it find shadow AI, including agents nobody registered?",
+       "Does it enforce policy in the path of traffic, or only report afterwards?",
+       "Where is data processed and stored, and can it stay in the region?",
+       "How does it handle agents and MCP servers, not only chat tools?"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Frequently asked questions",
+    "blocks": [
+     {
+      "t": "cta",
+      "labels": [
+       "Request a briefing",
+       "Browse all vendors"
+      ]
+     },
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "What is shadow AI?",
+        "a": "Shadow AI is any AI tool, model or agent used in an organisation without security or IT approval, such as an employee using a public chatbot with company data."
+       },
+       {
+        "q": "What is prompt injection?",
+        "a": "Prompt injection is an attack where crafted input makes an AI model ignore its instructions or reveal data. It is one of the main risks for AI applications and agents."
+       },
+       {
+        "q": "Who should own AI governance?",
+        "a": "It is shared. Security sets controls, compliance maps them to regulation, and the business owns the use cases. A platform that gives all three the same view makes this practical."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 20,
+  "name": "Application security",
+  "spec": {
+   "URL": "/solutions/application-security/",
+   "Page type": "Solution page",
+   "Title tag": "Application & API Security Testing | Evanssion",
+   "Meta description": "Find and fix exploitable flaws in applications, APIs and AI features, with less noise for developers. Application security solutions via Evanssion.",
+   "H1": "Application and API security",
+   "Schema": "WebPage, FAQPage, BreadcrumbList",
+   "Primary CTA": "Request a briefing"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "Application security finds and fixes flaws in the software you build before attackers can use them. Modern programmes test running applications and APIs, validate which findings can really be exploited, and feed the confirmed ones to developers in the tools they already use."
+     }
+    ]
+   },
+   {
+    "title": "The problem with noisy testing",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Teams run many scanners and receive long lists of findings, most of which are never fixed. AI coding assistants add code faster than reviewers can check it. Developers lose trust in tools that raise false alarms, and real flaws wait in the queue."
+     }
+    ]
+   },
+   {
+    "title": "What good looks like",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Testing that runs in CI/CD and in the IDE, not once a year.",
+       "Findings validated for exploitability, so developers see fewer and better tickets.",
+       "One system of record that merges results from every scanner.",
+       "Retesting that proves a fix works.",
+       "Coverage for APIs and AI-powered features, not only web pages."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Vendors that deliver this through Evanssion",
+    "blocks": [
+     {
+      "t": "table",
+      "head": [
+       "Vendor",
+       "Role in this solution"
+      ],
+      "rows": [
+       [
+        "Bright Security",
+        "Dynamic testing of applications, APIs and LLM features with validated findings and verified fixes"
+       ],
+       [
+        "DefectDojo",
+        "Consolidates findings from 500+ tools, removes duplicates and tracks remediation"
+       ],
+       [
+        "ReversingLabs",
+        "Checks compiled builds and third-party software for malware, tampering and secrets"
+       ]
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Questions to ask when choosing a solution",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "What share of findings are confirmed as exploitable?",
+       "Does it fit our pipeline and ticketing tools without extra work for developers?",
+       "Does it test APIs and AI features?",
+       "How does it prove that a fix worked?"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Frequently asked questions",
+    "blocks": [
+     {
+      "t": "cta",
+      "labels": [
+       "Request a briefing",
+       "Browse all vendors"
+      ]
+     },
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "What is the difference between SAST and DAST?",
+        "a": "Static testing (SAST) reads source code without running it. Dynamic testing (DAST) probes a running application like an attacker. Most programmes use both."
+       },
+       {
+        "q": "What is ASPM?",
+        "a": "Application security posture management brings findings from many tools into one place, ranks them by risk and tracks them to closure."
+       },
+       {
+        "q": "Do we need to test APIs separately?",
+        "a": "APIs expose business logic and data directly, so they need their own testing. Good tools discover and test APIs as part of the same workflow."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 21,
+  "name": "Threat intelligence",
+  "spec": {
+   "URL": "/solutions/threat-intelligence/",
+   "Page type": "Solution page",
+   "Title tag": "Threat Intelligence Solutions | Evanssion",
+   "Meta description": "See attacker infrastructure before it is used. Preemptive threat intelligence and malware intelligence for security teams, through Evanssion in the Gulf.",
+   "H1": "Threat intelligence",
+   "Schema": "WebPage, FAQPage, BreadcrumbList",
+   "Primary CTA": "Request a briefing"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "Threat intelligence tells security teams who is attacking, how, and with what. The most useful intelligence is early and specific: it flags attacker infrastructure before it is used, and it adds context to alerts so analysts can decide faster."
+     }
+    ]
+   },
+   {
+    "title": "From reacting to getting ahead",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Many feeds list indicators after an attack has already used them. By then the phishing email has been delivered and the malware has called home. Teams need intelligence that arrives earlier, connects related infrastructure, and plugs straight into the tools they run."
+     }
+    ]
+   },
+   {
+    "title": "What good looks like",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Indicators that identify infrastructure before first use.",
+       "Context on campaigns, tooling and related infrastructure for each alert.",
+       "API and feed delivery into SIEM, SOAR and firewalls.",
+       "Brand monitoring that finds impersonation domains early.",
+       "Malware intelligence for file and network analysis."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Vendors that deliver this through Evanssion",
+    "blocks": [
+     {
+      "t": "table",
+      "head": [
+       "Vendor",
+       "Role in this solution"
+      ],
+      "rows": [
+       [
+        "Silent Push",
+        "Indicators of Future Attack, threat hunting and brand protection built from DNS, web, certificate and WHOIS data"
+       ],
+       [
+        "ReversingLabs",
+        "File and network threat intelligence from a very large malware and goodware corpus"
+       ]
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Questions to ask when choosing a solution",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "How early does the intelligence arrive compared with common feeds?",
+       "Can analysts pivot from one indicator to related infrastructure?",
+       "How does it integrate with our SIEM and SOAR?",
+       "What is the false-positive rate on blocking use?"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Frequently asked questions",
+    "blocks": [
+     {
+      "t": "cta",
+      "labels": [
+       "Request a briefing",
+       "Browse all vendors"
+      ]
+     },
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "What is cyber threat intelligence?",
+        "a": "It is information about attackers, their methods and their infrastructure, used to prevent, detect and respond to attacks."
+       },
+       {
+        "q": "What is the difference between an indicator of compromise and an indicator of future attack?",
+        "a": "An indicator of compromise points to evidence of an attack that has happened. An indicator of future attack points to infrastructure that looks prepared for an attack that has not yet happened."
+       },
+       {
+        "q": "Who needs a threat intelligence platform?",
+        "a": "Organisations with a security operations or incident response team, such as banks, telecoms and large enterprises, get the most value."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 22,
+  "name": "Software supply chain security",
+  "spec": {
+   "URL": "/solutions/software-supply-chain-security/",
+   "Page type": "Solution page",
+   "Title tag": "Software Supply Chain Security | Evanssion",
+   "Meta description": "Verify the software you build and buy for malware, tampering and secrets. Software supply chain security solutions via Evanssion in the UAE, KSA and Bahrain.",
+   "H1": "Software supply chain security",
+   "Schema": "WebPage, FAQPage, BreadcrumbList, DefinedTerm",
+   "Primary CTA": "Request a briefing"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "Software supply chain security checks that the software you build, buy and depend on has not been tampered with and does not hide malware, secrets or exploitable flaws. It matters because attackers increasingly compromise a supplier or a package rather than attack you directly."
+     }
+    ]
+   },
+   {
+    "title": "What you cannot see can hurt you",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Modern applications are assembled from open-source libraries, commercial software and AI-generated code. A list of components shows what was meant to be in the build, not what is actually there. Procurement teams also receive software from vendors with little way to verify it."
+     }
+    ]
+   },
+   {
+    "title": "What good looks like",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Analysis of the compiled build, not only the source and the component list.",
+       "Detection of malware, tampering and hard-coded secrets in packages and containers.",
+       "Release gates in CI/CD.",
+       "A way to assess third-party and vendor software before deployment.",
+       "Central tracking of findings across all tools."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Vendors that deliver this through Evanssion",
+    "blocks": [
+     {
+      "t": "table",
+      "head": [
+       "Vendor",
+       "Role in this solution"
+      ],
+      "rows": [
+       [
+        "ReversingLabs",
+        "Spectra Assure analyses releases, containers and third-party software for active threats"
+       ],
+       [
+        "DefectDojo",
+        "Tracks supply chain and other findings in one risk-ranked view"
+       ]
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Questions to ask when choosing a solution",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Does it inspect binaries and containers, not just manifests?",
+       "Can we assess software we buy, not only software we build?",
+       "How does it reduce false positives?",
+       "Can it block a release automatically?"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Frequently asked questions",
+    "blocks": [
+     {
+      "t": "cta",
+      "labels": [
+       "Request a briefing",
+       "Browse all vendors"
+      ]
+     },
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "What is a software supply chain attack?",
+        "a": "It is an attack that compromises software at a supplier, in a library or in a build process, so that the malicious code reaches many customers through a trusted update."
+       },
+       {
+        "q": "What is an SBOM?",
+        "a": "A software bill of materials lists the components in a piece of software. It is useful, but it does not prove the software is free of malware or tampering."
+       },
+       {
+        "q": "Does this apply to us if we do not develop software?",
+        "a": "Yes. Any organisation that runs third-party software depends on its suppliers' build processes. Assessing vendor software is part of the answer."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 23,
+  "name": "Vulnerability and exposure management",
+  "spec": {
+   "URL": "/solutions/vulnerability-management/",
+   "Page type": "Solution page",
+   "Title tag": "Vulnerability & Exposure Management | Evanssion",
+   "Meta description": "Close vulnerabilities faster with consolidated findings, risk-based ranking and automated patching. Solutions via Evanssion in the UAE, KSA and Bahrain.",
+   "H1": "Vulnerability and exposure management",
+   "Schema": "WebPage, FAQPage, BreadcrumbList",
+   "Primary CTA": "Request a briefing"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "Vulnerability and exposure management is the work of finding weaknesses, deciding which ones matter, and fixing them quickly. The hard part is rarely finding them. It is merging many lists, ranking by real risk, and getting fixes deployed."
+     }
+    ]
+   },
+   {
+    "title": "More findings than fixes",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Each scanner has its own list. The same flaw appears several times, severity scores ignore whether an exploit exists, and patching waits on tickets and maintenance windows. Auditors then ask for evidence that the process works."
+     }
+    ]
+   },
+   {
+    "title": "What good looks like",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "One consolidated record across scanners and teams.",
+       "Ranking that uses exploit data such as EPSS and the CISA Known Exploited Vulnerabilities list.",
+       "Remediation SLAs that are measured, not estimated.",
+       "Automated patching with verification.",
+       "Documented risk acceptance for what cannot be fixed."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Vendors that deliver this through Evanssion",
+    "blocks": [
+     {
+      "t": "table",
+      "head": [
+       "Vendor",
+       "Role in this solution"
+      ],
+      "rows": [
+       [
+        "DefectDojo",
+        "Consolidation, de-duplication, risk ranking and workflow for findings from 500+ tools"
+       ]
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Questions to ask when choosing a solution",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Does it rank by exploitability as well as severity?",
+       "Does it connect to our ticketing and patching tools?",
+       "Can it verify that a patch was applied?",
+       "What reporting do auditors get?"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Frequently asked questions",
+    "blocks": [
+     {
+      "t": "cta",
+      "labels": [
+       "Request a briefing",
+       "Browse all vendors"
+      ]
+     },
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "What is risk-based vulnerability management?",
+        "a": "It ranks vulnerabilities by the likelihood and impact of real attacks, using exploit data and asset importance, rather than by severity score alone."
+       },
+       {
+        "q": "What are EPSS and CISA KEV?",
+        "a": "The Exploit Prediction Scoring System estimates the probability that a vulnerability will be exploited. The CISA Known Exploited Vulnerabilities catalogue lists flaws that are being exploited now."
+       },
+       {
+        "q": "Should patching be automatic?",
+        "a": "For most endpoint and third-party software, yes, within policy and approved windows. Critical servers often need change control."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 24,
+  "name": "Security operations and data",
+  "spec": {
+   "URL": "/solutions/security-operations/",
+   "Page type": "Solution page",
+   "Title tag": "Security Operations & Data Solutions | Evanssion",
+   "Meta description": "Reduce alert overload and SIEM cost with AI-driven investigation and a security data fabric. Solutions via Evanssion in the UAE, KSA and Bahrain.",
+   "H1": "Security operations and security data",
+   "Schema": "WebPage, FAQPage, BreadcrumbList",
+   "Primary CTA": "Request a briefing"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "A modern security operations centre depends on two things: clean data that costs less to store and search, and enough analyst capacity to investigate what it finds. AI agents can now take on much of the investigation work, and a data fabric can control what reaches the SIEM."
+     }
+    ]
+   },
+   {
+    "title": "Too many alerts, too much data",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Log volumes grow every year and SIEM pricing follows. Analysts triage alerts by hand and many are never investigated. Detections drift as the environment changes, and migrations between platforms take months."
+     }
+    ]
+   },
+   {
+    "title": "What good looks like",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Data collected once, filtered, enriched and routed to the right tool.",
+       "Lower SIEM ingestion and storage cost without losing coverage.",
+       "AI-assisted investigation that attaches its evidence to each verdict.",
+       "Continuous threat hunting and detection tuning.",
+       "Freedom to change SIEM or data lake without a rebuild."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Vendors that deliver this through Evanssion",
+    "blocks": [
+     {
+      "t": "table",
+      "head": [
+       "Vendor",
+       "Role in this solution"
+      ],
+      "rows": [
+       [
+        "Arambh Labs",
+        "AI agents that investigate alerts, hunt threats and tune detections"
+       ],
+       [
+        "Silent Push",
+        "Preemptive intelligence that enriches alerts and hunts"
+       ]
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Questions to ask when choosing a solution",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Which share of alerts does it close without human help, and with what evidence?",
+       "Which sources and destinations does it integrate with?",
+       "Can it run in our own environment?",
+       "How is the SIEM cost reduction measured?"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Frequently asked questions",
+    "blocks": [
+     {
+      "t": "cta",
+      "labels": [
+       "Request a briefing",
+       "Browse all vendors"
+      ]
+     },
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "What is an AI SOC?",
+        "a": "An AI SOC uses AI agents for tasks such as alert triage, investigation and hunting, while analysts review and decide on the important cases."
+       },
+       {
+        "q": "What is a security data pipeline?",
+        "a": "It is software that collects logs and telemetry, filters and normalises them, and sends them to the SIEM, data lake and other tools."
+       },
+       {
+        "q": "Will AI replace SOC analysts?",
+        "a": "It is better described as shifting their time from repetitive triage to investigation, hunting and improving detections."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 25,
+  "name": "Governance, risk and compliance",
+  "spec": {
+   "URL": "/solutions/grc-compliance/",
+   "Page type": "Solution page",
+   "Title tag": "GRC & Compliance Automation | Evanssion",
+   "Meta description": "Prove compliance with SAMA, NCA ECC, UAE PDPL and more from one platform. Governance, risk and compliance automation via Evanssion in the Gulf.",
+   "H1": "Governance, risk and compliance",
+   "Schema": "WebPage, FAQPage, BreadcrumbList",
+   "Primary CTA": "Request a briefing"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "Governance, risk and compliance (GRC) software helps an organisation manage risk, map controls to regulations and keep evidence ready for audit. In the Gulf, the same control often has to satisfy several frameworks, so mapping once and reusing evidence saves most of the effort."
+     }
+    ]
+   },
+   {
+    "title": "Many regulators, one team",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "A bank in the Gulf may answer to its central bank, a national cybersecurity authority, a data protection law and international standards. Each asks for similar evidence in a different shape. Teams rebuild the same spreadsheets for every audit and find gaps late."
+     }
+    ]
+   },
+   {
+    "title": "What good looks like",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Controls mapped once to many frameworks.",
+       "Continuous monitoring and evidence collection.",
+       "Risk, policy, audit and third-party risk in one place.",
+       "AI governance alongside traditional compliance.",
+       "Data residency that matches regulatory expectations."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Vendors that deliver this through Evanssion",
+    "blocks": [
+     {
+      "t": "table",
+      "head": [
+       "Vendor",
+       "Role in this solution"
+      ],
+      "rows": [
+       [
+        "Operlity",
+        "GRC, AI governance, identity and data governance with regional frameworks included"
+       ]
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Questions to ask when choosing a solution",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Which regional frameworks are included, and who keeps them current?",
+       "How are controls mapped across frameworks?",
+       "Where is data stored, and can it stay in the country or the region?",
+       "How much of the evidence gathering is automated?"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Frequently asked questions",
+    "blocks": [
+     {
+      "t": "cta",
+      "labels": [
+       "Request a briefing",
+       "Browse all vendors"
+      ]
+     },
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "Which frameworks matter for Gulf organisations?",
+        "a": "Common ones include the Saudi SAMA Cyber Security Framework and NCA Essential Cybersecurity Controls, the UAE Information Assurance Standards and PDPL, the Bahrain PDPL and central bank rules, plus ISO 27001."
+       },
+       {
+        "q": "What is continuous compliance?",
+        "a": "It is monitoring controls all the time and collecting evidence automatically, so you are ready for audit at any point instead of preparing for it."
+       },
+       {
+        "q": "Does GRC software cover AI regulation?",
+        "a": "Some platforms do. Operlity includes AI model inventory and risk assessment aligned with the EU AI Act, ISO 42001 and the NIST AI RMF."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 26,
+  "name": "Breach containment and Zero Trust segmentation",
+  "spec": {
+   "URL": "/solutions/breach-containment/",
+   "Page type": "Solution page",
+   "Title tag": "Breach Containment & Segmentation | Evanssion",
+   "Meta description": "Stop attackers moving once they are inside. Microsegmentation and breach containment for hybrid and multi-cloud estates, via Evanssion in the Gulf.",
+   "H1": "Breach containment and Zero Trust segmentation",
+   "Schema": "WebPage, FAQPage, BreadcrumbList, DefinedTerm",
+   "Primary CTA": "Request a briefing"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "Breach containment limits how far an attacker can move after getting in. By mapping which systems need to talk to each other and blocking everything else, segmentation turns a breach of one server into an incident, rather than a crisis across the whole estate."
+     }
+    ]
+   },
+   {
+    "title": "Assume breach",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Perimeter controls cannot stop every attack. Once inside, ransomware and intruders move laterally across flat networks, hybrid clouds and shared services. Organisations need to see how workloads communicate and enforce rules that limit those paths."
+     }
+    ]
+   },
+   {
+    "title": "What good looks like",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "A live map of how workloads and devices communicate.",
+       "Policy that limits traffic to what is needed, across data centre and cloud.",
+       "Quick isolation of an affected workload during an incident.",
+       "Detection of unusual lateral movement.",
+       "Evidence of segmentation for audits and Zero Trust programmes."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Vendors that deliver this through Evanssion",
+    "blocks": [
+     {
+      "t": "table",
+      "head": [
+       "Vendor",
+       "Role in this solution"
+      ],
+      "rows": [
+       [
+        "Illumio",
+        "Segmentation and cloud detection and response on an AI security graph"
+       ]
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Questions to ask when choosing a solution",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Does it work across data centre, cloud and endpoints with one policy model?",
+       "Can we see traffic before enforcing rules?",
+       "How quickly can we contain a workload during an incident?",
+       "What does the deployment involve for the network team?"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Frequently asked questions",
+    "blocks": [
+     {
+      "t": "cta",
+      "labels": [
+       "Request a briefing",
+       "Browse all vendors"
+      ]
+     },
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "What is lateral movement?",
+        "a": "Lateral movement is how attackers move from the first system they compromise to others in the network in search of valuable data or systems."
+       },
+       {
+        "q": "How is segmentation different from a firewall?",
+        "a": "Perimeter firewalls control traffic at the edge. Segmentation controls traffic between workloads inside the network and cloud, down to individual systems."
+       },
+       {
+        "q": "Is this part of Zero Trust?",
+        "a": "Yes. Limiting access to what is explicitly needed, and assuming a breach is possible, are core Zero Trust principles."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 27,
+  "name": "Partners",
+  "spec": {
+   "URL": "/partners/",
+   "Page type": "Landing (partner audience)",
+   "Title tag": "Partner with Evanssion | Security Reseller Programme",
+   "Meta description": "Join the Evanssion partner programme: 10 security and AI security vendors, deal registration, training and incentives for Gulf and MEA resellers.",
+   "H1": "Grow your security business with Evanssion",
+   "Schema": "WebPage, FAQPage, BreadcrumbList",
+   "Primary CTA": "Become a partner"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "Evanssion gives resellers, systems integrators and managed security providers one route to ten specialist security and AI security vendors, with the training, registration and support to sell them in the Middle East and Africa."
+     },
+     {
+      "t": "cta",
+      "labels": [
+       "Become a partner",
+       "Partner login"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Why partners work with Evanssion",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "A focused portfolio of cybersecurity and AI security vendors that solve problems customers are asking about now.",
+       "Formal partner agreements, so terms are clear on both sides.",
+       "Deal registration through the partner portal, reviewed by our team. Each opportunity is protected for 60-days (further if required on the updates of the progress).",
+       "Vendor training, product webinars and a library of sales, presales and technical material.",
+       "Incentive and promotion announcements delivered in the portal.",
+       "Joint account planning with our team for active partners.",
+       "Presales and proof-of-concept support from Evanssion and the vendors."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Who we work with",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Value-added resellers, systems integrators and managed security service providers with a security practice in the UAE, Saudi Arabia, Bahrain or elsewhere in the Middle East and Africa."
+     }
+    ]
+   },
+   {
+    "title": "Programme at a glance",
+    "blocks": [
+     {
+      "t": "table",
+      "head": [
+       "Tier",
+       "Intended for",
+       "Draft entry criteria",
+       "Draft benefits"
+      ],
+      "rows": [
+       [
+        "Registered",
+        "New partners",
+        "Signed agreement, approved application, portal access",
+        "Portal, resources, training, deal registration"
+       ],
+       [
+        "Authorised",
+        "Active partners",
+        "Mutually agreed revenue and dedicate resources for select vendors in sales & presales.",
+        "Registered benefits plus: Deal protection, presales support, higher discounts."
+       ],
+       [
+        "Strategic",
+        "Top partners",
+        "Extended credit, turn-over based credits upon achieving mutually agreed revenue targets.",
+        "Authorised benefits plus joint account planning and joint marketing, events and campaigns."
+       ]
+      ]
+     }
+    ]
+   },
+   {
+    "title": "How it works",
+    "blocks": [
+     {
+      "t": "ol",
+      "items": [
+       "Apply online and tell us about your business and the vendors you want to sell.",
+       "We review the application and speak with you.",
+       "Sign the partner agreement.",
+       "Receive portal access, onboarding and your first training.",
+       "Register opportunities, run joint account plans and grow together."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Frequently asked questions",
+    "blocks": [
+     {
+      "t": "cta",
+      "labels": [
+       "Become a partner"
+      ]
+     },
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "What does it cost to become an Evanssion partner?",
+        "a": "None. Register, and give a jumpstart to your business with our portfolio."
+       },
+       {
+        "q": "Which vendors can I sell?",
+        "a": "You can apply for any of our vendors. Authorisation is agreed per vendor where the vendor requires it."
+       },
+       {
+        "q": "Do I need certified staff?",
+        "a": "We’ll help you in getting your team trained and certified on select vendors in the areas of presales, sales and technical."
+       },
+       {
+        "q": "Which countries do you cover?",
+        "a": "Our focus is the UAE, Saudi Arabia and Bahrain. We also work with partners across the wider Middle East and Africa."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 28,
+  "name": "Become a partner",
+  "spec": {
+   "URL": "/partners/become-a-partner/",
+   "Page type": "Form page",
+   "Title tag": "Become an Evanssion Partner | Apply Online",
+   "Meta description": "Apply to join the Evanssion partner programme. Tell us about your company and the security vendors you want to sell in the UAE, Saudi Arabia, Bahrain and MEA.",
+   "H1": "Apply to become an Evanssion partner",
+   "Schema": "WebPage, FAQPage",
+   "Primary CTA": "Submit application"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "It takes about ten minutes to apply. We review every application and reply within 5 working days."
+     }
+    ]
+   },
+   {
+    "title": "Before you apply",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "A registered company with a trade licence in your country.",
+       "A security practice with staff who can present, scope and support the products.",
+       "Willingness to register opportunities and share pipeline.",
+       "Company documents for onboarding: licence, tax registration, company profile."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Application form fields",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Company name, website, country and city, year established, number of staff, number of security staff.",
+       "Partner type: reseller, systems integrator, managed security provider, other.",
+       "Primary contact: name, job title, work email, phone.",
+       "Vendors of interest (checkbox list of the ten).",
+       "Target customer sectors and countries.",
+       "Current security vendors you sell.",
+       "Consent to contact and to data processing. Link to privacy notice."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "What happens next",
+    "blocks": [
+     {
+      "t": "ol",
+      "items": [
+       "We confirm receipt immediately by email.",
+       "Our partner team reviews fit and contacts you.",
+       "If approved, we send the partner agreement for signature.",
+       "We create your portal accounts and schedule onboarding."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Frequently asked questions",
+    "blocks": [
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "Who reviews my application?",
+        "a": "The Evanssion partner team. We look at your market focus, security capability and the vendors you want to sell."
+       },
+       {
+        "q": "Can several people from my company have portal access?",
+        "a": "Yes. Once approved, additional users from your company can register and are approved by us."
+       },
+       {
+        "q": "What if my application is not approved?",
+        "a": "We will tell you why and, where possible, what would change the decision."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 29,
+  "name": "Our partners",
+  "spec": {
+   "URL": "/partners/our-partners/",
+   "Page type": "Directory",
+   "Title tag": "Evanssion Partners | UAE, Saudi Arabia, Bahrain & MEA",
+   "Meta description": "Resellers, integrators and managed security providers that work with Evanssion across the UAE, Saudi Arabia, Bahrain and the Middle East and Africa.",
+   "H1": "Our partners",
+   "Schema": "CollectionPage, ItemList (Organization per partner)",
+   "Primary CTA": "Become a partner"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "These companies are registered Evanssion partners. Each has signed a partner agreement and has access to our vendors, training and support."
+     }
+    ]
+   },
+   {
+    "title": "Directory",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Filter by country (UAE, Saudi Arabia, Bahrain, other MEA), partner type and vendor. Each card shows logo, company name, country, partner type, vendors and website."
+     }
+    ]
+   },
+   {
+    "title": "Empty-state copy until partners are signed",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "We are signing our first regional partners now. If you resell or integrate security in the Middle East or Africa, apply to be among the first."
+     }
+    ]
+   },
+   {
+    "title": "Listing a partner: card fields",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Logo (provided by partner), company name, country, partner type.",
+       "Vendors authorised (chips linking to vendor pages).",
+       "Short description (max 30 words), website link.",
+       "Tier badge (optional, only if tiers are published)."
+      ]
+     },
+     {
+      "t": "cta",
+      "labels": [
+       "Become a partner"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 30,
+  "name": "Partner portal",
+  "spec": {
+   "URL": "/partners/portal/",
+   "Page type": "Landing (public page that links to the gated app)",
+   "Title tag": "Partner Portal | Evanssion",
+   "Meta description": "Evanssion partner portal: deal registration, training, sales resources and incentive announcements for registered partners.",
+   "H1": "Evanssion partner portal",
+   "Schema": "WebPage",
+   "Primary CTA": "Partner login"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "The portal is where registered partners register deals, find resources and complete training. Access is by approval."
+     },
+     {
+      "t": "cta",
+      "labels": [
+       "Partner login",
+       "Not a partner yet? Apply"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "What is inside",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Deal registration: submit opportunities for review and track their status.",
+       "Resource library: sales, presales and technical material by vendor and product.",
+       "Training: vendor courses, videos and webinars.",
+       "Announcements: promotions, incentive programmes and vendor news."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Getting access",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Apply through the Become a partner page. Once your company is approved and your agreement is signed, we create your portal account. Additional users from your company can then register and are approved by our team."
+     }
+    ]
+   },
+   {
+    "title": "Need help?",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Email sales@evanssion.com or call +971 58 606 1121."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 31,
+  "name": "UAE",
+  "spec": {
+   "URL": "/regions/uae/",
+   "Page type": "Region page",
+   "Title tag": "Cybersecurity Distributor in the UAE | Evanssion",
+   "Meta description": "Evanssion, a Dubai-based value-added distributor of cybersecurity and AI security, serves UAE partners and enterprises with 10 specialist vendors.",
+   "H1": "Cybersecurity and AI security distribution in the UAE",
+   "Schema": "WebPage, FAQPage, BreadcrumbList, Place or AreaServed (on Organization)",
+   "Primary CTA": "Talk to our UAE team"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "Evanssion is headquartered in Dubai and supplies cybersecurity and AI security solutions to UAE partners and enterprises. We work with registered partners and directly with enterprises on focused opportunities."
+     }
+    ]
+   },
+   {
+    "title": "The UAE security market",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "UAE organisations are digitising quickly and face rising attack volumes, tighter data protection rules and growing use of AI. Banks, insurers, healthcare providers, logistics, real estate and retail are all investing in security programmes."
+     }
+    ]
+   },
+   {
+    "title": "Regulation and standards to know",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Federal Decree-Law No. 45 of 2021 on the Protection of Personal Data (UAE PDPL).",
+       "UAE Information Assurance regulation and standards.",
+       "Central Bank of the UAE requirements for licensed financial institutions.",
+       "National encryption and post-quantum guidance from the UAE Cyber Security Council.",
+       "Emirate-level frameworks, such as Dubai and Abu Dhabi information security standards."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "How Evanssion helps in UAE",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Local partners and direct support for enterprises in Dubai, Abu Dhabi and the northern emirates.",
+       "Briefings and proof-of-concept help with our vendors.",
+       "Compliance-oriented solutions, such as Operlity, that include UAE frameworks.",
+       "Partner training and deal registration for UAE resellers and integrators."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Vendors most relevant here",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Operlity for UAE PDPL and Information Assurance compliance, Illumio for breach containment, WitnessAI and Onyx Security for AI governance, Arambh Labs for security operations, and Silent Push for threat intelligence."
+     }
+    ]
+   },
+   {
+    "title": "Partners in UAE",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Write to us to get the list of partners in the UAE."
+     }
+    ]
+   },
+   {
+    "title": "Frequently asked questions",
+    "blocks": [
+     {
+      "t": "cta",
+      "labels": [
+       "Talk to us",
+       "Become a partner"
+      ]
+     },
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "Is Evanssion based in the UAE?",
+        "a": "Yes. Evanssion is headquartered in Dubai."
+       },
+       {
+        "q": "Do you sell to UAE government entities?",
+        "a": "Yes. Through our partners."
+       },
+       {
+        "q": "How can a UAE reseller join?",
+        "a": "Apply on the Become a partner page. We review each application and onboard approved partners."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 32,
+  "name": "Saudi Arabia",
+  "spec": {
+   "URL": "/regions/saudi-arabia/",
+   "Page type": "Region page",
+   "Title tag": "Cybersecurity Distributor in Saudi Arabia | Evanssion",
+   "Meta description": "Evanssion supplies cybersecurity and AI security to Saudi partners and enterprises, with solutions mapped to NCA ECC, SAMA and PDPL requirements.",
+   "H1": "Cybersecurity and AI security distribution in Saudi Arabia",
+   "Schema": "WebPage, FAQPage, BreadcrumbList, Place or AreaServed (on Organization)",
+   "Primary CTA": "Talk to our Saudi Arabia team"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "Saudi Arabia is a focus market for Evanssion. We support Saudi resellers, integrators and enterprises with security and AI security vendors, and prioritise solutions that help with Saudi regulatory requirements."
+     }
+    ]
+   },
+   {
+    "title": "The Saudi security market",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Saudi Arabia is one of the region's largest and fastest-growing security markets, driven by national digital programmes, strict regulatory frameworks and large public and private investment. Buyers often expect local presence and clear answers on data location."
+     }
+    ]
+   },
+   {
+    "title": "Regulation and standards to know",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "National Cybersecurity Authority (NCA) Essential Cybersecurity Controls (ECC-2:2024), with related controls for cloud and critical systems.",
+       "SAMA Cyber Security Framework for financial institutions.",
+       "Saudi Personal Data Protection Law (PDPL), now enforceable.",
+       "Sector and government procurement requirements, including local content expectations."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "How Evanssion helps in Saudi Arabia",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Introductions to Saudi partners that can contract and support locally.",
+       "Compliance-driven solutions, such as Operlity, that list SAMA, Saudi ECC and Saudi PDPL.",
+       "Briefings in Riyadh, Jeddah and the Eastern Province by arrangement.",
+       "Partner onboarding for Saudi resellers and integrators."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Vendors most relevant here",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Operlity for SAMA, ECC and PDPL mapping, WitnessAI and Onyx Security for AI governance, Illumio for segmentation, DefectDojo and Bright Security for application security, and Arambh Labs for AI-assisted security operations."
+     }
+    ]
+   },
+   {
+    "title": "Partners in Saudi Arabia",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Write to us to get the list of our partners in Saudi Arabia."
+     },
+     {
+      "t": "p",
+      "text": "1st Floor, Aban Center,"
+     },
+     {
+      "t": "p",
+      "text": "King Abdulaziz St, Al Ghadir, Riyadh -13311- 4672"
+     },
+     {
+      "t": "p",
+      "text": "Kingdom of Saudi Arabia"
+     },
+     {
+      "t": "p",
+      "text": "Tel - [+966 11 411 0140](tel:+966%2011%20411%200140)"
+     },
+     {
+      "t": "cta",
+      "labels": [
+       "Talk to us",
+       "Become a partner"
+      ]
+     },
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "Can data stay in Saudi Arabia?",
+        "a": "That depends on the vendor and deployment. Several of our vendors offer private cloud, VPC or on-premises options. Ask us for the details per product."
+       },
+       {
+        "q": "Which Saudi regulations do your solutions help with?",
+        "a": "Operlity maps SAMA, Saudi ECC and Saudi PDPL, and other vendors help with specific controls such as segmentation, vulnerability management and monitoring."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 33,
+  "name": "Bahrain",
+  "spec": {
+   "URL": "/regions/bahrain/",
+   "Page type": "Region page",
+   "Title tag": "Cybersecurity Distributor in Bahrain | Evanssion",
+   "Meta description": "Evanssion supports Bahrain partners and enterprises with specialist cybersecurity and AI security vendors, including financial sector and PDPL needs.",
+   "H1": "Cybersecurity and AI security distribution in Bahrain",
+   "Schema": "WebPage, FAQPage, BreadcrumbList, Place or AreaServed (on Organization)",
+   "Primary CTA": "Talk to our Bahrain team"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "Bahrain is one of Evanssion's three focus markets. We support Bahraini resellers, integrators and enterprises, particularly in financial services, with specialist cybersecurity and AI security vendors."
+     }
+    ]
+   },
+   {
+    "title": "The Bahrain security market",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Bahrain has a concentrated, well-regulated financial sector and a government that promotes digital services and cloud adoption. Organisations value vendors that fit regulatory expectations and that support them locally."
+     }
+    ]
+   },
+   {
+    "title": "Regulation and standards to know",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Bahrain Personal Data Protection Law (Law No. 30 of 2018).",
+       "Central Bank of Bahrain Rulebook, including cyber risk, outsourcing and cloud requirements for licensed firms.",
+       "National Cyber Security Centre guidance."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "How Evanssion helps in Bahrain",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Direct briefings for Bahraini enterprises and banks.",
+       "Partner onboarding for Bahraini resellers and integrators.",
+       "Solutions that support financial sector controls and data protection duties."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Vendors most relevant here",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Operlity for governance and compliance, Illumio for segmentation, Silent Push for threat intelligence, WitnessAI for AI governance and Arambh Labs for security operations."
+     }
+    ]
+   },
+   {
+    "title": "Partners in Bahrain",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Write to us to get a list of our partners in the Kingdom of Bahrain."
+     }
+    ]
+   },
+   {
+    "title": "Frequently asked questions",
+    "blocks": [
+     {
+      "t": "cta",
+      "labels": [
+       "Talk to us",
+       "Become a partner"
+      ]
+     },
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "Does Evanssion serve Bahrain?",
+        "a": "Yes. Bahrain is one of our three focus markets, with the UAE and Saudi Arabia."
+       },
+       {
+        "q": "How can a Bahraini reseller join?",
+        "a": "Apply on the Become a partner page."
+       },
+       {
+        "q": "Are your solutions relevant to Central Bank of Bahrain requirements?",
+        "a": "Several support controls that licensed firms need, such as governance, segmentation and vulnerability management."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 34,
+  "name": "Africa and wider MEA",
+  "spec": {
+   "URL": "/regions/africa/",
+   "Page type": "Region page",
+   "Title tag": "Cybersecurity Distributor for Africa & MEA | Evanssion",
+   "Meta description": "Evanssion supports partners and enterprises across Africa and the wider Middle East with cybersecurity and AI security vendors through a partner-led model.",
+   "H1": "Cybersecurity and AI security distribution across Africa and the wider MEA",
+   "Schema": "WebPage, FAQPage, BreadcrumbList, Place or AreaServed (on Organization)",
+   "Primary CTA": "Talk to our Africa and wider MEA team"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "Beyond the Gulf, Evanssion has a broader mandate across the Middle East and Africa. We work through regional partners and select countries by demand, using the same portfolio, training and deal registration as in our focus markets."
+     }
+    ]
+   },
+   {
+    "title": "Our approach outside the focus markets",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Security spending is growing across African and wider Middle Eastern markets, but each country differs in regulation, currency, procurement and partner strength. We start with partners that already have customers and add countries where there is demand."
+     }
+    ]
+   },
+   {
+    "title": "Regulation and standards to know",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Nigeria Data Protection Act 2023.",
+       "South Africa Protection of Personal Information Act (POPIA).",
+       "Kenya Data Protection Act 2019.",
+       "Egypt Personal Data Protection Law (Law No. 151 of 2020)."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "How Evanssion helps in Africa and wider MEA",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Partner recruitment and onboarding by country.",
+       "Remote briefings, demonstrations and training.",
+       "Commercial support for cross-border transactions."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Vendors most relevant here",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Depends on the market. Common starting points are DefectDojo and Bright Security for application security, Silent Push for threat intelligence and Operlity for compliance."
+     }
+    ]
+   },
+   {
+    "title": "Partners in Africa and wider MEA",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Write to us to get a list of our partners in the MEA region."
+     }
+    ]
+   },
+   {
+    "title": "Frequently asked questions",
+    "blocks": [
+     {
+      "t": "cta",
+      "labels": [
+       "Talk to us",
+       "Become a partner"
+      ]
+     },
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "Which African countries do you cover?",
+        "a": "Egypt, Lebanon, Jordan, South Africa and Nigeria."
+       },
+       {
+        "q": "Do you ship products to partners outside the Gulf?",
+        "a": "Our vendors are mostly software and cloud services, delivered digitally. Commercial terms depend on the country."
+       },
+       {
+        "q": "How do I register interest?",
+        "a": "Apply on the Become a partner page and select your country."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 35,
+  "name": "Insights hub",
+  "spec": {
+   "URL": "/insights/",
+   "Page type": "Hub",
+   "Title tag": "Cybersecurity & AI Security Insights | Evanssion",
+   "Meta description": "Guides, explainers and regional analysis on cybersecurity and AI security for security leaders, partners and vendors in the Gulf and MEA.",
+   "H1": "Insights",
+   "Schema": "CollectionPage, Blog, ItemList",
+   "Primary CTA": "Subscribe"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "Practical guides and regional analysis on cybersecurity and AI security, written for security leaders, partners and vendors in the Gulf and the wider Middle East and Africa."
+     }
+    ]
+   },
+   {
+    "title": "Categories",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "AI security and governance",
+       "Application security and software supply chain",
+       "Threat intelligence and security operations",
+       "Compliance and regulation in the Gulf",
+       "Market and region",
+       "Partner news"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Editorial standards (shown on the page for trust)",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Every article has a named author with a short bio.",
+       "Dates published and updated are shown.",
+       "Claims cite a primary source.",
+       "Vendor-stated figures are labelled as such."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Launch plan: first 12 articles",
+    "blocks": [
+     {
+      "t": "table",
+      "head": [
+       "#",
+       "Working title (as a question)",
+       "Format",
+       "Links to"
+      ],
+      "rows": [
+       [
+        "1",
+        "What is shadow AI and how do you find it?",
+        "Explainer",
+        "AI security; WitnessAI, Onyx"
+       ],
+       [
+        "2",
+        "How do AI agents get identity and credentials safely?",
+        "Explainer",
+        "AI security; Backflipt"
+       ],
+       [
+        "3",
+        "What is an Indicator of Future Attack?",
+        "Explainer",
+        "Threat intelligence; Silent Push"
+       ],
+       [
+        "4",
+        "How do you check third-party software before you deploy it?",
+        "Guide",
+        "Supply chain; ReversingLabs"
+       ],
+       [
+        "5",
+        "What is ASPM and do you need it?",
+        "Explainer",
+        "Vulnerability management; DefectDojo"
+       ],
+       [
+        "6",
+        "How much of your SIEM bill is noise?",
+        "Guide",
+        "Security operations;"
+       ],
+       [
+        "7",
+        "What is an AI SOC and what can it do today?",
+        "Explainer",
+        "Security operations; Arambh Labs"
+       ],
+       [
+        "8",
+        "Which Saudi and UAE frameworks overlap, and how do you map them once?",
+        "Regional guide",
+        "GRC; Operlity"
+       ],
+       [
+        "9",
+        "What is microsegmentation and how does it stop ransomware spreading?",
+        "Explainer",
+        "Breach containment; Illumio"
+       ],
+       [
+        "10",
+        "How should you test APIs and AI features for security flaws?",
+        "Guide",
+        "Application security; Bright Security"
+       ],
+       [
+        "11",
+        "How do you patch faster without breaking production?",
+        "Guide",
+        "Vulnerability management"
+       ],
+       [
+        "12",
+        "What does a value-added distributor do for a security vendor?",
+        "Explainer",
+        "Become a vendor"
+       ]
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Subscribe",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Get new articles and event invitations by email."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 36,
+  "name": "Glossary",
+  "spec": {
+   "URL": "/insights/glossary/",
+   "Page type": "Glossary hub (plus one page per term, /insights/glossary/term-name/)",
+   "Title tag": "Cybersecurity & AI Security Glossary | Evanssion",
+   "Meta description": "Plain-language definitions of cybersecurity and AI security terms, from ASPM and microsegmentation to MCP and prompt injection.",
+   "H1": "Cybersecurity and AI security glossary",
+   "Schema": "DefinedTermSet, DefinedTerm (each term), BreadcrumbList",
+   "Primary CTA": "Explore solutions"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "Short, plain definitions of the terms our vendors and customers use. Each term has its own page so search engines and AI assistants can cite it directly."
+     }
+    ]
+   },
+   {
+    "title": "Launch terms (draft definitions)",
+    "blocks": [
+     {
+      "t": "table",
+      "head": [
+       "Term",
+       "Definition (40 to 60 words, ready to publish after review)"
+      ],
+      "rows": [
+       [
+        "ASPM",
+        "Application security posture management brings findings from code, build, cloud and runtime scanners into one view, removes duplicates, ranks them by real risk and tracks fixes to closure."
+       ],
+       [
+        "Shadow AI",
+        "Shadow AI is any AI tool, model or agent used inside an organisation without security or IT approval, such as an employee pasting company data into a public chatbot."
+       ],
+       [
+        "Prompt injection",
+        "Prompt injection is an attack in which crafted input makes an AI model ignore its instructions, reveal data or take unintended actions. It is a leading risk for AI applications and agents."
+       ],
+       [
+        "MCP (Model Context Protocol)",
+        "Model Context Protocol is an open standard that lets AI agents connect to tools and data sources. Each MCP server an agent can reach extends what the agent can do, so access needs to be governed."
+       ],
+       [
+        "A2A (Agent2Agent)",
+        "Agent2Agent is a protocol that lets AI agents from different platforms communicate and delegate tasks to each other. Security teams need to authenticate and authorise this traffic."
+       ],
+       [
+        "Indicator of Future Attack (IOFA)",
+        "An Indicator of Future Attack is a signal that internet infrastructure matches the pattern attackers use to prepare an attack, before any attack has used it. Silent Push uses IOFA for preemptive defence."
+       ],
+       [
+        "Software supply chain security",
+        "Software supply chain security verifies that software you build or buy has not been tampered with and does not hide malware, secrets or exploitable flaws, including in open-source and third-party components."
+       ],
+       [
+        "Microsegmentation",
+        "Microsegmentation divides a network or cloud into small zones with their own rules, down to individual workloads, so a compromised system cannot freely reach others."
+       ],
+       [
+        "Lateral movement",
+        "Lateral movement is how an attacker moves from the first system they compromise to others in the environment, looking for credentials, data or systems to control."
+       ],
+       [
+        "Security data fabric",
+        "A security data fabric collects, cleans, enriches and routes security and observability data to the tools that need it, reducing cost and improving detection quality."
+       ],
+       [
+        "AI SOC",
+        "An AI SOC uses AI agents to perform security operations work such as alert triage, investigation and threat hunting, with analysts reviewing and deciding on important cases."
+       ],
+       [
+        "Value-added distributor",
+        "A value-added distributor sells technology through channel partners and adds services such as technical enablement, presales, training and local support, beyond simply supplying product."
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 37,
+  "name": "Events and webinars",
+  "spec": {
+   "URL": "/events/",
+   "Page type": "Hub",
+   "Title tag": "Events & Webinars | Evanssion",
+   "Meta description": "Webinars, roundtables and events from Evanssion and our vendors for security leaders and partners in the UAE, Saudi Arabia, Bahrain and MEA.",
+   "H1": "Events and webinars",
+   "Schema": "CollectionPage, Event (each event, with startDate, location, eventAttendanceMode)",
+   "Primary CTA": "Register"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "Join briefings, vendor webinars and regional roundtables. Partners get recordings and follow-up material in the partner portal."
+     }
+    ]
+   },
+   {
+    "title": "Upcoming",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "GITEX 2026, Dubai, UAE"
+     }
+    ]
+   },
+   {
+    "title": "Past events and recordings",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Coming Soon"
+     }
+    ]
+   },
+   {
+    "title": "Proposed programme (to agree)",
+    "blocks": [
+     {
+      "t": "table",
+      "head": [
+       "Format",
+       "Audience",
+       "Suggested rhythm"
+      ],
+      "rows": [
+       [
+        "Vendor webinar",
+        "Partners and customers",
+        "One vendor per month, rotating through the 10"
+       ],
+       [
+        "Partner training session",
+        "Registered partners",
+        "After each new partner onboarding"
+       ],
+       [
+        "Regional roundtable",
+        "Security leaders",
+        "Quarterly, one market at a time (UAE, KSA, Bahrain)"
+       ],
+       [
+        "Trade shows",
+        "All",
+        "Coming Soon"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 38,
+  "name": "Site-wide elements",
+  "spec": {
+   "URL": "All pages",
+   "Page type": "Header, footer, banners",
+   "Title tag": "Pattern: Page topic | Evanssion (max 60 characters)",
+   "Meta description": "Max 155 characters, one clear benefit, region where relevant",
+   "H1": "One per page",
+   "Schema": "Organization and WebSite on every page; BreadcrumbList on all but home",
+   "Primary CTA": "Request a briefing / Become a partner"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": []
+   },
+   {
+    "title": "Primary navigation",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Vendors | Solutions | Partners | Regions | Insights | Company (About, Events, Contact). Right side: Partner login (text link) and Request a briefing (button)."
+     }
+    ]
+   },
+   {
+    "title": "Footer",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Brand line: Your trusted cybersecurity and AI distribution partner. GCC, UAE, MEA.",
+       "Columns: Vendors (12 links), Solutions (8 links), Partners (4 links), Regions (4 links), Company (About, Insights, Events, Contact).",
+       "Contact: sales@evanssion.com, +971 58 606 1121, Dubai address",
+       "Legal: Privacy notice, Terms, Cookie settings. LinkedIn link. https://www.linkedin.com/company/evanssion/",
+       "Copyright line with year and legal entity name: Evanssion FZCO, Dubai, UAE."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Cookie and consent notice",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "We use essential cookies to run this site and, with your consent, analytics cookies to improve it. Accept, Reject non-essential, or Manage."
+     }
+    ]
+   },
+   {
+    "title": "Breadcrumbs",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Home / Section / Page on every page below the home page, marked up with BreadcrumbList."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 39,
+  "name": "Privacy notice",
+  "spec": {
+   "URL": "/privacy/",
+   "Page type": "Legal",
+   "Title tag": "Privacy Notice | Evanssion",
+   "Meta description": "How Evanssion collects, uses and protects personal data on evanssion.com and in the partner portal.",
+   "H1": "Privacy notice",
+   "Schema": "WebPage",
+   "Primary CTA": "None"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Who we are and how to contact us (data controller details). info@evanssion.com",
+       "What we collect: forms, partner applications, portal accounts, deal registration data including customer contact details, analytics.",
+       "Why we use it and the legal basis.",
+       "Who we share it with: vendors, service providers, partners where needed for a registered deal.",
+       "Where data is stored and transferred. Hosting region: Dubai, UAE",
+       "Retention periods.",
+       "Your rights and how to exercise them.",
+       "Cookies.",
+       "Changes to this notice and effective date."
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 40,
+  "name": "Terms of use",
+  "spec": {
+   "URL": "/terms/",
+   "Page type": "Legal",
+   "Title tag": "Terms of Use | Evanssion",
+   "Meta description": "Terms for using evanssion.com and the Evanssion partner portal.",
+   "H1": "Terms of use",
+   "Schema": "WebPage",
+   "Primary CTA": "None"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Acceptance and scope.",
+       "Website use and intellectual property, including vendor trademarks.",
+       "Partner portal: eligibility, accounts, confidentiality, acceptable use.",
+       "No warranties on vendor information; vendor sites govern product details.",
+       "Limitation of liability and governing law - UAE"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 41,
+  "name": "Error and confirmation pages",
+  "spec": {
+   "URL": "/404.html, /thank-you/",
+   "Page type": "Utility",
+   "Title tag": "Page not found | Evanssion",
+   "Meta description": "Not indexed (noindex)",
+   "H1": "We could not find that page",
+   "Schema": "None",
+   "Primary CTA": "Go to home"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": []
+   },
+   {
+    "title": "404 page",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "That page is not here. Try one of these: Vendors, Solutions, Partners, Contact. Or search the site."
+     }
+    ]
+   },
+   {
+    "title": "Thank-you page (after any form)",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Thank you. We have your message and will reply within 1 working day.While you wait, explore our vendors or read our latest insights."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 42,
+  "name": "llms.txt (draft)",
+  "spec": {
+   "URL": "/llms.txt",
+   "Page type": "Machine-readable summary for AI assistants",
+   "Title tag": "n/a",
+   "Meta description": "n/a",
+   "H1": "n/a",
+   "Schema": "n/a",
+   "Primary CTA": "n/a"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "p",
+      "text": "A plain-text file that gives AI assistants a clear summary and the best pages to cite. Draft:"
+     },
+     {
+      "t": "p",
+      "text": "# Evanssion"
+     },
+     {
+      "t": "p",
+      "text": "> Evanssion is a Dubai-based value-added distributor of cybersecurity and AI security solutions, serving partners and enterprises in the UAE, Saudi Arabia, Bahrain and across the Middle East and Africa."
+     },
+     {
+      "t": "p",
+      "text": "## Key pages"
+     },
+     {
+      "t": "p",
+      "text": "- [Vendors](https://www.evanssion.com/vendors/): the 10 vendors we distribute"
+     },
+     {
+      "t": "p",
+      "text": "- [Solutions](https://www.evanssion.com/solutions/): security solutions by problem"
+     },
+     {
+      "t": "p",
+      "text": "- [Partners](https://www.evanssion.com/partners/): the partner programme"
+     },
+     {
+      "t": "p",
+      "text": "- [Regions](https://www.evanssion.com/regions/uae/): UAE, Saudi Arabia, Bahrain, Africa and wider MEA"
+     },
+     {
+      "t": "p",
+      "text": "- [Glossary](https://www.evanssion.com/insights/glossary/): definitions of security and AI security terms"
+     },
+     {
+      "t": "p",
+      "text": "- [Contact](https://www.evanssion.com/contact/)"
+     }
+    ]
+   }
+  ]
+ }
+]
