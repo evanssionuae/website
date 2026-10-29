@@ -328,7 +328,7 @@ function mdHtml(src) {
   flushP(); flushL();
   return out.join('\n');
 }
-const kbCard = (a) => `<a class="card kb-card" href="${href(a.URL)}"><img class="kb-thumb" src="${asset('img/kb/' + a.slug + '-sm.jpg')}" alt="" width="640" height="360" loading="lazy" decoding="async"><div class="kb-text"><p class="kb-meta">${a.tag ? `<span class="chip-tag">${esc(a.tag)}</span>` : ''}<time datetime="${a.date}">${fmtDate(a.date)}</time></p><h3>${esc(a.title)}</h3><p class="small muted">${esc(a.summary)}</p><span class="go">Read article →</span></div></a>`;
+const kbCard = (a) => `<a class="card kb-card" data-group="${esc(a.tag || '')}" href="${href(a.URL)}"><img class="kb-thumb" src="${asset('img/kb/' + a.slug + '-sm.jpg')}" alt="" width="640" height="360" loading="lazy" decoding="async"><div class="kb-text"><p class="kb-meta">${a.tag ? `<span class="chip-tag">${esc(a.tag)}</span>` : ''}<time datetime="${a.date}">${fmtDate(a.date)}</time></p><h3>${esc(a.title)}</h3><p class="small muted">${esc(a.summary)}</p><span class="go">Read article →</span></div></a>`;
 
 const T = {
   home(p) {
@@ -455,8 +455,10 @@ const T = {
   },
 
   kbHub(p) {
-    return hero(p, { lede: 'Practical articles on AI security, application security, threat modeling and the events that matter to security buyers and partners in the Middle East.', actions: '' }) +
-      secWide('Articles', `<div class="grid g3 kb-grid">${kb.map(kbCard).join('')}</div>`, { alt: true }) +
+    const cnt = {}; for (const a of kb) if (a.tag) cnt[a.tag] = (cnt[a.tag] || 0) + 1;
+    const tags = Object.keys(cnt).sort((x, y) => cnt[y] - cnt[x] || x.localeCompare(y));
+    return hero(p, { lede: 'Practical articles on AI security, cyber readiness, security operations and the events that matter to security buyers and partners in the Middle East.', actions: '' }) +
+      secWide('Articles', `${tags.length > 1 ? `<div class="chips" role="group" aria-label="Filter articles by topic" data-filter><button class="chip" type="button" data-g="" aria-pressed="true">All</button>${tags.map((g) => `<button class="chip" type="button" data-g="${esc(g)}" aria-pressed="false">${esc(g)}</button>`).join('')}</div>` : ''}<div class="grid g3 kb-grid filterable">${kb.map(kbCard).join('')}</div>`, { alt: true }) +
       sec('Subscribe', `<p class="prose">Get new articles and event invitations by email.</p>${subscribeForm()}`, { id: 'subscribe' }) +
       band(['Request a briefing'], 'Talk to us about your security priorities');
   },
