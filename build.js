@@ -87,9 +87,41 @@ for (const t of terms) {
   byUrl[t.URL] = pages[pages.length - 1];
 }
 
+/* knowledge base: src/knowledgebase/<slug>.md, front matter + markdown body. Newest first. */
+const KB_DIR = path.join(SRC, 'knowledgebase');
+const kb = [];
+if (fs.existsSync(KB_DIR)) {
+  for (const f of fs.readdirSync(KB_DIR).filter((x) => x.endsWith('.md'))) {
+    const raw = fs.readFileSync(path.join(KB_DIR, f), 'utf8').replace(/\r\n/g, '\n');
+    const m = raw.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+    if (!m) throw new Error('Missing front matter: ' + f);
+    const a = { slug: f.replace(/\.md$/, ''), body: m[2] };
+    for (const line of m[1].split('\n')) { const i = line.indexOf(':'); if (i > 0) a[line.slice(0, i).trim()] = line.slice(i + 1).trim(); }
+    for (const k of ['title', 'seoTitle', 'date', 'summary', 'description']) if (!a[k]) throw new Error(`${f}: missing "${k}" in front matter`);
+    a.words = a.body.split(/\s+/).filter(Boolean).length;
+    kb.push(a);
+  }
+  kb.sort((x, y) => (x.date < y.date ? 1 : x.date > y.date ? -1 : 0));
+}
+if (kb.length) {
+  pages.push({ n: 36.2, name: 'Knowledge base', URL: '/insights/knowledgebase/', sections: [], spec: {
+    URL: '/insights/knowledgebase/', 'Page type': 'Knowledge base hub', 'Title tag': 'AI and Cybersecurity Knowledge Base | Evanssion',
+    'Meta description': 'Articles on AI security, application security, threat modeling and events from Evanssion, for security leaders and partners in the Middle East.',
+    H1: 'Knowledge base', Schema: 'CollectionPage, BreadcrumbList', 'Primary CTA': 'Request a briefing' } });
+  byUrl['/insights/knowledgebase/'] = pages[pages.length - 1];
+  for (const a of kb) {
+    const URL = `/insights/knowledgebase/${a.slug}/`;
+    pages.push({ n: 36.3, name: a.seoTitle, URL, article: a, ogImage: `/assets/img/kb/${a.slug}.jpg`, sections: [], spec: {
+      URL, 'Page type': 'Knowledge base article', 'Title tag': `${a.seoTitle} | Evanssion`, 'Meta description': a.description,
+      H1: a.title, Schema: 'Article, BreadcrumbList', 'Primary CTA': 'Request a briefing' } });
+    byUrl[URL] = pages[pages.length - 1]; a.URL = URL;
+  }
+}
+
 const typeOf = (p) => {
   const u = p.URL;
   if (p.glossTerm) return 'term';
+  if (p.article) return 'article'; if (u === '/insights/knowledgebase/') return 'kbHub';
   if (u === '/') return 'home'; if (u === '/about/') return 'about'; if (u === '/contact/') return 'contact';
   if (u === '/vendors/') return 'vendorHub'; if (u === '/vendors/become-a-vendor/') return 'becomeVendor';
   if (vendors.includes(p)) return 'vendor'; if (u === '/solutions/') return 'solutionHub'; if (solutions.includes(p)) return 'solution';
@@ -276,6 +308,28 @@ const vendorTile = (v) => `<a class="card vendor-card" href="${href(v.URL)}">${v
 const solutionCard = (s, sub) => `<a class="card" href="${href(s.URL)}"><h3>${esc(s.name)}</h3>${sub ? `<p class="small muted">${esc(sub)}</p>` : ''}<span class="go">Explore →</span></a>`;
 const faqOf = (p) => p.sections.flatMap((s) => s.blocks).find((b) => b.t === 'faq');
 
+
+/* ------------------------------------------------------------------ knowledge base helpers */
+const fmtDate = (d) => new Date(d + 'T00:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+const jpegWidth = (file) => { try { const b = fs.readFileSync(file); let i = 2; while (i < b.length) { if (b[i] !== 0xff) { i++; continue; } const t = b[i + 1]; if (t >= 0xc0 && t <= 0xc3) return b.readUInt16BE(i + 7); i += 2 + b.readUInt16BE(i + 2); } } catch (e) {} return 1600; };
+function mdHtml(src) {
+  const inl = (t) => esc(t).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/(?<![*\w])\*(?!\s)(.+?)(?<!\s)\*(?![*\w])/g, '<em>$1</em>').replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g, (m, tx, u) => `<a href="${u}" target="_blank" rel="noopener">${tx}</a>`);
+  const out = []; let para = [], list = null;
+  const flushP = () => { if (para.length) { out.push(`<p>${inl(para.join(' '))}</p>`); para = []; } };
+  const flushL = () => { if (list) { out.push(`<${list.t}>${list.items.map((i) => `<li>${inl(i)}</li>`).join('')}</${list.t}>`); list = null; } };
+  for (const raw of src.split('\n')) {
+    const l = raw.trim(); let m;
+    if (!l) { flushP(); continue; }
+    if ((m = l.match(/^(#{2,3})\s+(.+)$/))) { flushP(); flushL(); out.push(`<h${m[1].length}>${inl(m[2])}</h${m[1].length}>`); continue; }
+    if ((m = l.match(/^[-*]\s+(.+)$/))) { flushP(); if (!list || list.t !== 'ul') { flushL(); list = { t: 'ul', items: [] }; } list.items.push(m[1]); continue; }
+    if ((m = l.match(/^\d+\.\s+(.+)$/))) { flushP(); if (!list || list.t !== 'ol') { flushL(); list = { t: 'ol', items: [] }; } list.items.push(m[1]); continue; }
+    flushL(); para.push(l);
+  }
+  flushP(); flushL();
+  return out.join('\n');
+}
+const kbCard = (a) => `<a class="card kb-card" href="${href(a.URL)}"><img class="kb-thumb" src="${asset('img/kb/' + a.slug + '-sm.jpg')}" alt="" width="640" height="360" loading="lazy" decoding="async"><div class="kb-text"><p class="kb-meta">${a.tag ? `<span class="chip-tag">${esc(a.tag)}</span>` : ''}<time datetime="${a.date}">${fmtDate(a.date)}</time></p><h3>${esc(a.title)}</h3><p class="small muted">${esc(a.summary)}</p><span class="go">Read article →</span></div></a>`;
+
 const T = {
   home(p) {
     const s = (re) => findSec(p, re);
@@ -400,11 +454,30 @@ const T = {
     return hero(p, { kicker: 'Region', side: media('Regional image', 'region-' + slugOf(p.spec.URL)) }) + generic(p) + endBand(p, 'Talk to our team');
   },
 
+  kbHub(p) {
+    return hero(p, { lede: 'Practical articles on AI security, application security, threat modeling and the events that matter to security buyers and partners in the Middle East.', actions: '' }) +
+      secWide('Articles', `<div class="grid g3 kb-grid">${kb.map(kbCard).join('')}</div>`, { alt: true }) +
+      sec('Subscribe', `<p class="prose">Get new articles and event invitations by email.</p>${subscribeForm()}`, { id: 'subscribe' }) +
+      band(['Request a briefing'], 'Talk to us about your security priorities');
+  },
+
+  article(p) {
+    const a = p.article, mins = Math.max(1, Math.round(a.words / 220));
+    const big = jpegWidth(path.join(SRC, 'img/kb', a.slug + '.jpg'));
+    const more = kb.filter((x) => x !== a).slice(0, 3);
+    const fig = `<figure class="art-fig"><img src="${asset('img/kb/' + a.slug + '.jpg')}" srcset="${asset('img/kb/' + a.slug + '-sm.jpg')} 640w, ${asset('img/kb/' + a.slug + '.jpg')} ${big}w" sizes="(max-width: 800px) 100vw, 760px" alt="${esc(a.imageAlt || '')}" width="1600" height="900" fetchpriority="high" decoding="async">${a.credit ? `<figcaption>${esc(a.credit)}</figcaption>` : ''}</figure>`;
+    return `<article class="article"><header class="art-head"><div class="wrap narrow">${a.tag ? `<p class="eyebrow">${esc(a.tag)}</p>` : ''}<h1>${esc(p.spec.H1)}</h1><p class="art-meta"><time datetime="${a.date}">${fmtDate(a.date)}</time> · ${mins} min read</p></div></header>` +
+      `<div class="wrap narrow">${fig}<div class="art-body">${mdHtml(a.body)}</div>${a.note ? `<p class="art-note">${esc(a.note)}</p>` : ''}</div></article>` +
+      band(['Request a briefing'], 'Talk to our team about this topic') +
+      (more.length ? secWide('More from the knowledge base', `<div class="grid g3 kb-grid">${more.map(kbCard).join('')}</div>`, { alt: true }) : '');
+  },
+
   insights(p) {
     const cats = findSec(p, /Categories/).blocks[0].items;
     const std = findSec(p, /Editorial standards/);
     const plan = findSec(p, /Launch plan/).blocks.find((b) => b.t === 'table');
     return hero(p, { actions: `<div class="actions"><a class="btn btn-primary" href="#subscribe">Subscribe</a></div>` }) +
+      (kb.length ? secWide('From the knowledge base', `<div class="grid g3 kb-grid">${kb.slice(0, 3).map(kbCard).join('')}</div><p class="actions">${btn('See all articles', '/insights/knowledgebase/', 'secondary')}</p>`) : '') +
       secWide('Categories', `<div class="chips static">${cats.map((c) => `<span class="chip">${esc(c)}</span>`).join('')}</div>`, { alt: true }) +
       sec('Coming up', `<p class="prose">Our first articles are in preparation. Each one answers a question buyers and partners ask us.</p><ul class="list">${plan.rows.map((r) => `<li><strong>${esc(r[1])}</strong> <span class="muted">${esc(r[2])}</span></li>`).join('')}</ul>`) +
       sec(std.title.replace(/\s*\(.*\)/, ''), renderBlock(std.blocks[0], { page: p }), { alt: true }) +
@@ -448,7 +521,7 @@ const NAV = [
   { label: 'Solutions', to: '/solutions/', links: solutions.map((s) => [s.name, s.URL]), all: ['All solutions', '/solutions/'], wide: true },
   { label: 'Partners', to: '/partners/', links: [['Become a partner', '/partners/become-a-partner/'], ['Our partners', '/partners/our-partners/'], ['Partner portal', '/partners/portal/']], all: ['Partner programme', '/partners/'] },
   { label: 'Regions', button: true, links: regions.map((r) => [r.name, r.URL]) },
-  { label: 'Insights', to: '/insights/', links: [['Insights', '/insights/'], ['Glossary', '/insights/glossary/']] },
+  { label: 'Insights', to: '/insights/', links: [['Insights', '/insights/'], ['Knowledge base', '/insights/knowledgebase/'], ['Glossary', '/insights/glossary/']] },
   { label: 'Company', button: true, links: [['About', '/about/'], ['Events', '/events/'], ['Contact', '/contact/']] },
 ];
 const navHtml = () => `<nav class="site-nav" id="site-nav" aria-label="Main"><ul class="nav-list">${NAV.map((n) => {
@@ -477,7 +550,7 @@ ${col('Vendors', vendors.map((v) => [v.name, v.URL]))}
 ${col('Solutions', solutions.map((s) => [s.name, s.URL]))}
 ${col('Partners', [['Partner programme', '/partners/'], ['Become a partner', '/partners/become-a-partner/'], ['Our partners', '/partners/our-partners/'], ['Partner portal', '/partners/portal/']])}
 ${col('Regions', regions.map((r) => [r.name, r.URL]))}
-${col('Company', [['About', '/about/'], ['Insights', '/insights/'], ['Glossary', '/insights/glossary/'], ['Events', '/events/'], ['Contact', '/contact/'], ['Become a vendor', '/vendors/become-a-vendor/']])}
+${col('Company', [['About', '/about/'], ['Insights', '/insights/'], ['Knowledge base', '/insights/knowledgebase/'], ['Glossary', '/insights/glossary/'], ['Events', '/events/'], ['Contact', '/contact/'], ['Become a vendor', '/vendors/become-a-vendor/']])}
 </div><div class="foot-base"><p>© ${new Date().getFullYear()} Evanssion FZCO, Dubai, UAE.</p><ul><li><a href="${href('/privacy/')}">Privacy notice</a></li><li><a href="${href('/terms/')}">Terms</a></li><li><button class="linklike" type="button" id="cookie-settings">Cookie settings</button></li></ul></div></div></footer>
 <div class="consent" id="consent" role="region" aria-label="Cookie consent" hidden><p>We use essential cookies to run this site and, with your consent, analytics cookies to improve it.</p><div class="actions"><button class="btn btn-secondary btn-sm" data-choice="reject" type="button">Reject non-essential</button><button class="btn btn-primary btn-sm" data-choice="accept" type="button">Accept</button></div></div>`;
 
@@ -489,7 +562,7 @@ function crumbs(p) {
   segs.forEach((s, i) => {
     acc += '/' + s; const url = acc + '/';
     const pg = byUrl[url];
-    if (pg) trail.push({ name: i === segs.length - 1 ? p.name : ({ '/vendors/': 'Vendors', '/solutions/': 'Solutions', '/partners/': 'Partners', '/insights/': 'Insights' }[url] || pg.name), url });
+    if (pg) trail.push({ name: i === segs.length - 1 ? p.name : ({ '/vendors/': 'Vendors', '/solutions/': 'Solutions', '/partners/': 'Partners', '/insights/': 'Insights', '/insights/knowledgebase/': 'Knowledge base' }[url] || pg.name), url });
   });
   return trail;
 }
@@ -502,12 +575,14 @@ function jsonld(p, trail, type) {
     contactPoint: [{ '@type': 'ContactPoint', contactType: 'sales', email: 'sales@evanssion.com', telephone: '+971586061121', areaServed: ['AE', 'SA', 'BH'], availableLanguage: ['English'] }] };
   const g = [org, { '@type': 'WebSite', '@id': ORIGIN + '/#site', url: ORIGIN + '/', name: 'Evanssion', publisher: { '@id': ORIGIN + '/#org' }, inLanguage: 'en' }];
   if (!p.noindex) {
-    const pageType = { about: 'AboutPage', contact: 'ContactPage', vendorHub: 'CollectionPage', solutionHub: 'CollectionPage', insights: 'CollectionPage', glossary: 'CollectionPage', events: 'CollectionPage', partnerDir: 'CollectionPage' }[type] || 'WebPage';
+    const pageType = { about: 'AboutPage', contact: 'ContactPage', vendorHub: 'CollectionPage', solutionHub: 'CollectionPage', insights: 'CollectionPage', glossary: 'CollectionPage', kbHub: 'CollectionPage', article: 'Article', events: 'CollectionPage', partnerDir: 'CollectionPage' }[type] || 'WebPage';
     const node = { '@type': pageType, '@id': ORIGIN + p.URL + '#page', url: ORIGIN + p.URL, name: p.spec['Title tag'], description: p.spec['Meta description'], isPartOf: { '@id': ORIGIN + '/#site' }, about: { '@id': ORIGIN + '/#org' }, inLanguage: 'en' };
     const list = (items) => ({ '@type': 'ItemList', itemListElement: items.map((x, i) => ({ '@type': 'ListItem', position: i + 1, name: x.name, url: ORIGIN + x.URL })) });
     if (type === 'vendorHub') node.mainEntity = list(vendors);
     if (type === 'solutionHub') node.mainEntity = list(solutions);
     if (type === 'glossary') node.mainEntity = { '@type': 'DefinedTermSet', '@id': ORIGIN + p.URL + '#terms', name: 'Cybersecurity and AI security glossary', hasDefinedTerm: terms.map((t) => ({ '@type': 'DefinedTerm', name: t.term, description: t.def, url: ORIGIN + t.URL, inDefinedTermSet: ORIGIN + p.URL + '#terms' })) };
+    if (type === 'kbHub') node.mainEntity = list(kb.map((a) => ({ name: a.title, URL: a.URL })));
+    if (type === 'article') { const a = p.article; Object.assign(node, { headline: a.title, datePublished: a.date, dateModified: a.date, image: ORIGIN + p.ogImage, author: { '@id': ORIGIN + '/#org' }, publisher: { '@id': ORIGIN + '/#org' }, mainEntityOfPage: ORIGIN + p.URL, articleSection: a.tag, wordCount: a.words }); delete node.about; }
     g.push(node);
     if (type === 'term') g.push({ '@type': 'DefinedTerm', '@id': ORIGIN + p.URL + '#term', name: p.glossTerm.term, description: p.glossTerm.def, url: ORIGIN + p.URL, inDefinedTermSet: ORIGIN + '/insights/glossary/' });
     if (type === 'vendor') {
@@ -544,7 +619,7 @@ ${p.noindex ? '' : `<link rel="canonical" href="${ORIGIN}${p.URL}">`}
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0A0B0E" media="(prefers-color-scheme: dark)">
-<meta property="og:type" content="website"><meta property="og:site_name" content="Evanssion"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${ORIGIN}${p.URL}"><meta property="og:image" content="${ORIGIN}/assets/og.png">
+<meta property="og:type" content="${p.article ? 'article' : 'website'}"><meta property="og:site_name" content="Evanssion"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${ORIGIN}${p.URL}"><meta property="og:image" content="${ORIGIN}${p.ogImage || '/assets/og.png'}">
 <meta name="twitter:card" content="summary_large_image">
 <script>try{var t=localStorage.getItem('evanssion-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="icon" type="image/png" href="${asset('mark.png')}">
@@ -581,6 +656,6 @@ const indexable = pages.filter((p) => !p.noindex);
 const today = new Date().toISOString().slice(0, 10);
 fs.writeFileSync(path.join(DIST, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${indexable.map((p) => `  <url><loc>${ORIGIN}${p.URL}</loc><lastmod>${today}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 fs.writeFileSync(path.join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /thank-you/\n\n# AI crawlers are welcome\nUser-agent: GPTBot\nAllow: /\nUser-agent: ClaudeBot\nAllow: /\nUser-agent: PerplexityBot\nAllow: /\nUser-agent: Google-Extended\nAllow: /\n\nSitemap: ${ORIGIN}/sitemap.xml\n`);
-fs.writeFileSync(path.join(DIST, 'llms.txt'), `# Evanssion\n\n> Evanssion is a Dubai-based value-added distributor of cybersecurity and AI security solutions, serving partners and enterprises in the UAE, Saudi Arabia, Bahrain and across the Middle East and Africa.\n\n## Key pages\n- [Vendors](${ORIGIN}/vendors/): the ${vendors.length} vendors we distribute\n- [Solutions](${ORIGIN}/solutions/): security solutions by problem\n- [Partners](${ORIGIN}/partners/): the partner programme\n- [Regions](${ORIGIN}/regions/uae/): UAE, Saudi Arabia, Bahrain, Africa and wider MEA\n- [Glossary](${ORIGIN}/insights/glossary/): definitions of security and AI security terms\n- [Contact](${ORIGIN}/contact/)\n\n## Vendors\n${vendors.map((v) => `- [${v.name}](${ORIGIN}${v.URL}): ${(vendorMeta[v.name.toLowerCase()] || {}).what || ''}`).join('\n')}\n\n## Solutions\n${solutions.map((s) => `- [${s.name}](${ORIGIN}${s.URL})`).join('\n')}\n`);
+fs.writeFileSync(path.join(DIST, 'llms.txt'), `# Evanssion\n\n> Evanssion is a Dubai-based value-added distributor of cybersecurity and AI security solutions, serving partners and enterprises in the UAE, Saudi Arabia, Bahrain and across the Middle East and Africa.\n\n## Key pages\n- [Vendors](${ORIGIN}/vendors/): the ${vendors.length} vendors we distribute\n- [Solutions](${ORIGIN}/solutions/): security solutions by problem\n- [Partners](${ORIGIN}/partners/): the partner programme\n- [Regions](${ORIGIN}/regions/uae/): UAE, Saudi Arabia, Bahrain, Africa and wider MEA\n- [Glossary](${ORIGIN}/insights/glossary/): definitions of security and AI security terms\n- [Contact](${ORIGIN}/contact/)\n\n## Knowledge base\n- [Knowledge base](${ORIGIN}/insights/knowledgebase/): articles on AI security, application security and events\n${kb.map((a) => `- [${a.title}](${ORIGIN}${a.URL}): ${a.summary}`).join('\n')}\n\n## Vendors\n${vendors.map((v) => `- [${v.name}](${ORIGIN}${v.URL}): ${(vendorMeta[v.name.toLowerCase()] || {}).what || ''}`).join('\n')}\n\n## Solutions\n${solutions.map((s) => `- [${s.name}](${ORIGIN}${s.URL})`).join('\n')}\n`);
 console.log(`${pages.length} pages + sitemap, robots, llms.txt -> ${DIST} (${PROD ? 'prod' : 'preview'} links)`);
 if (warn.length) console.log('WARN', warn);

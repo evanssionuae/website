@@ -270,3 +270,24 @@ tbody th { font-weight: 650; }
 [hidden] { display: none !important; }
 
 .person .portrait { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 18%; border-radius: 14px; background: var(--fill); display: block; }
+
+/* ---------- knowledge base ---------- */
+.wrap.narrow { max-width: 760px; }
+.art-head { padding-block: clamp(28px, 5vw, 64px) 24px; }
+.art-head .wrap { display: flex; flex-direction: column; gap: 14px; }
+.art-head h1 { font-size: clamp(1.875rem, 1.1rem + 2.8vw, 2.875rem); line-height: 1.1; max-width: none; }
+.art-meta { color: var(--fg-2); font-size: .9375rem; }
+.art-fig { margin: 0 0 32px; }
+.art-fig img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--r-card); display: block; background: var(--fill); }
+.art-fig figcaption { font-size: .8125rem; color: var(--fg-2); margin-top: 8px; }
+.art-body { display: flex; flex-direction: column; gap: 16px; font-size: 1.0625rem; line-height: 1.65; padding-bottom: 8px; }
+.art-body h2 { font-size: clamp(1.375rem, 1.1rem + 1vw, 1.75rem); margin-top: 20px; }
+.art-body h3 { font-size: 1.125rem; margin-top: 8px; }
+.art-body ul, .art-body ol { margin: 0; padding-left: 1.25rem; display: flex; flex-direction: column; gap: 10px; }
+.art-note { margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--hair); font-size: .875rem; color: var(--fg-2); }
+.article + .band { margin-top: clamp(40px, 6vw, 72px); }
+.kb-card { padding: 0; overflow: hidden; gap: 0; }
+.kb-thumb { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; display: block; background: var(--fill); }
+.kb-text { display: flex; flex-direction: column; gap: 10px; padding: 20px 22px 22px; flex: 1; }
+.kb-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; font-size: .8125rem; color: var(--fg-2); }
+.kb-card h3 { font-size: 1.1875rem; }
