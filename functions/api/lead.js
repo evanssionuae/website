@@ -7,6 +7,11 @@
 //   TURNSTILE_SECRET  optional Cloudflare Turnstile secret (add the widget to the forms first)
 const json = (o, status = 200) => new Response(JSON.stringify(o), { status, headers: { 'Content-Type': 'application/json' } });
 
+// GET /api/lead reports which settings are present (never their values) so setup can be checked in a browser
+export async function onRequestGet({ env }) {
+  return json({ function: 'running', RESEND_API_KEY: !!env.RESEND_API_KEY, LEAD_FROM: !!env.LEAD_FROM, LEAD_TO: !!env.LEAD_TO });
+}
+
 export async function onRequestPost({ request, env }) {
   let body;
   try { body = await request.json(); } catch { return json({ error: 'Invalid request' }, 400); }
@@ -25,5 +30,7 @@ export async function onRequestPost({ request, env }) {
     headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
     body: JSON.stringify({ from: env.LEAD_FROM, to: [to], reply_to: email, subject: `Website ${type}: ${f['c-company'] || f['a-company'] || email}`, text: `${lines}\n\nPage: ${body.page}\nIP country: ${request.cf?.country || ''}` }),
   });
-  return res.ok ? json({ ok: true }) : json({ error: 'Send failed' }, 502);
+  if (res.ok) return json({ ok: true });
+  let detail = ''; try { detail = (await res.json()).message || ''; } catch {}
+  return json({ error: 'Send failed', status: res.status, detail }, 502);
 }
