@@ -135,7 +135,30 @@ const labelled = (t) => { const m = t.match(/^([^:]{2,42}):\s+(.+)$/); return m 
 
 /* ------------------------------------------------------------------ primitives */
 const slot = (t) => `<p class="slot">${esc(t)}</p>`;
-const media = (label, ar = '4 / 3') => `<div class="media" role="img" aria-label="Image placeholder: ${esc(label)}" style="--ar:${ar}">${esc(label)}</div>`;
+const PAGE_IMG = {
+  'home-hero': 'Abstract glass shields forming a protective dome over the Middle East and Africa',
+  'about-team': 'Quiet modern office in Dubai Silicon Oasis at dusk',
+  'sol-ai-security': 'Neural network sphere inside a protective ring',
+  'sol-application-security': 'Application windows linked by API lines with a filter intercepting one',
+  'sol-threat-intelligence': 'Dotted globe with data arcs converging on a radar sweep',
+  'sol-supply-chain': 'Chain of software packages on a path with one being verified',
+  'sol-vulnerability': 'Asset grid with glowing weak points being mapped',
+  'sol-security-operations': 'Data ribbons from many sources flowing into one hub',
+  'sol-grc': 'Layered documents and balanced geometric blocks with check markers',
+  'sol-breach-containment': 'Network cells separated by glass walls with one sealed off',
+  'region-uae': 'Stylised Dubai skyline at blue hour',
+  'region-saudi-arabia': 'Stylised Riyadh skyline at desert dusk',
+  'region-bahrain': 'Stylised Manama waterfront at dusk',
+  'region-africa': 'Dotted map of Africa and the Middle East with glowing hubs',
+};
+const SOL_IMG = { 'ai-security': 'sol-ai-security', 'application-security': 'sol-application-security', 'threat-intelligence': 'sol-threat-intelligence', 'software-supply-chain-security': 'sol-supply-chain', 'vulnerability-management': 'sol-vulnerability', 'security-operations': 'sol-security-operations', 'grc-compliance': 'sol-grc', 'breach-containment': 'sol-breach-containment' };
+const IMG_EXT = ['jpg', 'jpeg', 'png', 'webp'];
+/* uses src/img/pages/<name>.(jpg|png|webp) when present, otherwise the grey placeholder */
+const media = (label, name) => {
+  const ext = IMG_EXT.find((e) => fs.existsSync(path.join(SRC, 'img/pages', name + '.' + e)));
+  if (ext) return `<img class="media-img" src="${asset('img/pages/' + name + '.' + ext)}" alt="${esc(PAGE_IMG[name] || label)}" width="1536" height="1024" decoding="async">`;
+  return `<div class="media" role="img" aria-label="Image placeholder: ${esc(label)}" style="--ar:3 / 2">${esc(label)}</div>`;
+};
 const btn = (label, to, kind = 'primary') => `<a class="btn btn-${kind}" href="${href(to)}"${ext(to)}>${esc(label)}</a>`;
 
 function ctaTarget(label) {
@@ -266,7 +289,7 @@ const T = {
     const why = s(/Why work with/);
     const where = s(/Where we work/);
     const what = s(/What does Evanssion do/);
-    return hero(p, { side: media('Hero visual', '4 / 3') }) +
+    return hero(p, { side: media('Hero visual', 'home-hero') }) +
       sec('What does Evanssion do?', what.blocks.map((b) => renderBlock(b, { page: p })).join('')) +
       secWide('Three ways to work with us', `<div class="grid g3">${three.map((c, i) => `<a class="card" href="${href(threeHref[i])}"><h3>${esc(c.title)}</h3><p>${esc(c.text.join(' '))}</p><span class="go">${threeGo[i]} →</span></a>`).join('')}</div>`, { alt: true }) +
       secWide(s(/Our portfolio/).title, Object.entries(groups).map(([g, vs]) => `<h3 class="group">${esc(g)}</h3><div class="grid g4">${vs.map(vendorTile).join('')}</div>`).join('')) +
@@ -291,7 +314,7 @@ const T = {
       'Mohan Krishnamurthy': 'A strong techno-commercial background, more than 30 years of industry experience, and a published author.',
     };
     const where = findSec(p, /Where we are/);
-    return hero(p, { side: media('Team or office image', '4 / 3') }) +
+    return hero(p, { side: media('Team or office image', 'about-team') }) +
       generic(p, [/story and leadership/, /Where we are/]).replace(/<\/section>$/, '</section>') +
       secWide('Our story and leadership', `<div class="grid g3">${leaders.map((l) => `<div class="card person"><img class="portrait" src="${asset('img/team/' + l.name.split(' ')[0].toLowerCase() + '.jpg')}" alt="${esc(l.name)}" width="480" height="557" loading="lazy"><h3>${esc(l.name)}</h3><p class="eyebrow">${esc(l.title)}</p><p class="small">${esc(bios[l.name] || '')}</p></div>`).join('')}</div>`, { alt: true }) +
       sec('Where we are', `<p class="prose"><strong>Evanssion FZCO</strong><br>${esc(ADDRESS)}<br>United Arab Emirates</p><p class="actions"><a class="btn btn-secondary" href="${MAPS}" target="_blank" rel="noopener">Open in Google Maps</a></p>`) +
@@ -351,7 +374,7 @@ const T = {
     const idx = parts.findIndex((x) => /What good looks like/.test(x));
     parts.splice(idx + 1, 0, vendorSec);
     const others = solutions.filter((s) => s !== p).slice(0, 3);
-    return hero(p, { kicker: 'Solution', side: media('Illustration', '4 / 3') }) + parts.join('') +
+    return hero(p, { kicker: 'Solution', side: media('Illustration', SOL_IMG[slugOf(p.spec.URL)]) }) + parts.join('') +
       secWide('Related solutions', `<div class="grid g3">${others.map((s) => solutionCard(s)).join('')}</div>`, { alt: true }) + endBand(p, 'Talk to us about this problem');
   },
 
@@ -374,7 +397,7 @@ const T = {
   },
 
   region(p) {
-    return hero(p, { kicker: 'Region', side: media('Regional image', '4 / 3') }) + generic(p) + endBand(p, 'Talk to our team');
+    return hero(p, { kicker: 'Region', side: media('Regional image', 'region-' + slugOf(p.spec.URL)) }) + generic(p) + endBand(p, 'Talk to our team');
   },
 
   insights(p) {
