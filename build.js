@@ -311,21 +311,26 @@ const faqOf = (p) => p.sections.flatMap((s) => s.blocks).find((b) => b.t === 'fa
 
 /* ------------------------------------------------------------------ knowledge base helpers */
 const fmtDate = (d) => new Date(d + 'T00:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+const pngSize = (file) => { const b = fs.readFileSync(file); if (b[0] === 0x89) return [b.readUInt32BE(16), b.readUInt32BE(20)]; let i = 2; while (i < b.length) { if (b[i] !== 0xff) { i++; continue; } const t = b[i + 1]; if (t >= 0xc0 && t <= 0xc3) return [b.readUInt16BE(i + 7), b.readUInt16BE(i + 5)]; i += 2 + b.readUInt16BE(i + 2); } throw new Error('no size'); };
 const jpegWidth = (file) => { try { const b = fs.readFileSync(file); let i = 2; while (i < b.length) { if (b[i] !== 0xff) { i++; continue; } const t = b[i + 1]; if (t >= 0xc0 && t <= 0xc3) return b.readUInt16BE(i + 7); i += 2 + b.readUInt16BE(i + 2); } } catch (e) {} return 1600; };
 function mdHtml(src) {
   const inl = (t) => esc(t).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/(?<![*\w])\*(?!\s)(.+?)(?<!\s)\*(?![*\w])/g, '<em>$1</em>').replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g, (m, tx, u) => `<a href="${u}" target="_blank" rel="noopener">${tx}</a>`);
-  const out = []; let para = [], list = null;
+  const out = []; let para = [], list = null, tbl = [];
+  const flushT = () => { if (!tbl.length) return; const rows = tbl.filter((r) => !/^\|[\s:|-]+\|?$/.test(r)).map((r) => r.replace(/^\||\|$/g, '').split('|').map((c) => c.trim())); const [h, ...b] = rows; out.push(`<div class="art-table"><table><thead><tr>${h.map((c) => `<th>${inl(c)}</th>`).join('')}</tr></thead><tbody>${b.map((r) => `<tr>${r.map((c) => `<td>${inl(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`); tbl = []; };
   const flushP = () => { if (para.length) { out.push(`<p>${inl(para.join(' '))}</p>`); para = []; } };
   const flushL = () => { if (list) { out.push(`<${list.t}>${list.items.map((i) => `<li>${inl(i)}</li>`).join('')}</${list.t}>`); list = null; } };
   for (const raw of src.split('\n')) {
     const l = raw.trim(); let m;
-    if (!l) { flushP(); continue; }
+    if (!l) { flushP(); flushT(); continue; }
+    if ((m = l.match(/^!\[(.*?)\]\((\S+?)\)$/))) { flushP(); flushL(); const fp = path.join(SRC, 'img/kb', m[2]); let dim = ''; try { const sz = pngSize(fp); dim = ` width="${sz[0]}" height="${sz[1]}"`; } catch (e) {} const [alt, cap] = m[1].split('||'); out.push(`<figure class="art-inline"><img src="${asset('img/kb/' + m[2])}" alt="${esc(alt)}"${dim} loading="lazy" decoding="async">${cap ? `<figcaption>${inl(cap)}</figcaption>` : ''}</figure>`); continue; }
+    if (l.startsWith('|')) { flushP(); flushL(); tbl.push(l); continue; }
+    if (tbl.length) flushT();
     if ((m = l.match(/^(#{2,3})\s+(.+)$/))) { flushP(); flushL(); out.push(`<h${m[1].length}>${inl(m[2])}</h${m[1].length}>`); continue; }
     if ((m = l.match(/^[-*]\s+(.+)$/))) { flushP(); if (!list || list.t !== 'ul') { flushL(); list = { t: 'ul', items: [] }; } list.items.push(m[1]); continue; }
     if ((m = l.match(/^\d+\.\s+(.+)$/))) { flushP(); if (!list || list.t !== 'ol') { flushL(); list = { t: 'ol', items: [] }; } list.items.push(m[1]); continue; }
     flushL(); para.push(l);
   }
-  flushP(); flushL();
+  flushP(); flushL(); flushT();
   return out.join('\n');
 }
 const kbCard = (a) => `<a class="card kb-card" data-group="${esc(a.tag || '')}" href="${href(a.URL)}"><img class="kb-thumb" src="${asset('img/kb/' + a.slug + '-sm.jpg')}" alt="" width="640" height="360" loading="lazy" decoding="async"><div class="kb-text"><p class="kb-meta">${a.tag ? `<span class="chip-tag">${esc(a.tag)}</span>` : ''}<time datetime="${a.date}">${fmtDate(a.date)}</time></p><h3>${esc(a.title)}</h3><p class="small muted">${esc(a.summary)}</p><span class="go">Read article →</span></div></a>`;
