@@ -661,6 +661,7 @@ fs.writeFileSync(path.join(DIST, 'assets/site.css'), fs.readFileSync(path.join(S
 fs.copyFileSync(path.join(SRC, 'site.js'), path.join(DIST, 'assets/site.js'));
 fs.cpSync(path.join(SRC, 'img'), path.join(DIST, 'assets/img'), { recursive: true });
 for (const f of ['mark.png', 'og.png']) fs.copyFileSync(path.join(SRC, f), path.join(DIST, 'assets', f));
+if (fs.existsSync(path.join(SRC, '_headers'))) fs.copyFileSync(path.join(SRC, '_headers'), path.join(DIST, '_headers')); /* security headers and cache rules for Cloudflare Pages */
 for (const p of pages) {
   const out = path.join(DIST, fileOf(p.URL));
   fs.mkdirSync(path.dirname(out), { recursive: true });
