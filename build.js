@@ -190,7 +190,12 @@ const IMG_EXT = ['jpg', 'jpeg', 'png', 'webp'];
 /* uses src/img/pages/<name>.(jpg|png|webp) when present, otherwise the grey placeholder */
 const media = (label, name) => {
   const ext = IMG_EXT.find((e) => fs.existsSync(path.join(SRC, 'img/pages', name + '.' + e)));
-  if (ext) return `<img class="media-img" src="${asset('img/pages/' + name + '.' + ext)}" alt="${esc(PAGE_IMG[name] || label)}" width="1536" height="1024" decoding="async">`;
+  if (ext) {
+    const small = fs.existsSync(path.join(SRC, 'img/pages', name + '-sm.' + ext));
+    const set = small ? ` srcset="${asset('img/pages/' + name + '-sm.' + ext)} 768w, ${asset('img/pages/' + name + '.' + ext)} 1536w" sizes="(max-width: 900px) 100vw, 640px"` : '';
+    /* these are hero images at the top of the page, so they load straight away and with priority */
+    return `<img class="media-img" src="${asset('img/pages/' + name + '.' + ext)}"${set} alt="${esc(PAGE_IMG[name] || label)}" width="1536" height="1024" decoding="async" fetchpriority="high">`;
+  }
   return `<div class="media" role="img" aria-label="Image placeholder: ${esc(label)}" style="--ar:3 / 2">${esc(label)}</div>`;
 };
 const btn = (label, to, kind = 'primary') => `<a class="btn btn-${kind}" href="${href(to)}"${ext(to)}>${esc(label)}</a>`;
