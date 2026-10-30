@@ -4,6 +4,7 @@
    node build.js          -> dist/ with relative links ending in index.html (opens from disk)
    node build.js --prod   -> dist/ with clean root-absolute URLs for hosting */
 const fs = require('fs');
+const crypto = require('crypto');
 const path = require('path');
 
 const PROD = process.argv.includes('--prod');
@@ -145,7 +146,13 @@ const href = (to) => {
   if (PROD) return to;
   return pre() + fileOf(p) + (q ? '?' + q : '');
 };
-const asset = (f) => (PROD ? '/assets/' + f : pre() + 'assets/' + f);
+/* long-lived files carry a version in the URL (?v=...), so the browser can keep them for a year and still pick up every change */
+const VER = crypto.createHash('md5').update(fs.readFileSync(path.join(SRC, 'site.css'))).update(fs.readFileSync(__filename)).update(fs.readFileSync(path.join(SRC, 'mark.png'))).digest('hex').slice(0, 8);
+const VERSIONED = new Set(['site.css', 'site.js', 'mark.png']);
+/* runs before first paint: marks the page as JavaScript-enabled (so the menu is laid out once) and applies a saved theme */
+const HEAD_JS = "document.documentElement.className='js';try{var t=localStorage.getItem('evanssion-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}";
+const HEAD_JS_HASH = 'sha256-' + crypto.createHash('sha256').update(HEAD_JS).digest('base64');
+const asset = (f) => (PROD ? '/assets/' + f : pre() + 'assets/' + f) + (VERSIONED.has(f) ? '?v=' + VER : '');
 const ext = (u) => (/^https?:/.test(u) ? ' target="_blank" rel="noopener"' : '');
 
 /* ------------------------------------------------------------------ text helpers */
@@ -192,9 +199,12 @@ const media = (label, name) => {
   const ext = IMG_EXT.find((e) => fs.existsSync(path.join(SRC, 'img/pages', name + '.' + e)));
   if (ext) {
     const small = fs.existsSync(path.join(SRC, 'img/pages', name + '-sm.' + ext));
-    const set = small ? ` srcset="${asset('img/pages/' + name + '-sm.' + ext)} 768w, ${asset('img/pages/' + name + '.' + ext)} 1536w" sizes="(max-width: 900px) 100vw, 640px"` : '';
+    const webp = fs.existsSync(path.join(SRC, 'img/pages', name + '.webp')) && fs.existsSync(path.join(SRC, 'img/pages', name + '-sm.webp'));
+    const sizes = '(max-width: 900px) 100vw, 640px';
+    const set = small ? ` srcset="${asset('img/pages/' + name + '-sm.' + ext)} 768w, ${asset('img/pages/' + name + '.' + ext)} 1536w" sizes="${sizes}"` : '';
     /* these are hero images at the top of the page, so they load straight away and with priority */
-    return `<img class="media-img" src="${asset('img/pages/' + name + '.' + ext)}"${set} alt="${esc(PAGE_IMG[name] || label)}" width="1536" height="1024" decoding="async" fetchpriority="high">`;
+    const img = `<img class="media-img" src="${asset('img/pages/' + name + '.' + ext)}"${set} alt="${esc(PAGE_IMG[name] || label)}" width="1536" height="1024" decoding="async" fetchpriority="high">`;
+    return webp ? `<picture><source type="image/webp" srcset="${asset('img/pages/' + name + '-sm.webp')} 768w, ${asset('img/pages/' + name + '.webp')} 1536w" sizes="${sizes}">${img}</picture>` : img;
   }
   return `<div class="media" role="img" aria-label="Image placeholder: ${esc(label)}" style="--ar:3 / 2">${esc(label)}</div>`;
 };
@@ -310,7 +320,7 @@ const endBand = (p, headline) => {
   return band(use, headline);
 };
 /* vendor logos sit on a white plate in both themes so each brand's own colours stay intact */
-const vlogo = (v, big) => `<span class="vlogo${big ? ' big' : ''}"><img src="${asset('img/vendors/' + slugOf(v.URL) + '.png')}" alt="${esc(v.name)} logo" loading="lazy"></span>`;
+const vlogo = (v, big) => { const f = path.join(SRC, 'img/vendors', slugOf(v.URL) + '.png'); const [w, h] = fs.existsSync(f) ? pngSize(f) : [560, 120]; return `<span class="vlogo${big ? ' big' : ''}"><img src="${asset('img/vendors/' + slugOf(v.URL) + '.png')}" alt="${esc(v.name)} logo" width="${w}" height="${h}" loading="lazy" decoding="async"></span>`; };
 const vendorTile = (v) => `<a class="card vendor-card" href="${href(v.URL)}">${vlogo(v)}<h3 class="vname">${esc(v.name)}</h3><p class="small muted">${esc((vendorMeta[v.name.toLowerCase()] || {}).what || '')}</p><span class="go">View vendor →</span></a>`;
 const solutionCard = (s, sub) => `<a class="card" href="${href(s.URL)}"><h3>${esc(s.name)}</h3>${sub ? `<p class="small muted">${esc(sub)}</p>` : ''}<span class="go">Explore →</span></a>`;
 const faqOf = (p) => p.sections.flatMap((s) => s.blocks).find((b) => b.t === 'faq');
@@ -635,7 +645,7 @@ ${p.noindex ? '' : `<link rel="canonical" href="${ORIGIN}${p.URL}">`}
 <meta name="theme-color" content="#0A0B0E" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="${p.article ? 'article' : 'website'}"><meta property="og:site_name" content="Evanssion"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${ORIGIN}${p.URL}"><meta property="og:image" content="${ORIGIN}${p.ogImage || '/assets/og.png'}">
 <meta name="twitter:card" content="summary_large_image">
-<script>try{var t=localStorage.getItem('evanssion-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<script>${HEAD_JS}</script>
 <link rel="icon" type="image/png" href="${asset('mark.png')}">
 <link rel="stylesheet" href="${asset('site.css')}">
 ${jsonld(p, trail, type)}
@@ -657,11 +667,12 @@ ${footer()}
 fs.rmSync(DIST, { recursive: true, force: true });
 fs.mkdirSync(path.join(DIST, 'assets'), { recursive: true });
 const wm = 'data:image/png;base64,' + fs.readFileSync(path.join(SRC, 'wordmark.png')).toString('base64'); // inlined so the CSS mask also works from file://
-fs.writeFileSync(path.join(DIST, 'assets/site.css'), fs.readFileSync(path.join(SRC, 'site.css'), 'utf8').replace('/*TOKENS*/', TOKENS).split('url(wordmark.png)').join(`url(${wm})`));
+const minCss = (c) => process.env.NOMIN ? c : c.replace(/\/\*[\s\S]*?\*\//g, (m) => (m === '/*TOKENS*/' ? m : '')).replace(/\s+/g, ' ').replace(/ ?([{};,]) ?/g, '$1').replace(/;}/g, '}').trim();
+fs.writeFileSync(path.join(DIST, 'assets/site.css'), minCss(fs.readFileSync(path.join(SRC, 'site.css'), 'utf8').replace('/*TOKENS*/', TOKENS).split('url(wordmark.png)').join(`url(${wm})`)));
 fs.copyFileSync(path.join(SRC, 'site.js'), path.join(DIST, 'assets/site.js'));
 fs.cpSync(path.join(SRC, 'img'), path.join(DIST, 'assets/img'), { recursive: true });
 for (const f of ['mark.png', 'og.png']) fs.copyFileSync(path.join(SRC, f), path.join(DIST, 'assets', f));
-if (fs.existsSync(path.join(SRC, '_headers'))) fs.copyFileSync(path.join(SRC, '_headers'), path.join(DIST, '_headers')); /* security headers and cache rules for Cloudflare Pages */
+if (fs.existsSync(path.join(SRC, '_headers'))) fs.writeFileSync(path.join(DIST, '_headers'), fs.readFileSync(path.join(SRC, '_headers'), 'utf8').split('{{HEAD_JS_HASH}}').join(HEAD_JS_HASH)); /* security headers and cache rules for Cloudflare Pages */
 for (const p of pages) {
   const out = path.join(DIST, fileOf(p.URL));
   fs.mkdirSync(path.dirname(out), { recursive: true });

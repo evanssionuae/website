@@ -209,6 +209,7 @@ tbody th { font-weight: 650; }
 .bars i { display: block; height: 12px; width: var(--w, 100%); border-radius: 6px; background: var(--fill); }
 .bars.lg i { height: 18px; border-radius: 9px; }
 .media { width: 100%; aspect-ratio: var(--ar, 16 / 10); border-radius: var(--r-card); background: var(--fill); display: grid; place-items: center; color: var(--fg-2); font: 500 .75rem var(--font-mono); letter-spacing: .04em; text-transform: uppercase; text-align: center; padding: 12px; }
+picture { display: contents; }
 .media-img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--r-card); display: block; background: var(--fill); }
 .card .media { border-radius: 14px; }
 .slot { font: 500 .75rem/1.4 var(--font-mono); letter-spacing: .03em; color: var(--fg-2); }
