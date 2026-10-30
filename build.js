@@ -152,6 +152,9 @@ const VERSIONED = new Set(['site.css', 'site.js', 'mark.png']);
 /* runs before first paint: marks the page as JavaScript-enabled (so the menu is laid out once) and applies a saved theme */
 const HEAD_JS = "document.documentElement.className='js';try{var t=localStorage.getItem('evanssion-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}";
 const HEAD_JS_HASH = 'sha256-' + crypto.createHash('sha256').update(HEAD_JS).digest('base64');
+/* Cloudflare Turnstile: the public site key comes from the TURNSTILE_SITEKEY build variable; without it the forms work as before */
+const TS_KEY = process.env.TURNSTILE_SITEKEY || '';
+const tsSlot = () => (TS_KEY ? '<div class="ts-slot"></div>' : '');
 const asset = (f) => (PROD ? '/assets/' + f : pre() + 'assets/' + f) + (VERSIONED.has(f) ? '?v=' + VER : '');
 const ext = (u) => (/^https?:/.test(u) ? ' target="_blank" rel="noopener"' : '');
 
@@ -266,7 +269,7 @@ const select = (id, label, opts) => `<div class="field"><label for="${id}">${esc
 const checks = (name, legend, opts) => `<fieldset class="field checks"><legend>${esc(legend)}</legend><div class="check-grid">${opts.map((o, i) => `<label class="check"><input type="checkbox" name="${name}" value="${esc(o)}"><span>${esc(o)}</span></label>`).join('')}</div></fieldset>`;
 const consent = (id) => `<label class="check consent-line"><input id="${id}" name="consent" type="checkbox" required><span>I agree to Evanssion contacting me about this enquiry and processing my details as described in the <a href="${href('/privacy/')}">privacy notice</a>.</span></label>`;
 const formShell = (id, type, inner, submit) =>
-  `<form class="form" id="${id}" data-lead data-type="${type}" novalidate><input type="text" name="website_url" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">${inner}${consent(id + '-consent')}<div class="form-foot"><button class="btn btn-primary" type="submit">${esc(submit)}</button><p class="form-msg" role="status" aria-live="polite"></p></div></form>`;
+  `<form class="form" id="${id}" data-lead data-type="${type}" novalidate><input type="text" name="website_url" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">${inner}${consent(id + '-consent')}${tsSlot()}<div class="form-foot"><button class="btn btn-primary" type="submit">${esc(submit)}</button><p class="form-msg" role="status" aria-live="polite"></p></div></form>`;
 const vendorOpts = () => vendors.map((v) => v.name);
 const solutionOpts = () => solutions.map((s) => s.name);
 
@@ -292,7 +295,7 @@ ${area('a-sectors', 'Target customer sectors and countries')}
 ${field('a-current', 'Security vendors you sell today', { req: false })}`;
   return formShell('partner-form', 'partner-application', inner, 'Submit application');
 }
-const subscribeForm = () => `<form class="form inline" id="subscribe-form" data-lead data-type="subscribe" novalidate><input type="text" name="website_url" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><div class="field"><label for="s-email">Work email</label><input id="s-email" name="email" type="email" required autocomplete="email"></div>${consent('s-consent')}<div class="form-foot"><button class="btn btn-primary" type="submit">Subscribe</button><p class="form-msg" role="status" aria-live="polite"></p></div></form>`;
+const subscribeForm = () => `<form class="form inline" id="subscribe-form" data-lead data-type="subscribe" novalidate><input type="text" name="website_url" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><div class="field"><label for="s-email">Work email</label><input id="s-email" name="email" type="email" required autocomplete="email"></div>${consent('s-consent')}${tsSlot()}<div class="form-foot"><button class="btn btn-primary" type="submit">Subscribe</button><p class="form-msg" role="status" aria-live="polite"></p></div></form>`;
 
 /* ------------------------------------------------------------------ templates */
 const sectionsOf = (p) => p.sections.filter((s) => s.title);
@@ -650,7 +653,7 @@ ${p.noindex ? '' : `<link rel="canonical" href="${ORIGIN}${p.URL}">`}
 <link rel="stylesheet" href="${asset('site.css')}">
 ${jsonld(p, trail, type)}
 </head>
-<body data-thanks="${PROD ? '/thank-you/' : pre() + 'thank-you/index.html'}">
+<body data-thanks="${PROD ? '/thank-you/' : pre() + 'thank-you/index.html'}"${TS_KEY ? ` data-ts="${esc(TS_KEY)}"` : ''}>
 ${header()}
 ${crumbHtml(trail)}
 <main id="main">

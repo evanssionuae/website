@@ -4,7 +4,7 @@
 //   LEAD_FROM       verified sender, e.g. "Evanssion Website <website@evanssion.com>"
 //   LEAD_TO         default inbox, e.g. sales@evanssion.com
 //   LEAD_TO_PARTNER / LEAD_TO_VENDOR / LEAD_TO_ENTERPRISE  optional per-type inboxes
-//   TURNSTILE_SECRET  optional Cloudflare Turnstile secret (add the widget to the forms first)
+//   TURNSTILE_SECRET  Cloudflare Turnstile secret key (the public site key goes in TURNSTILE_SITEKEY, read at build time)
 const json = (o, status = 200) => new Response(JSON.stringify(o), { status, headers: { 'Content-Type': 'application/json' } });
 
 // GET /api/lead reports which settings are present (never their values) so setup can be checked in a browser
@@ -19,6 +19,18 @@ export async function onRequestPost({ request, env }) {
   const f = body.fields || {};
   const email = String(f.email || f['c-email'] || f['a-email'] || '');
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return json({ error: 'A valid email is required' }, 400);
+
+  /* Cloudflare Turnstile: enforced once TURNSTILE_SECRET is set in Pages > Settings > Variables and secrets */
+  if (env.TURNSTILE_SECRET) {
+    const token = String(body.cf || '');
+    if (!token) return json({ error: 'Verification required' }, 400);
+    const v = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ secret: env.TURNSTILE_SECRET, response: token, remoteip: request.headers.get('CF-Connecting-IP') || '' }),
+    });
+    const r = await v.json().catch(() => ({}));
+    if (!r.success) return json({ error: 'Verification failed' }, 400);
+  }
 
   const type = String(body.type || 'enquiry');
   const to = env['LEAD_TO_' + type.toUpperCase().replace(/-.*/, '')] || env.LEAD_TO;

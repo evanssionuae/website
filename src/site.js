@@ -87,6 +87,25 @@
     sync();
   }
 
+  /* Cloudflare Turnstile (bot check): the script is loaded only when someone starts using a form, so it costs normal page views nothing */
+  var tsKey = document.body.dataset.ts || '', tsState = 0, tsQueue = [];
+  function tsReady() { tsState = 2; tsQueue.splice(0).forEach(function (fn) { fn(); }); }
+  function tsLoad(fn) {
+    if (!tsKey) return;
+    if (tsState === 2) return fn();
+    tsQueue.push(fn);
+    if (tsState === 1) return;
+    tsState = 1;
+    var s = document.createElement('script'); s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'; s.async = true; s.onload = tsReady; document.head.appendChild(s);
+  }
+  document.querySelectorAll('form[data-lead]').forEach(function (f) {
+    var slot = f.querySelector('.ts-slot'); if (!slot || !tsKey) return;
+    f.addEventListener('focusin', function once() {
+      f.removeEventListener('focusin', once);
+      tsLoad(function () { f.__tsId = window.turnstile.render(slot, { sitekey: tsKey, size: 'flexible', theme: 'auto' }); });
+    });
+  });
+
   /* lead forms post JSON to /api/lead; fall back to a ready-made email if the endpoint is not there */
   document.querySelectorAll('form[data-lead]').forEach(function (f) {
     var msg = f.querySelector('.form-msg');
@@ -94,8 +113,9 @@
       e.preventDefault();
       if (!f.checkValidity()) { f.reportValidity(); return; }
       var fd = new FormData(f), body = { type: f.dataset.type, page: location.pathname, fields: {} };
-      fd.forEach(function (v, k) { if (k === 'website_url') { body.hp = v; return; } if (body.fields[k] !== undefined) body.fields[k] = [].concat(body.fields[k], v); else body.fields[k] = v; });
+      fd.forEach(function (v, k) { if (k === 'website_url') { body.hp = v; return; } if (k === 'cf-turnstile-response') { body.cf = v; return; } if (body.fields[k] !== undefined) body.fields[k] = [].concat(body.fields[k], v); else body.fields[k] = v; });
       var btn = f.querySelector('button[type="submit"]'); btn.disabled = true; msg.className = 'form-msg'; msg.textContent = 'Sending…';
+      if (tsKey && !body.cf) { btn.disabled = false; msg.className = 'form-msg err'; msg.textContent = 'Please wait a moment while we verify you are human, then press the button again.'; return; }
       fetch('/api/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
         .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json().catch(function () { return {}; }); })
         .then(function () { location.href = document.body.dataset.thanks || '/thank-you/'; })
@@ -104,6 +124,7 @@
           var link = 'mailto:sales@evanssion.com?subject=' + encodeURIComponent('Website enquiry: ' + body.type) + '&body=' + encodeURIComponent(lines);
           msg.className = 'form-msg err'; msg.innerHTML = 'We could not send this form from here. <a href="' + link + '">Email it to sales@evanssion.com</a> instead.';
           btn.disabled = false;
+          if (window.turnstile && f.__tsId !== undefined) { try { window.turnstile.reset(f.__tsId); } catch (x) {} }
         });
     });
   });
