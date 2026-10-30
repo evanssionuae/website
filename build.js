@@ -153,6 +153,8 @@ const vendorNames = vendors.map((v) => v.name).sort((a, b) => b.length - a.lengt
 /* escape, then link the first mention of each vendor (not the current page) */
 function rich(text, { link = true, self } = {}) {
   let h = esc(text);
+  const md = [];
+  h = h.replace(/\[([^\]]+)\]\(((?:https?:|mailto:|tel:|\/)[^)\s]*)\)/g, (m, t, u) => { md.push(`<a href="${u}"${ext(u)}>${t}</a>`); return `\u0001${md.length - 1}\u0002`; });
   h = h.replace(/(https?:\/\/[^\s<]+?)([.,;]?)(\s|$)/g, (m, u, tail, sp) => `<a href="${u}"${ext(u)}>${u.replace(/^https?:\/\//, '').replace(/\/$/, '')}</a>${tail}${sp}`);
   if (link) {
     for (const n of vendorNames) {
@@ -161,7 +163,7 @@ function rich(text, { link = true, self } = {}) {
       h = h.replace(re, (m, a, name) => `${a}<a href="${href(vendorByName[name.toLowerCase()].URL)}">${name}</a>`);
     }
   }
-  return h;
+  return h.replace(/\u0001(\d+)\u0002/g, (m, i) => md[+i]);
 }
 const labelled = (t) => { const m = t.match(/^([^:]{2,42}):\s+(.+)$/); return m ? `<strong>${esc(m[1])}:</strong> ${m[2]}` : t; };
 
