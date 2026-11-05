@@ -9,8 +9,9 @@ const path = require('path');
 
 const PROD = process.argv.includes('--prod');
 const ORIGIN = 'https://www.evanssion.com';
-const PORTAL_URL = 'https://portal.evanssion.com/'; // login app, separate subdomain (to be confirmed)
+const PORTAL_URL = 'https://partners-4lg.pages.dev'; // partner login app (interim address; switch to the final subdomain at cutover)
 const LINKEDIN = 'https://www.linkedin.com/company/evanssion/';
+const LI_SVG = '<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>';
 const MAPS = 'https://maps.app.goo.gl/4DN5GKFSHXBSQBLT7';
 const ADDRESS = '201, Techno Hub 2, Dubai Silicon Oasis, Dubai, UAE';
 const SRC = path.join(__dirname, 'src');
@@ -75,8 +76,8 @@ const TERM_REL = {
   aspm: ['/solutions/vulnerability-management/', '/vendors/defectdojo/'], 'shadow-ai': ['/solutions/ai-security/', '/vendors/witnessai/'],
   'prompt-injection': ['/solutions/ai-security/', '/vendors/witnessai/'], mcp: ['/solutions/ai-security/', '/vendors/backflipt/'],
   a2a: ['/solutions/ai-security/', '/vendors/backflipt/'], 'indicator-of-future-attack': ['/solutions/threat-intelligence/', '/vendors/silent-push/'],
-  'software-supply-chain-security': ['/solutions/software-supply-chain-security/', '/vendors/reversinglabs/'], microsegmentation: ['/solutions/breach-containment/', '/vendors/illumio/'],
-  'lateral-movement': ['/solutions/breach-containment/', '/vendors/illumio/'], 'security-data-fabric': ['/solutions/security-operations/'],
+  'software-supply-chain-security': ['/solutions/software-supply-chain-security/', '/vendors/reversinglabs/'], microsegmentation: [],
+  'lateral-movement': [], 'security-data-fabric': ['/solutions/security-operations/'],
   'ai-soc': ['/solutions/security-operations/', '/vendors/arambh-labs/'], 'value-added-distributor': ['/partners/', '/vendors/become-a-vendor/'],
 };
 const terms = termRows.map(([term, def]) => ({ term, def, slug: termSlug(term), URL: `/insights/glossary/${termSlug(term)}/` }));
@@ -105,15 +106,15 @@ if (fs.existsSync(KB_DIR)) {
   kb.sort((x, y) => (x.date < y.date ? 1 : x.date > y.date ? -1 : 0));
 }
 if (kb.length) {
-  pages.push({ n: 36.2, name: 'Knowledge base', URL: '/insights/knowledgebase/', sections: [], spec: {
-    URL: '/insights/knowledgebase/', 'Page type': 'Knowledge base hub', 'Title tag': 'AI and Cybersecurity Knowledge Base | Evanssion',
+  pages.push({ n: 36.2, name: 'Blog Articles', URL: '/insights/knowledgebase/', sections: [], spec: {
+    URL: '/insights/knowledgebase/', 'Page type': 'Blog hub', 'Title tag': 'Blog: AI and Cybersecurity Articles | Evanssion',
     'Meta description': 'Articles on AI security, application security, threat modeling and events from Evanssion, for security leaders and partners in the Middle East.',
-    H1: 'Knowledge base', Schema: 'CollectionPage, BreadcrumbList', 'Primary CTA': 'Request a briefing' } });
+    H1: 'Blog Articles', Schema: 'CollectionPage, BreadcrumbList', 'Primary CTA': 'Request a briefing' } });
   byUrl['/insights/knowledgebase/'] = pages[pages.length - 1];
   for (const a of kb) {
     const URL = `/insights/knowledgebase/${a.slug}/`;
     pages.push({ n: 36.3, name: a.seoTitle, URL, article: a, ogImage: `/assets/img/kb/${a.slug}.jpg`, sections: [], spec: {
-      URL, 'Page type': 'Knowledge base article', 'Title tag': `${a.seoTitle} | Evanssion`, 'Meta description': a.description,
+      URL, 'Page type': 'Blog article', 'Title tag': `${a.seoTitle} | Evanssion`, 'Meta description': a.description,
       H1: a.title, Schema: 'Article, BreadcrumbList', 'Primary CTA': 'Request a briefing' } });
     byUrl[URL] = pages[pages.length - 1]; a.URL = URL;
   }
@@ -123,12 +124,13 @@ const typeOf = (p) => {
   const u = p.URL;
   if (p.glossTerm) return 'term';
   if (p.article) return 'article'; if (u === '/insights/knowledgebase/') return 'kbHub';
+  if (u === '/agentic-cyber-services/') return 'agentic';
   if (u === '/') return 'home'; if (u === '/about/') return 'about'; if (u === '/contact/') return 'contact';
   if (u === '/vendors/') return 'vendorHub'; if (u === '/vendors/become-a-vendor/') return 'becomeVendor';
   if (vendors.includes(p)) return 'vendor'; if (u === '/solutions/') return 'solutionHub'; if (solutions.includes(p)) return 'solution';
   if (u === '/partners/') return 'partnerLanding'; if (u === '/partners/become-a-partner/') return 'becomePartner';
   if (u === '/partners/our-partners/') return 'partnerDir'; if (u === '/partners/portal/') return 'portal';
-  if (regions.includes(p)) return 'region'; if (u === '/insights/') return 'insights'; if (u === '/insights/glossary/') return 'glossary';
+  if (regions.includes(p)) return 'region'; if (u === '/insights/glossary/') return 'glossary';
   if (u === '/events/') return 'events'; if (u === '/privacy/' || u === '/terms/') return 'legal';
   if (u === '/404.html') return 'notFound'; if (u === '/thank-you/') return 'thanks';
   throw new Error('No template for ' + u);
@@ -189,13 +191,12 @@ const PAGE_IMG = {
   'sol-vulnerability': 'Asset grid with glowing weak points being mapped',
   'sol-security-operations': 'Data ribbons from many sources flowing into one hub',
   'sol-grc': 'Layered documents and balanced geometric blocks with check markers',
-  'sol-breach-containment': 'Network cells separated by glass walls with one sealed off',
   'region-uae': 'Stylised Dubai skyline at blue hour',
   'region-saudi-arabia': 'Stylised Riyadh skyline at desert dusk',
   'region-bahrain': 'Stylised Manama waterfront at dusk',
   'region-africa': 'Dotted map of Africa and the Middle East with glowing hubs',
 };
-const SOL_IMG = { 'ai-security': 'sol-ai-security', 'application-security': 'sol-application-security', 'threat-intelligence': 'sol-threat-intelligence', 'software-supply-chain-security': 'sol-supply-chain', 'vulnerability-management': 'sol-vulnerability', 'security-operations': 'sol-security-operations', 'grc-compliance': 'sol-grc', 'breach-containment': 'sol-breach-containment' };
+const SOL_IMG = { 'ai-security': 'sol-ai-security', 'application-security': 'sol-application-security', 'threat-intelligence': 'sol-threat-intelligence', 'software-supply-chain-security': 'sol-supply-chain', 'vulnerability-management': 'sol-vulnerability', 'security-operations': 'sol-security-operations', 'grc-compliance': 'sol-grc' };
 const IMG_EXT = ['jpg', 'jpeg', 'png', 'webp'];
 /* uses src/img/pages/<name>.(jpg|png|webp) when present, otherwise the grey placeholder */
 const media = (label, name) => {
@@ -376,7 +377,7 @@ const T = {
       sec(why.title, renderBlock(why.blocks[0], { page: p })) +
       `<section class="sec alt"><div class="wrap"><div class="sec-head"><h2>Evanssion at a glance</h2></div><dl class="stats">${stats.map((x) => `<div><dt>${esc(x.l)}</dt><dd>${esc(x.n)}</dd></div>`).join('')}</dl></div></section>` +
       sec(where.title, where.blocks.map((b) => renderBlock(b, { page: p })).join('') + `<p class="actions"><a class="btn btn-secondary" href="${href('/regions/uae/')}">UAE</a><a class="btn btn-secondary" href="${href('/regions/saudi-arabia/')}">Saudi Arabia</a><a class="btn btn-secondary" href="${href('/regions/bahrain/')}">Bahrain</a><a class="btn btn-secondary" href="${href('/regions/africa/')}">Africa and wider MEA</a></p>`) +
-      secWide('Latest insights', `<a class="card wide" href="${href('/insights/')}"><h3>Guides and regional analysis</h3><p class="muted">Practical guides on AI security, application security, threat intelligence and compliance in the Gulf.</p><span class="go">Read insights →</span></a>`, { alt: true }) +
+      secWide(s(/Latest/).title, kb.length ? `<div class="grid g3 kb-grid">${kb.slice(0, 3).map(kbCard).join('')}</div><p class="actions">${btn('See all articles', '/insights/knowledgebase/', 'secondary')}</p>` : `<a class="card wide" href="${href('/insights/knowledgebase/')}"><h3>Guides and regional analysis</h3><p class="muted">Practical guides on AI security, application security, threat intelligence and compliance in the Gulf.</p><span class="go">Read the blog →</span></a>`, { alt: true }) +
       sec('Frequently asked questions', renderBlock(faqOf(p), { page: p })) +
       band(['Talk to us', 'sales@evanssion.com', '+971 58 606 1121'], 'Talk to us');
   },
@@ -387,15 +388,15 @@ const T = {
       const title = (b.text.match(/^[^,]+,\s*([^:]+):/) || [])[1];
       return { name, title };
     });
-    const bios = {
-      'Ashok Chakravarthi Arulmozhi': 'Serial entrepreneur who has built multimillion-dollar businesses.',
-      'Dilip Kalliyat': 'More than 20 years in the UAE, with strong system integration experience and a solid cybersecurity background.',
-      'Mohan Krishnamurthy': 'A strong techno-commercial background, more than 30 years of industry experience, and a published author.',
+    const LI = {
+      'Ashok Chakravarthi Arulmozhi': 'https://www.linkedin.com/in/ashokarul/',
+      'Dilip Kalliyat': 'https://www.linkedin.com/in/dkalliyat/',
+      'Mohan Krishnamurthy': 'https://www.linkedin.com/in/leomohan/',
     };
     const where = findSec(p, /Where we are/);
     return hero(p, { side: media('Team or office image', 'about-team') }) +
       generic(p, [/story and leadership/, /Where we are/]).replace(/<\/section>$/, '</section>') +
-      secWide('Our story and leadership', `<div class="grid g3">${leaders.map((l) => `<div class="card person"><img class="portrait" src="${asset('img/team/' + l.name.split(' ')[0].toLowerCase() + '.jpg')}" alt="${esc(l.name)}" width="480" height="557" loading="lazy"><h3>${esc(l.name)}</h3><p class="eyebrow">${esc(l.title)}</p><p class="small">${esc(bios[l.name] || '')}</p></div>`).join('')}</div>`, { alt: true }) +
+      secWide('Our story and leadership', `<div class="grid g3">${leaders.map((l) => `<div class="card person"><img class="portrait" src="${asset('img/team/' + l.name.split(' ')[0].toLowerCase() + '.jpg')}" alt="${esc(l.name)}" width="480" height="557" loading="lazy">${LI[l.name] ? `<a class="in-link" href="${LI[l.name]}" target="_blank" rel="noopener noreferrer" aria-label="${esc(l.name)} on LinkedIn">${LI_SVG}</a>` : ''}<h3>${esc(l.name)}</h3><p class="eyebrow">${esc(l.title)}</p></div>`).join('')}</div>`, { alt: true }) +
       sec('Where we are', `<p class="prose"><strong>Evanssion FZCO</strong><br>${esc(ADDRESS)}<br>United Arab Emirates</p><p class="actions"><a class="btn btn-secondary" href="${MAPS}" target="_blank" rel="noopener">Open in Google Maps</a></p>`) +
       endBand(p, 'Work with Evanssion');
   },
@@ -496,19 +497,26 @@ const T = {
     return `<article class="article"><header class="art-head"><div class="wrap narrow">${a.tag ? `<p class="eyebrow">${esc(a.tag)}</p>` : ''}<h1>${esc(p.spec.H1)}</h1><p class="art-meta"><time datetime="${a.date}">${fmtDate(a.date)}</time> · ${mins} min read</p></div></header>` +
       `<div class="wrap narrow">${fig}<div class="art-body">${mdHtml(a.body)}</div>${a.note ? `<p class="art-note">${esc(a.note)}</p>` : ''}</div></article>` +
       band(['Request a briefing'], 'Talk to our team about this topic') +
-      (more.length ? secWide('More from the knowledge base', `<div class="grid g3 kb-grid">${more.map(kbCard).join('')}</div>`, { alt: true }) : '');
+      (more.length ? secWide('More from the blog', `<div class="grid g3 kb-grid">${more.map(kbCard).join('')}</div>`, { alt: true }) : '');
   },
 
-  insights(p) {
-    const cats = findSec(p, /Categories/).blocks[0].items;
-    const std = findSec(p, /Editorial standards/);
-    const plan = findSec(p, /Launch plan/).blocks.find((b) => b.t === 'table');
-    return hero(p, { actions: `<div class="actions"><a class="btn btn-primary" href="#subscribe">Subscribe</a></div>` }) +
-      (kb.length ? secWide('From the knowledge base', `<div class="grid g3 kb-grid">${kb.slice(0, 3).map(kbCard).join('')}</div><p class="actions">${btn('See all articles', '/insights/knowledgebase/', 'secondary')}</p>`) : '') +
-      secWide('Categories', `<div class="chips static">${cats.map((c) => `<span class="chip">${esc(c)}</span>`).join('')}</div>`, { alt: true }) +
-      sec('Coming up', `<p class="prose">Our first articles are in preparation. Each one answers a question buyers and partners ask us.</p><ul class="list">${plan.rows.map((r) => `<li><strong>${esc(r[1])}</strong> <span class="muted">${esc(r[2])}</span></li>`).join('')}</ul>`) +
-      sec(std.title.replace(/\s*\(.*\)/, ''), renderBlock(std.blocks[0], { page: p }), { alt: true }) +
-      sec('Subscribe', `<p class="prose">Get new articles and event invitations by email.</p>${subscribeForm()}`, { id: 'subscribe' });
+  agentic(p) {
+    const s = (re) => findSec(p, re);
+    const blk = (sc, t) => sc.blocks.find((b) => b.t === t);
+    const tagCls = (t) => String(t).toLowerCase().replace(/[^a-z]+/g, '');
+    const metric = (m) => `<div class="metric"><span class="mtag mtag-${tagCls(m.tag)}">${esc(m.tag)}</span><p class="mval">${esc(m.v)}</p><p class="mlabel">${esc(m.l)}</p></div>`;
+    const today = s(/lose time/), agents = s(/Agents for your team/), nums = s(/in numbers/), built = s(/Built to answer/), beyond = s(/Beyond the first/), who = s(/Who it is for/), faq = faqOf(p);
+    const agentCard = (a) => `<article class="card agent"><p class="eyebrow">${esc(a.area)}</p><h3>${esc(a.title)}</h3><p class="muted">${esc(a.pain)}</p><p>${esc(a.does)}</p><div class="agent-out"><span class="mtag mtag-${tagCls(a.tag)}">${esc(a.tag)}</span><p class="mval">${esc(a.stat)}</p><p class="mlabel">${esc(a.statl)}</p></div></article>`;
+    const notes = nums.blocks.filter((b) => b.t === 'p');
+    return hero(p) +
+      secWide(today.title, `<p class="prose">${rich(today.blocks[0].text, { self: p })}</p><div class="grid g3 metrics">${blk(today, 'metrics').items.map(metric).join('')}</div>`) +
+      secWide(agents.title, `<div class="grid g2 agents">${blk(agents, 'agents').items.map(agentCard).join('')}</div>`, { alt: true }) +
+      secWide(nums.title, `<p class="prose">${rich(notes[0].text, { self: p })}</p><div class="grid g4 metrics">${blk(nums, 'metrics').items.map(metric).join('')}</div><p class="notice">${esc(notes[1].text)}</p>`) +
+      secWide(built.title, renderBlock(blk(built, 'cards'), { page: p }) + `<p class="prose">${esc(built.blocks.filter((b) => b.t === 'p')[0].text)}</p>`, { alt: true }) +
+      sec(beyond.title, `<p class="prose">${esc(beyond.blocks[0].text)}</p><div class="chips static">${blk(beyond, 'chips').items.map((c) => `<span class="chip">${esc(c)}</span>`).join('')}</div>`) +
+      secWide(who.title, renderBlock(blk(who, 'cards'), { page: p }), { alt: true }) +
+      sec('Questions about agentic cyber services', faq ? renderBlock(faq, { page: p }) : '') +
+      endBand(p, 'See what agents could take off your team');
   },
 
   glossary(p) {
@@ -538,7 +546,7 @@ const T = {
     return hero(p, { kicker: '404', lede: 'That page is not here. Try one of these:', actions: `<div class="actions">${btn('Vendors', '/vendors/')}${btn('Solutions', '/solutions/', 'secondary')}${btn('Partners', '/partners/', 'secondary')}${btn('Contact', '/contact/', 'secondary')}${btn('Go to home', '/', 'secondary')}</div>` });
   },
   thanks(p) {
-    return hero(p, { kicker: 'Confirmation', lede: 'We have your message and will reply within 1 working day. While you wait, explore our vendors or read our latest insights.', actions: `<div class="actions">${btn('Explore vendors', '/vendors/')}${btn('Read insights', '/insights/', 'secondary')}</div>` });
+    return hero(p, { kicker: 'Confirmation', lede: 'We have your message and will reply within 1 working day. While you wait, explore our vendors or read our latest blog articles.', actions: `<div class="actions">${btn('Explore vendors', '/vendors/')}${btn('Read the blog', '/insights/knowledgebase/', 'secondary')}</div>` });
   },
 };
 
@@ -546,13 +554,15 @@ const T = {
 const NAV = [
   { label: 'Vendors', to: '/vendors/', links: vendors.map((v) => [v.name, v.URL]), all: ['All vendors', '/vendors/'], wide: true },
   { label: 'Solutions', to: '/solutions/', links: solutions.map((s) => [s.name, s.URL]), all: ['All solutions', '/solutions/'], wide: true },
+  { label: 'Agentic Cyber Services', to: '/agentic-cyber-services/' },
   { label: 'Partners', to: '/partners/', links: [['Become a partner', '/partners/become-a-partner/'], ['Our partners', '/partners/our-partners/'], ['Partner portal', '/partners/portal/']], all: ['Partner programme', '/partners/'] },
   { label: 'Regions', button: true, links: regions.map((r) => [r.name, r.URL]) },
-  { label: 'Insights', to: '/insights/', links: [['Insights', '/insights/'], ['Knowledge base', '/insights/knowledgebase/'], ['Glossary', '/insights/glossary/']] },
+  { label: 'Blog', to: '/insights/knowledgebase/', links: [['Blog Articles', '/insights/knowledgebase/'], ['Glossary', '/insights/glossary/']] },
   { label: 'Company', button: true, links: [['About', '/about/'], ['Events', '/events/'], ['Contact', '/contact/']] },
 ];
 const navHtml = () => `<nav class="site-nav" id="site-nav" aria-label="Main"><ul class="nav-list">${NAV.map((n) => {
   const cur = n.to && (CUR === n.to || CUR.startsWith(n.to)) ? ' aria-current="page"' : '';
+  if (!n.links) return `<li class="nav-item"><a class="nav-link" href="${href(n.to)}"${cur}>${n.label}</a></li>`;
   const head = n.button ? `<button class="nav-link" type="button" aria-expanded="false" aria-haspopup="true">${n.label}</button>` : `<a class="nav-link" href="${href(n.to)}"${cur}>${n.label}</a>`;
   const items = n.links.map(([l, u]) => `<li><a href="${href(u)}">${esc(l)}</a></li>`).join('') + (n.all ? `<li class="all"><a href="${href(n.all[1])}">${n.all[0]} →</a></li>` : '');
   return `<li class="nav-item${n.wide ? ' wide' : ''}">${head}<div class="nav-panel"><ul>${items}</ul></div></li>`;
@@ -564,7 +574,8 @@ const header = () => `<a class="skip" href="#main">Skip to content</a>
 ${LOGO()}
 ${navHtml()}
 <div class="bar-end">
-<a class="text-link hide-sm" href="${href('/partners/portal/')}">Partner login</a>
+<button class="icon-btn search-btn" id="search-toggle" type="button" aria-label="Search the site" aria-haspopup="dialog" data-index="${asset('search-index.json')}" data-root="${PROD ? '/' : pre()}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+<a class="text-link hide-sm hide-md" href="${href('/partners/portal/')}">Partner login</a>
 <a class="btn btn-primary btn-sm hide-sm" href="${href('/contact/')}">Request a briefing</a>
 <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch theme"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button>
 <button class="icon-btn menu-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button>
@@ -572,13 +583,14 @@ ${navHtml()}
 
 const col = (title, items) => `<div><h2>${title}</h2><ul>${items.map(([l, u]) => `<li><a href="${href(u)}">${esc(l)}</a></li>`).join('')}</ul></div>`;
 const footer = () => `<footer class="site-footer"><div class="wrap"><div class="foot-grid">
-<div class="foot-brand">${LOGO()}<p>Your trusted cybersecurity and AI distribution partner. GCC, UAE, MEA.</p><p><a href="mailto:sales@evanssion.com">sales@evanssion.com</a><br><a href="tel:+971586061121">+971 58 606 1121</a><br>${esc(ADDRESS)}</p><p><a href="${LINKEDIN}" target="_blank" rel="noopener">LinkedIn</a></p></div>
+<div class="foot-brand">${LOGO()}<p>Your trusted cybersecurity and AI distribution partner across Middle East &amp; Africa.</p><p><a href="mailto:sales@evanssion.com">sales@evanssion.com</a><br><a href="tel:+971586061121">+971 58 606 1121</a><br>${esc(ADDRESS)}</p><p><a class="in-link" href="${LINKEDIN}" target="_blank" rel="noopener" aria-label="Evanssion on LinkedIn">${LI_SVG}</a></p></div>
 ${col('Vendors', vendors.map((v) => [v.name, v.URL]))}
-${col('Solutions', solutions.map((s) => [s.name, s.URL]))}
+${col('Solutions', [...solutions.map((s) => [s.name, s.URL]), ['Agentic Cyber Services', '/agentic-cyber-services/']])}
 ${col('Partners', [['Partner programme', '/partners/'], ['Become a partner', '/partners/become-a-partner/'], ['Our partners', '/partners/our-partners/'], ['Partner portal', '/partners/portal/']])}
 ${col('Regions', regions.map((r) => [r.name, r.URL]))}
-${col('Company', [['About', '/about/'], ['Insights', '/insights/'], ['Knowledge base', '/insights/knowledgebase/'], ['Glossary', '/insights/glossary/'], ['Events', '/events/'], ['Contact', '/contact/'], ['Become a vendor', '/vendors/become-a-vendor/']])}
+${col('Company', [['About', '/about/'], ['Blog Articles', '/insights/knowledgebase/'], ['Glossary', '/insights/glossary/'], ['Events', '/events/'], ['Contact', '/contact/'], ['Become a vendor', '/vendors/become-a-vendor/']])}
 </div><div class="foot-base"><p>© ${new Date().getFullYear()} Evanssion FZCO, Dubai, UAE.</p><ul><li><a href="${href('/privacy/')}">Privacy notice</a></li><li><a href="${href('/terms/')}">Terms</a></li><li><button class="linklike" type="button" id="cookie-settings">Cookie settings</button></li></ul></div></div></footer>
+<div class="search" id="search" role="dialog" aria-modal="true" aria-label="Search the site" hidden><div class="search-box"><form class="search-form" role="search" action="#"><input id="search-input" type="search" name="q" placeholder="Search vendors, solutions, articles" autocomplete="off" aria-label="Search the site" aria-controls="search-results"><button class="icon-btn" id="search-close" type="button" aria-label="Close search"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></form><p class="small muted" id="search-status" role="status" aria-live="polite"></p><ul class="search-results" id="search-results"></ul></div></div>
 <div class="consent" id="consent" role="region" aria-label="Cookie consent" hidden><p>We use essential cookies to run this site and, with your consent, analytics cookies to improve it.</p><div class="actions"><button class="btn btn-secondary btn-sm" data-choice="reject" type="button">Reject non-essential</button><button class="btn btn-primary btn-sm" data-choice="accept" type="button">Accept</button></div></div>`;
 
 function crumbs(p) {
@@ -589,7 +601,7 @@ function crumbs(p) {
   segs.forEach((s, i) => {
     acc += '/' + s; const url = acc + '/';
     const pg = byUrl[url];
-    if (pg) trail.push({ name: i === segs.length - 1 ? p.name : ({ '/vendors/': 'Vendors', '/solutions/': 'Solutions', '/partners/': 'Partners', '/insights/': 'Insights', '/insights/knowledgebase/': 'Knowledge base' }[url] || pg.name), url });
+    if (pg) trail.push({ name: i === segs.length - 1 ? p.name : ({ '/vendors/': 'Vendors', '/solutions/': 'Solutions', '/partners/': 'Partners', '/insights/knowledgebase/': 'Blog Articles' }[url] || pg.name), url });
   });
   return trail;
 }
@@ -602,7 +614,7 @@ function jsonld(p, trail, type) {
     contactPoint: [{ '@type': 'ContactPoint', contactType: 'sales', email: 'sales@evanssion.com', telephone: '+971586061121', areaServed: ['AE', 'SA', 'BH'], availableLanguage: ['English'] }] };
   const g = [org, { '@type': 'WebSite', '@id': ORIGIN + '/#site', url: ORIGIN + '/', name: 'Evanssion', publisher: { '@id': ORIGIN + '/#org' }, inLanguage: 'en' }];
   if (!p.noindex) {
-    const pageType = { about: 'AboutPage', contact: 'ContactPage', vendorHub: 'CollectionPage', solutionHub: 'CollectionPage', insights: 'CollectionPage', glossary: 'CollectionPage', kbHub: 'CollectionPage', article: 'Article', events: 'CollectionPage', partnerDir: 'CollectionPage' }[type] || 'WebPage';
+    const pageType = { about: 'AboutPage', contact: 'ContactPage', vendorHub: 'CollectionPage', solutionHub: 'CollectionPage', glossary: 'CollectionPage', kbHub: 'CollectionPage', article: 'Article', events: 'CollectionPage', partnerDir: 'CollectionPage' }[type] || 'WebPage';
     const node = { '@type': pageType, '@id': ORIGIN + p.URL + '#page', url: ORIGIN + p.URL, name: p.spec['Title tag'], description: p.spec['Meta description'], isPartOf: { '@id': ORIGIN + '/#site' }, about: { '@id': ORIGIN + '/#org' }, inLanguage: 'en' };
     const list = (items) => ({ '@type': 'ItemList', itemListElement: items.map((x, i) => ({ '@type': 'ListItem', position: i + 1, name: x.name, url: ORIGIN + x.URL })) });
     if (type === 'vendorHub') node.mainEntity = list(vendors);
@@ -616,6 +628,7 @@ function jsonld(p, trail, type) {
       const m = vendorMeta[p.name.toLowerCase()] || {};
       g.push({ '@type': 'Organization', '@id': ORIGIN + p.URL + '#vendor', name: p.name, logo: ORIGIN + '/assets/img/vendors/' + slugOf(p.URL) + '.png' }, { '@type': 'Service', '@id': ORIGIN + p.URL + '#service', name: `${p.name} distribution in the Middle East and Africa`, serviceType: m.what, provider: { '@id': ORIGIN + '/#org' }, brand: { '@id': ORIGIN + p.URL + '#vendor' }, areaServed: ['United Arab Emirates', 'Saudi Arabia', 'Bahrain', 'Middle East', 'Africa'] });
     }
+    if (type === 'agentic') g.push({ '@type': 'Service', '@id': ORIGIN + p.URL + '#service', name: 'Agentic Cyber Services', serviceType: 'AI agents for security operations and risk management', description: p.spec['Meta description'], provider: { '@id': ORIGIN + '/#org' }, areaServed: ['United Arab Emirates', 'Saudi Arabia', 'Bahrain', 'Middle East', 'Africa'] });
     if (type === 'region') g.push({ '@type': 'Service', name: p.spec.H1, provider: { '@id': ORIGIN + '/#org' }, areaServed: { '@type': 'Country', name: p.name === 'Africa and wider MEA' ? 'Africa' : p.name } });
     const faq = p.sections.flatMap((s) => s.blocks).find((b) => b.t === 'faq');
     if (faq) g.push({ '@type': 'FAQPage', mainEntity: faq.items.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) });
@@ -682,9 +695,34 @@ for (const p of pages) {
   fs.writeFileSync(out, render(p));
 }
 const indexable = pages.filter((p) => !p.noindex);
+/* site search index: one record per indexable page, loaded on demand by the search dialog */
+const mdPlain = (t) => t.replace(/!\[[^\]]*\]\([^)]*\)/g, ' ').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/[#*_`>|]/g, ' ').replace(/\s+/g, ' ').trim();
+const blockText = (b) => {
+  if (b.text) return [b.text];
+  if (b.t === 'ul' || b.t === 'ol') return b.items;
+  if (b.t === 'cards') return b.items.flatMap((c) => [c.title, ...(c.text || [])]);
+  if (b.t === 'table') return b.rows.map((r) => r.join(' '));
+  if (b.t === 'faq') return b.items.flatMap((f) => [f.q, f.a]);
+  if (b.t === 'metrics') return b.items.map((m) => `${m.v} ${m.l}`);
+  if (b.t === 'agents') return b.items.flatMap((a) => [a.title, a.pain, a.does]);
+  if (b.t === 'chips') return b.items;
+  return [];
+};
+const KIND = { vendor: 'Vendor', solution: 'Solution', region: 'Region', article: 'Blog article', term: 'Glossary', kbHub: 'Blog', glossary: 'Glossary', agentic: 'Service', partnerLanding: 'Partners', becomePartner: 'Partners', partnerDir: 'Partners', portal: 'Partners' };
+const searchIndex = indexable.map((p) => {
+  const type = typeOf(p);
+  let text;
+  if (p.article) text = mdPlain(p.article.body);
+  else if (p.glossTerm) text = p.glossTerm.def;
+  else if (type === 'glossary') text = terms.map((t) => t.term).join(', ');
+  else if (type === 'kbHub') text = kb.map((a) => a.title).join('. ');
+  else text = p.sections.flatMap((sc) => [sc.title || '', ...sc.blocks.flatMap(blockText)]).join(' ').replace(/\s+/g, ' ');
+  return { t: p.article ? p.article.title : p.spec.H1, u: p.URL, k: KIND[type] || 'Page', d: p.spec['Meta description'] || '', x: text.slice(0, 2400) };
+});
+fs.writeFileSync(path.join(DIST, 'assets/search-index.json'), JSON.stringify(searchIndex));
 const today = new Date().toISOString().slice(0, 10);
 fs.writeFileSync(path.join(DIST, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${indexable.map((p) => `  <url><loc>${ORIGIN}${p.URL}</loc><lastmod>${today}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 fs.writeFileSync(path.join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /thank-you/\n\n# AI crawlers are welcome\nUser-agent: GPTBot\nAllow: /\nUser-agent: ClaudeBot\nAllow: /\nUser-agent: PerplexityBot\nAllow: /\nUser-agent: Google-Extended\nAllow: /\n\nSitemap: ${ORIGIN}/sitemap.xml\n`);
-fs.writeFileSync(path.join(DIST, 'llms.txt'), `# Evanssion\n\n> Evanssion is a Dubai-based value-added distributor of cybersecurity and AI security solutions, serving partners and enterprises in the UAE, Saudi Arabia, Bahrain and across the Middle East and Africa.\n\n## Key pages\n- [Vendors](${ORIGIN}/vendors/): the ${vendors.length} vendors we distribute\n- [Solutions](${ORIGIN}/solutions/): security solutions by problem\n- [Partners](${ORIGIN}/partners/): the partner programme\n- [Regions](${ORIGIN}/regions/uae/): UAE, Saudi Arabia, Bahrain, Africa and wider MEA\n- [Glossary](${ORIGIN}/insights/glossary/): definitions of security and AI security terms\n- [Contact](${ORIGIN}/contact/)\n\n## Knowledge base\n- [Knowledge base](${ORIGIN}/insights/knowledgebase/): articles on AI security, application security and events\n${kb.map((a) => `- [${a.title}](${ORIGIN}${a.URL}): ${a.summary}`).join('\n')}\n\n## Vendors\n${vendors.map((v) => `- [${v.name}](${ORIGIN}${v.URL}): ${(vendorMeta[v.name.toLowerCase()] || {}).what || ''}`).join('\n')}\n\n## Solutions\n${solutions.map((s) => `- [${s.name}](${ORIGIN}${s.URL})`).join('\n')}\n`);
+fs.writeFileSync(path.join(DIST, 'llms.txt'), `# Evanssion\n\n> Evanssion is a Dubai-based value-added distributor of cybersecurity and AI security solutions, serving partners and enterprises in the UAE, Saudi Arabia, Bahrain and across the Middle East and Africa.\n\n## Key pages\n- [Vendors](${ORIGIN}/vendors/): the ${vendors.length} vendors we distribute\n- [Solutions](${ORIGIN}/solutions/): security solutions by problem\n- [Agentic Cyber Services](${ORIGIN}/agentic-cyber-services/): AI agents for security operations and risk management\n- [Partners](${ORIGIN}/partners/): the partner programme\n- [Regions](${ORIGIN}/regions/uae/): UAE, Saudi Arabia, Bahrain, Africa and wider MEA\n- [Glossary](${ORIGIN}/insights/glossary/): definitions of security and AI security terms\n- [Contact](${ORIGIN}/contact/)\n\n## Blog\n- [Blog Articles](${ORIGIN}/insights/knowledgebase/): articles on AI security, application security and events\n${kb.map((a) => `- [${a.title}](${ORIGIN}${a.URL}): ${a.summary}`).join('\n')}\n\n## Vendors\n${vendors.map((v) => `- [${v.name}](${ORIGIN}${v.URL}): ${(vendorMeta[v.name.toLowerCase()] || {}).what || ''}`).join('\n')}\n\n## Solutions\n${solutions.map((s) => `- [${s.name}](${ORIGIN}${s.URL})`).join('\n')}\n`);
 console.log(`${pages.length} pages + sitemap, robots, llms.txt -> ${DIST} (${PROD ? 'prod' : 'preview'} links)`);
 if (warn.length) console.log('WARN', warn);

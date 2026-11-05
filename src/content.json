@@ -5,9 +5,9 @@
   "spec": {
    "URL": "/",
    "Page type": "Home",
-   "Title tag": "Evanssion | Cybersecurity & AI Security Distributor, MEA",
+   "Title tag": "Evanssion | Cyber, AI Security & Agentic Cyber VAD, MEA",
    "Meta description": "Dubai-based value-added distributor of cybersecurity and AI security, serving partners and enterprises in the UAE, Saudi Arabia, Bahrain and across MEA.",
-   "H1": "Cybersecurity and AI security, distributed across the Middle East and Africa",
+   "H1": "Cyber, AI Security & Agentic Cyber Services, Specialist VAD across Middle East and Africa",
    "Schema": "Organization, WebSite, FAQPage",
    "Primary CTA": "Explore vendors / Become a partner"
   },
@@ -66,15 +66,15 @@
     ]
    },
    {
-    "title": "Our portfolio: 10 specialist vendors",
+    "title": "Our portfolio: 9 specialist vendors",
     "blocks": [
      {
       "t": "p",
-      "text": "Cybersecurity (6): Silent Push (preemptive threat intelligence), ReversingLabs (malware analysis and software supply chain security), DefectDojo (unified vulnerability management), Operlity (GRC and compliance automation), Illumio (breach containment) and Bright Security (application and API security testing)."
+      "text": "Cybersecurity (5): Silent Push (preemptive threat intelligence), ReversingLabs (malware analysis and software supply chain security), DefectDojo (unified vulnerability management), Operlity (GRC and compliance automation) and Bright Security (application and API security testing)."
      },
      {
       "t": "p",
-      "text": "AI security and agentic AI (4): WitnessAI (AI security and governance), Onyx Security (control plane for AI agents), Backflipt (agent-to-agent governance) and Arambh Labs (agentic AI for security operations)."
+      "text": "AI Security & Agentic AI (4): WitnessAI (AI security and governance), Onyx Security (control plane for AI agents), Backflipt (agent-to-agent governance) and Arambh Labs (agentic AI for security operations)."
      }
     ]
    },
@@ -90,8 +90,7 @@
        "Trust the software you build and buy: software supply chain security.",
        "Close vulnerabilities faster: vulnerability and exposure management.",
        "Make the SOC faster and cheaper: security operations and data.",
-       "Prove compliance with regional regulations: governance, risk and compliance.",
-       "Limit the damage when attackers get in: breach containment."
+       "Prove compliance with regional regulations: governance, risk and compliance."
       ]
      }
     ]
@@ -105,7 +104,7 @@
        "Early access: we sign innovators before they are widely known in the region, so customers and partners get new capability first.",
        "Local focus: UAE, Saudi Arabia and Bahrain are our home markets, with reach across the wider Middle East and Africa.",
        "Support from the start: briefings, proof-of-concept help, partner training and deal registration.",
-       "One relationship: contracting, pricing and enablement for ten vendors through a single team."
+       "One relationship: contracting, pricing and enablement for nine vendors through a single team."
       ]
      }
     ]
@@ -126,20 +125,19 @@
       "t": "ul",
       "items": [
        "15+ Years in the Middle",
-       "100+ Partners across the MEA",
        "20+ Managed Partners",
-       "100+ Enterprise Customers",
-       "20+ Directly Managed Large Customers"
+       "40+ Partners across the MEA",
+       "100+ Enterprise Customers"
       ]
      }
     ]
    },
    {
-    "title": "Latest insights",
+    "title": "Latest from the blog",
     "blocks": [
      {
       "t": "p",
-      "text": "Three most recent articles, pulled from the Insights section."
+      "text": "Three most recent articles, pulled from the Blog section."
      }
     ]
    },
@@ -166,16 +164,12 @@
         "a": "We focus on the UAE, Saudi Arabia and Bahrain, with a broader mandate across the Middle East and Africa."
        },
        {
-        "q": "Does Evanssion sell directly to enterprises?",
-        "a": "We engage directly with enterprises on focused opportunities. However, we work through registered partners. Contact us and we will route you."
-       },
-       {
         "q": "How do I become an Evanssion partner?",
         "a": "Apply through the Become a partner page. We review each application for fit, then sign a partner agreement and give you access to the partner portal."
        },
        {
         "q": "Which security vendors does Evanssion represent?",
-        "a": "Silent Push, ReversingLabs, DefectDojo, Operlity, Illumio, Bright Security, WitnessAI, Onyx Security, Backflipt and Arambh Labs."
+        "a": "Silent Push, ReversingLabs, DefectDojo, Operlity, Bright Security, WitnessAI, Onyx Security, Backflipt and Arambh Labs."
        }
       ]
      }
@@ -210,7 +204,7 @@
     "blocks": [
      {
       "t": "p",
-      "text": "We select vendors with strong technology and a real need for regional help, then provide what a young vendor cannot build alone: local contracts, presales, partner enablement, deal support and commercial management. For partners, we are the way to a portfolio of vendors they would otherwise take months to sign. For enterprises, we are a route to technology that is new to the region."
+      "text": "We select vendors with strong technology and a real need for regional presence and representation, provide support in the areas of: local contracts, presales, partner enablement, deal support and commercial management. For partners, we are the way to a portfolio of vendors they would otherwise take months to sign. For enterprises, we are a route to technology that is new to the region"
      }
     ]
    },
@@ -374,9 +368,9 @@
    "URL": "/vendors/",
    "Page type": "Hub",
    "Title tag": "Cybersecurity & AI Security Vendors | Evanssion",
-   "Meta description": "Ten specialist cybersecurity and AI security vendors available through Evanssion in the UAE, Saudi Arabia, Bahrain and across the Middle East and Africa.",
+   "Meta description": "Nine specialist cybersecurity and AI security vendors available through Evanssion in the UAE, Saudi Arabia, Bahrain and across the Middle East and Africa.",
    "H1": "Our vendors",
-   "Schema": "CollectionPage, ItemList (10 vendors), BreadcrumbList",
+   "Schema": "CollectionPage, ItemList (9 vendors), BreadcrumbList",
    "Primary CTA": "Request a briefing"
   },
   "sections": [
@@ -385,7 +379,7 @@
     "blocks": [
      {
       "t": "lede",
-      "text": "Evanssion represents ten specialist vendors in cybersecurity and AI security. Each one solves a specific problem and is backed by local presales, enablement and commercial support."
+      "text": "Evanssion represents nine specialist vendors in cybersecurity and AI security. Each one solves a specific problem and is backed by local presales, enablement and commercial support."
      }
     ]
    },
@@ -416,10 +410,6 @@
         "AI-powered governance, risk and compliance automation"
        ],
        [
-        "Illumio",
-        "Breach containment platform"
-       ],
-       [
         "Bright Security",
         "Application and API security testing"
        ]
@@ -428,7 +418,7 @@
     ]
    },
    {
-    "title": "AI security and agentic AI",
+    "title": "AI Security & Agentic AI",
     "blocks": [
      {
       "t": "table",
@@ -968,130 +958,6 @@
        },
        {
         "q": "How do I buy Operlity in the Gulf?",
-        "a": "Contact Evanssion. We support enterprises directly and through registered partners."
-       }
-      ]
-     }
-    ]
-   }
-  ]
- },
- {
-  "n": 11,
-  "name": "Illumio",
-  "spec": {
-   "URL": "/vendors/illumio/",
-   "Page type": "Vendor page",
-   "Title tag": "Illumio UAE, Saudi Arabia & Bahrain | Evanssion",
-   "Meta description": "Illumio contains breaches with segmentation and cloud detection, so one compromised workload cannot spread. Via Evanssion in the UAE, KSA and Bahrain.",
-   "H1": "Illumio: breach containment",
-   "Schema": "Organization (vendor), Service or Product, FAQPage, BreadcrumbList",
-   "Primary CTA": "Request a briefing"
-  },
-  "sections": [
-   {
-    "title": null,
-    "blocks": [
-     {
-      "t": "lede",
-      "text": "Illumio is a breach containment platform. It combines segmentation, which limits what each workload and device can talk to, with detection and response based on an AI security graph, so an attacker who gets in cannot move freely. Evanssion distributes Illumio in the Middle East and Africa."
-     }
-    ]
-   },
-   {
-    "title": "What Illumio does",
-    "blocks": [
-     {
-      "t": "p",
-      "text": "Prevention will not stop every attack, so the aim is to limit the damage. Illumio maps how workloads communicate across data centres, cloud and endpoints, then applies policy that blocks the paths an attacker would use for lateral movement."
-     },
-     {
-      "t": "ul",
-      "items": [
-       "Illumio Segmentation: protect critical assets, workloads and devices across hybrid and multi-cloud environments.",
-       "Illumio Insights: hybrid multi-cloud detection and response built on an AI-powered security graph.",
-       "One console and one policy model across environments.",
-       "Designed to support Zero Trust programmes."
-      ]
-     }
-    ]
-   },
-   {
-    "title": "Who it is for",
-    "blocks": [
-     {
-      "t": "p",
-      "text": "Security leadership, infrastructure security and security operations teams in organisations with sensitive data centres, hybrid cloud estates or operational environments where ransomware spread is a board-level concern."
-     }
-    ]
-   },
-   {
-    "title": "Where it fits: typical use cases",
-    "blocks": [
-     {
-      "t": "ul",
-      "items": [
-       "Stop ransomware spreading from one compromised server to the rest of the estate.",
-       "Ring-fence crown-jewel applications and regulated data.",
-       "See real traffic flows between workloads before writing policy.",
-       "Provide evidence of segmentation for audits and Zero Trust programmes."
-      ]
-     }
-    ]
-   },
-   {
-    "title": "Proof points",
-    "blocks": [
-     {
-      "t": "ul",
-      "items": [
-       "Named a Leader in The Forrester Wave: Microsegmentation Solutions, Q3 2026 (vendor-stated).",
-       "Customers' Choice in the 2026 Gartner Peer Insights Voice of the Customer report for Network Security Microsegmentation (vendor-stated)."
-      ]
-     }
-    ]
-   },
-   {
-    "title": "Buying Illumio in the UAE, Saudi Arabia and Bahrain",
-    "blocks": [
-     {
-      "t": "p",
-      "text": "Evanssion is the authorised services partner for Illumio. Enterprises can engage us directly or through a registered Evanssion partner. Partners get deal registration, vendor training, demo support and commercial terms through the Evanssion partner portal."
-     }
-    ]
-   },
-   {
-    "title": "Frequently asked questions",
-    "blocks": [
-     {
-      "t": "cta",
-      "labels": [
-       "Request a briefing",
-       "Become a partner",
-       "Back to all vendors"
-      ]
-     },
-     {
-      "t": "related",
-      "text": "Related solution pages: Breach containment and Zero Trust segmentation. Vendor directory. Region pages (UAE, Saudi Arabia, Bahrain)."
-     },
-     {
-      "t": "faq",
-      "items": [
-       {
-        "q": "What is microsegmentation?",
-        "a": "Microsegmentation divides a network into small zones with their own rules, down to individual workloads, so that a compromised system cannot freely reach others."
-       },
-       {
-        "q": "How does segmentation help against ransomware?",
-        "a": "Ransomware depends on lateral movement. Blocking unneeded connections between systems shrinks the area an attacker can reach."
-       },
-       {
-        "q": "Does Illumio work across cloud and data centre?",
-        "a": "The vendor describes one platform for hybrid and multi-cloud environments."
-       },
-       {
-        "q": "How do I buy Illumio in the region?",
         "a": "Contact Evanssion. We support enterprises directly and through registered partners."
        }
       ]
@@ -1877,11 +1743,6 @@
         "Governance, risk and compliance",
         "Proving compliance with several regulators at once",
         "Operlity"
-       ],
-       [
-        "Breach containment",
-        "Attackers move freely once they are inside",
-        "Illumio"
        ]
       ]
      },
@@ -2691,122 +2552,13 @@
   ]
  },
  {
-  "n": 26,
-  "name": "Breach containment and Zero Trust segmentation",
-  "spec": {
-   "URL": "/solutions/breach-containment/",
-   "Page type": "Solution page",
-   "Title tag": "Breach Containment & Segmentation | Evanssion",
-   "Meta description": "Stop attackers moving once they are inside. Microsegmentation and breach containment for hybrid and multi-cloud estates, via Evanssion in the Gulf.",
-   "H1": "Breach containment and Zero Trust segmentation",
-   "Schema": "WebPage, FAQPage, BreadcrumbList, DefinedTerm",
-   "Primary CTA": "Request a briefing"
-  },
-  "sections": [
-   {
-    "title": null,
-    "blocks": [
-     {
-      "t": "lede",
-      "text": "Breach containment limits how far an attacker can move after getting in. By mapping which systems need to talk to each other and blocking everything else, segmentation turns a breach of one server into an incident, rather than a crisis across the whole estate."
-     }
-    ]
-   },
-   {
-    "title": "Assume breach",
-    "blocks": [
-     {
-      "t": "p",
-      "text": "Perimeter controls cannot stop every attack. Once inside, ransomware and intruders move laterally across flat networks, hybrid clouds and shared services. Organisations need to see how workloads communicate and enforce rules that limit those paths."
-     }
-    ]
-   },
-   {
-    "title": "What good looks like",
-    "blocks": [
-     {
-      "t": "ul",
-      "items": [
-       "A live map of how workloads and devices communicate.",
-       "Policy that limits traffic to what is needed, across data centre and cloud.",
-       "Quick isolation of an affected workload during an incident.",
-       "Detection of unusual lateral movement.",
-       "Evidence of segmentation for audits and Zero Trust programmes."
-      ]
-     }
-    ]
-   },
-   {
-    "title": "Vendors that deliver this through Evanssion",
-    "blocks": [
-     {
-      "t": "table",
-      "head": [
-       "Vendor",
-       "Role in this solution"
-      ],
-      "rows": [
-       [
-        "Illumio",
-        "Segmentation and cloud detection and response on an AI security graph"
-       ]
-      ]
-     }
-    ]
-   },
-   {
-    "title": "Questions to ask when choosing a solution",
-    "blocks": [
-     {
-      "t": "ul",
-      "items": [
-       "Does it work across data centre, cloud and endpoints with one policy model?",
-       "Can we see traffic before enforcing rules?",
-       "How quickly can we contain a workload during an incident?",
-       "What does the deployment involve for the network team?"
-      ]
-     }
-    ]
-   },
-   {
-    "title": "Frequently asked questions",
-    "blocks": [
-     {
-      "t": "cta",
-      "labels": [
-       "Request a briefing",
-       "Browse all vendors"
-      ]
-     },
-     {
-      "t": "faq",
-      "items": [
-       {
-        "q": "What is lateral movement?",
-        "a": "Lateral movement is how attackers move from the first system they compromise to others in the network in search of valuable data or systems."
-       },
-       {
-        "q": "How is segmentation different from a firewall?",
-        "a": "Perimeter firewalls control traffic at the edge. Segmentation controls traffic between workloads inside the network and cloud, down to individual systems."
-       },
-       {
-        "q": "Is this part of Zero Trust?",
-        "a": "Yes. Limiting access to what is explicitly needed, and assuming a breach is possible, are core Zero Trust principles."
-       }
-      ]
-     }
-    ]
-   }
-  ]
- },
- {
   "n": 27,
   "name": "Partners",
   "spec": {
    "URL": "/partners/",
    "Page type": "Landing (partner audience)",
    "Title tag": "Partner with Evanssion | Security Reseller Programme",
-   "Meta description": "Join the Evanssion partner programme: 10 security and AI security vendors, deal registration, training and incentives for Gulf and MEA resellers.",
+   "Meta description": "Join the Evanssion partner programme: 9 security and AI security vendors, deal registration, training and incentives for Gulf and MEA resellers.",
    "H1": "Grow your security business with Evanssion",
    "Schema": "WebPage, FAQPage, BreadcrumbList",
    "Primary CTA": "Become a partner"
@@ -2817,7 +2569,7 @@
     "blocks": [
      {
       "t": "lede",
-      "text": "Evanssion gives resellers, systems integrators and managed security providers one route to ten specialist security and AI security vendors, with the training, registration and support to sell them in the Middle East and Africa."
+      "text": "Evanssion gives resellers, systems integrators and managed security providers one route to nine specialist security and AI security vendors, with the training, registration and support to sell them in the Middle East and Africa."
      },
      {
       "t": "cta",
@@ -2982,7 +2734,7 @@
        "Company name, website, country and city, year established, number of staff, number of security staff.",
        "Partner type: reseller, systems integrator, managed security provider, other.",
        "Primary contact: name, job title, work email, phone.",
-       "Vendors of interest (checkbox list of the ten).",
+       "Vendors of interest (checkbox list of the nine).",
        "Target customer sectors and countries.",
        "Current security vendors you sell.",
        "Consent to contact and to data processing. Link to privacy notice."
@@ -3160,7 +2912,7 @@
    "URL": "/regions/uae/",
    "Page type": "Region page",
    "Title tag": "Cybersecurity Distributor in the UAE | Evanssion",
-   "Meta description": "Evanssion, a Dubai-based value-added distributor of cybersecurity and AI security, serves UAE partners and enterprises with 10 specialist vendors.",
+   "Meta description": "Evanssion, a Dubai-based value-added distributor of cybersecurity and AI security, serves UAE partners and enterprises with 9 specialist vendors.",
    "H1": "Cybersecurity and AI security distribution in the UAE",
    "Schema": "WebPage, FAQPage, BreadcrumbList, Place or AreaServed (on Organization)",
    "Primary CTA": "Talk to our UAE team"
@@ -3218,7 +2970,7 @@
     "blocks": [
      {
       "t": "p",
-      "text": "Operlity for UAE PDPL and Information Assurance compliance, Illumio for breach containment, WitnessAI and Onyx Security for AI governance, Arambh Labs for security operations, and Silent Push for threat intelligence."
+      "text": "Operlity for UAE PDPL and Information Assurance compliance, WitnessAI and Onyx Security for AI governance, Arambh Labs for security operations, and Silent Push for threat intelligence."
      }
     ]
    },
@@ -3326,7 +3078,7 @@
     "blocks": [
      {
       "t": "p",
-      "text": "Operlity for SAMA, ECC and PDPL mapping, WitnessAI and Onyx Security for AI governance, Illumio for segmentation, DefectDojo and Bright Security for application security, and Arambh Labs for AI-assisted security operations."
+      "text": "Operlity for SAMA, ECC and PDPL mapping, WitnessAI and Onyx Security for AI governance, DefectDojo and Bright Security for application security, and Arambh Labs for AI-assisted security operations."
      }
     ]
    },
@@ -3348,10 +3100,6 @@
      {
       "t": "p",
       "text": "Kingdom of Saudi Arabia"
-     },
-     {
-      "t": "p",
-      "text": "Tel - [+966 11 411 0140](tel:+966%2011%20411%200140)"
      },
      {
       "t": "cta",
@@ -3439,7 +3187,7 @@
     "blocks": [
      {
       "t": "p",
-      "text": "Operlity for governance and compliance, Illumio for segmentation, Silent Push for threat intelligence, WitnessAI for AI governance and Arambh Labs for security operations."
+      "text": "Operlity for governance and compliance, Silent Push for threat intelligence, WitnessAI for AI governance and Arambh Labs for security operations."
      }
     ]
    },
@@ -3591,157 +3339,6 @@
   ]
  },
  {
-  "n": 35,
-  "name": "Insights hub",
-  "spec": {
-   "URL": "/insights/",
-   "Page type": "Hub",
-   "Title tag": "Cybersecurity & AI Security Insights | Evanssion",
-   "Meta description": "Guides, explainers and regional analysis on cybersecurity and AI security for security leaders, partners and vendors in the Gulf and MEA.",
-   "H1": "Insights",
-   "Schema": "CollectionPage, Blog, ItemList",
-   "Primary CTA": "Subscribe"
-  },
-  "sections": [
-   {
-    "title": null,
-    "blocks": [
-     {
-      "t": "lede",
-      "text": "Practical guides and regional analysis on cybersecurity and AI security, written for security leaders, partners and vendors in the Gulf and the wider Middle East and Africa."
-     }
-    ]
-   },
-   {
-    "title": "Categories",
-    "blocks": [
-     {
-      "t": "ul",
-      "items": [
-       "AI security and governance",
-       "Application security and software supply chain",
-       "Threat intelligence and security operations",
-       "Compliance and regulation in the Gulf",
-       "Market and region",
-       "Partner news"
-      ]
-     }
-    ]
-   },
-   {
-    "title": "Editorial standards (shown on the page for trust)",
-    "blocks": [
-     {
-      "t": "ul",
-      "items": [
-       "Every article has a named author with a short bio.",
-       "Dates published and updated are shown.",
-       "Claims cite a primary source.",
-       "Vendor-stated figures are labelled as such."
-      ]
-     }
-    ]
-   },
-   {
-    "title": "Launch plan: first 12 articles",
-    "blocks": [
-     {
-      "t": "table",
-      "head": [
-       "#",
-       "Working title (as a question)",
-       "Format",
-       "Links to"
-      ],
-      "rows": [
-       [
-        "1",
-        "What is shadow AI and how do you find it?",
-        "Explainer",
-        "AI security; WitnessAI, Onyx"
-       ],
-       [
-        "2",
-        "How do AI agents get identity and credentials safely?",
-        "Explainer",
-        "AI security; Backflipt"
-       ],
-       [
-        "3",
-        "What is an Indicator of Future Attack?",
-        "Explainer",
-        "Threat intelligence; Silent Push"
-       ],
-       [
-        "4",
-        "How do you check third-party software before you deploy it?",
-        "Guide",
-        "Supply chain; ReversingLabs"
-       ],
-       [
-        "5",
-        "What is ASPM and do you need it?",
-        "Explainer",
-        "Vulnerability management; DefectDojo"
-       ],
-       [
-        "6",
-        "How much of your SIEM bill is noise?",
-        "Guide",
-        "Security operations;"
-       ],
-       [
-        "7",
-        "What is an AI SOC and what can it do today?",
-        "Explainer",
-        "Security operations; Arambh Labs"
-       ],
-       [
-        "8",
-        "Which Saudi and UAE frameworks overlap, and how do you map them once?",
-        "Regional guide",
-        "GRC; Operlity"
-       ],
-       [
-        "9",
-        "What is microsegmentation and how does it stop ransomware spreading?",
-        "Explainer",
-        "Breach containment; Illumio"
-       ],
-       [
-        "10",
-        "How should you test APIs and AI features for security flaws?",
-        "Guide",
-        "Application security; Bright Security"
-       ],
-       [
-        "11",
-        "How do you patch faster without breaking production?",
-        "Guide",
-        "Vulnerability management"
-       ],
-       [
-        "12",
-        "What does a value-added distributor do for a security vendor?",
-        "Explainer",
-        "Become a vendor"
-       ]
-      ]
-     }
-    ]
-   },
-   {
-    "title": "Subscribe",
-    "blocks": [
-     {
-      "t": "p",
-      "text": "Get new articles and event invitations by email."
-     }
-    ]
-   }
-  ]
- },
- {
   "n": 36,
   "name": "Glossary",
   "spec": {
@@ -3881,7 +3478,7 @@
        [
         "Vendor webinar",
         "Partners and customers",
-        "One vendor per month, rotating through the 10"
+        "One vendor per month, rotating through the 9"
        ],
        [
         "Partner training session",
@@ -3926,7 +3523,7 @@
     "blocks": [
      {
       "t": "p",
-      "text": "Vendors | Solutions | Partners | Regions | Insights | Company (About, Events, Contact). Right side: Partner login (text link) and Request a briefing (button)."
+      "text": "Vendors | Solutions | Agentic Cyber Services | Partners | Regions | Blog (Blog Articles, Glossary) | Company (About, Events, Contact). Right side: Partner login (text link) and Request a briefing (button)."
      }
     ]
    },
@@ -3936,8 +3533,8 @@
      {
       "t": "ul",
       "items": [
-       "Brand line: Your trusted cybersecurity and AI distribution partner. GCC, UAE, MEA.",
-       "Columns: Vendors (12 links), Solutions (8 links), Partners (4 links), Regions (4 links), Company (About, Insights, Events, Contact).",
+       "Brand line: Your trusted cybersecurity and AI distribution partner across Middle East & Africa.",
+       "Columns: Vendors (12 links), Solutions (8 links), Partners (4 links), Regions (4 links), Company (About, Blog Articles, Events, Contact).",
        "Contact: sales@evanssion.com, +971 58 606 1121, Dubai address",
        "Legal: Privacy notice, Terms, Cookie settings. LinkedIn link. https://www.linkedin.com/company/evanssion/",
        "Copyright line with year and legal entity name: Evanssion FZCO, Dubai, UAE."
@@ -4060,7 +3657,7 @@
     "blocks": [
      {
       "t": "p",
-      "text": "Thank you. We have your message and will reply within 1 working day.While you wait, explore our vendors or read our latest insights."
+      "text": "Thank you. We have your message and will reply within 1 working day.While you wait, explore our vendors or read our latest blog articles."
      }
     ]
    }
@@ -4100,7 +3697,7 @@
      },
      {
       "t": "p",
-      "text": "- [Vendors](https://www.evanssion.com/vendors/): the 10 vendors we distribute"
+      "text": "- [Vendors](https://www.evanssion.com/vendors/): the 9 vendors we distribute"
      },
      {
       "t": "p",
@@ -4121,6 +3718,307 @@
      {
       "t": "p",
       "text": "- [Contact](https://www.evanssion.com/contact/)"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 43,
+  "name": "Agentic Cyber Services",
+  "spec": {
+   "URL": "/agentic-cyber-services/",
+   "Page type": "Service",
+   "Title tag": "Agentic Cyber Services for Security Teams | Evanssion",
+   "Meta description": "AI agents that triage, prioritise and draft inside the security stack you already run, with your analysts approving every change. Via Evanssion in MEA.",
+   "H1": "Agentic Cyber Services",
+   "Schema": "Service, FAQPage, BreadcrumbList",
+   "Primary CTA": "Request a briefing"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "AI agents that triage, prioritise and draft inside the security stack you already run, with your analysts in control of every change. Risk management and security operations, without adding another console."
+     },
+     {
+      "t": "cta",
+      "labels": [
+       "Request a briefing",
+       "Talk to us"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Where security teams lose time today",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Most security work is not hunting adversaries. It is repetitive, judgement-light effort that still has to be done carefully. These are the baselines measured in an enterprise security estate before agents were introduced."
+     },
+     {
+      "t": "metrics",
+      "items": [
+       {
+        "v": "1 to 12 months",
+        "l": "to complete one framework assessment",
+        "tag": "Baseline"
+       },
+       {
+        "v": "1 to 2 days",
+        "l": "lost each time a vulnerability fix reaches the wrong team",
+        "tag": "Baseline"
+       },
+       {
+        "v": "5 to 10 min",
+        "l": "of manual checks for every reported phish",
+        "tag": "Baseline"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Agents for your team's repetitive security work",
+    "blocks": [
+     {
+      "t": "agents",
+      "items": [
+       {
+        "area": "Vulnerability management",
+        "title": "Vulnerability Remediation",
+        "pain": "Scanners produce thousands of findings. Triaged on CVSS alone, fixes go to the wrong team.",
+        "does": "Reads Defender findings, asset criticality and the owning team, then produces a prioritised work order for the right resolver team, approved by an analyst.",
+        "stat": "1 to 2 days",
+        "statl": "lost on every misrouted fix, removed by routing on risk and ownership",
+        "tag": "Outcome"
+       },
+       {
+        "area": "Security operations",
+        "title": "Phishing Triage",
+        "pain": "Every reported email means the same header, URL and attachment checks, done by hand.",
+        "does": "Checks headers, sender, URLs and attachments, then hands the analyst a verdict with a confidence level, an evidence summary and a recommended action.",
+        "stat": "5 to 10 min",
+        "statl": "of manual checks per reported phish, done by the agent before an analyst looks",
+        "tag": "Outcome"
+       },
+       {
+        "area": "Identity and access",
+        "title": "Identity Lifecycle Automation",
+        "pain": "Joiner, mover and leaver tasks are worked by hand from tickets. Leavers keep access too long.",
+        "does": "Acts on HR events and approved requests against your access policy, provisions access, removes leaver access and logs every step to your SIEM.",
+        "stat": "~75%",
+        "statl": "less manual effort per access request",
+        "tag": "Modelled"
+       },
+       {
+        "area": "Governance, risk and compliance",
+        "title": "Security Assessment",
+        "pain": "Framework assessments still run on email and spreadsheets, and take months to close.",
+        "does": "Works through questionnaires, evidence and diagrams against framework controls, then returns maturity scores, gap findings and a remediation roadmap.",
+        "stat": "2 weeks",
+        "statl": "per assessment, down from 1 to 12 months",
+        "tag": "Target"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "What agentic security looks like in numbers",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Agents work best as a closed loop from alert to root cause: detect, diagnose, escalate. Across that loop, the modelled saving in operational effort is around 60 per cent."
+     },
+     {
+      "t": "metrics",
+      "items": [
+       {
+        "v": "~60%",
+        "l": "less operational effort across the alert-to-root-cause loop",
+        "tag": "Modelled"
+       },
+       {
+        "v": "~60%",
+        "l": "less triage effort with anomaly triage",
+        "tag": "Modelled"
+       },
+       {
+        "v": "~65%",
+        "l": "less ticket handling with escalation and ITSM",
+        "tag": "Modelled"
+       },
+       {
+        "v": "~55%",
+        "l": "less diagnosis effort with root cause analysis",
+        "tag": "Modelled"
+       },
+       {
+        "v": "~90%",
+        "l": "of SIEM alerts were false positives",
+        "tag": "Baseline"
+       },
+       {
+        "v": "20,000+",
+        "l": "DLP alerts reviewed every day",
+        "tag": "Baseline"
+       },
+       {
+        "v": "~75%",
+        "l": "less analysis time per threat hunt",
+        "tag": "Modelled"
+       },
+       {
+        "v": "40% or more",
+        "l": "of threat-intelligence analyst hours freed",
+        "tag": "Target"
+       }
+      ]
+     },
+     {
+      "t": "p",
+      "text": "Baseline means measured before agents in an enterprise security estate. Modelled and target figures are projections, not guarantees. Results vary by estate."
+     }
+    ]
+   },
+   {
+    "title": "Built to answer to your SOC",
+    "blocks": [
+     {
+      "t": "cards",
+      "items": [
+       {
+        "title": "Read-only by default",
+        "text": [
+         "Agents begin with read access to your tools. Nothing changes until you decide it should."
+        ]
+       },
+       {
+        "title": "Humans approve changes",
+        "text": [
+         "An analyst reviews and approves every change before it is made. The agent drafts and prepares; your team decides."
+        ]
+       },
+       {
+        "title": "An identity per agent",
+        "text": [
+         "Each agent has its own identity, so its access can be scoped, logged and audited like any other user."
+        ]
+       },
+       {
+        "title": "Air-gapped option",
+        "text": [
+         "For environments that cannot connect to external services, an air-gapped deployment is available."
+        ]
+       }
+      ]
+     },
+     {
+      "t": "p",
+      "text": "Works with Microsoft Defender, Microsoft Sentinel, Microsoft Entra ID and ServiceNow."
+     }
+    ]
+   },
+   {
+    "title": "Beyond the first four agents",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "The same pattern extends across the security functions of enterprises that consume security, providers that deliver it as a service, and vendors that build and sell it. Agent design, ownership and buyer mapping are scoped with you for your own organisation."
+     },
+     {
+      "t": "chips",
+      "items": [
+       "Governance, risk and compliance",
+       "Third-party and trust",
+       "Security operations",
+       "Incident response and forensics",
+       "Threat intelligence and brand",
+       "Vulnerability and exposure",
+       "Identity and access",
+       "Cloud security",
+       "Application and product security",
+       "Data protection and privacy",
+       "AI security and governance",
+       "Architecture, network and endpoint",
+       "OT and ICS security",
+       "Human risk and fraud",
+       "Offensive security and resilience"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Who it is for",
+    "blocks": [
+     {
+      "t": "cards",
+      "items": [
+       {
+        "title": "Enterprises",
+        "text": [
+         "Banks, telcos, government entities, energy, retail and healthcare teams that want audit readiness, regulatory alignment and analyst hours released."
+        ]
+       },
+       {
+        "title": "Security service providers",
+        "text": [
+         "MSSPs, MDR providers and security practices that need more tenants per analyst and new sellable services."
+        ]
+       },
+       {
+        "title": "Vendors and distributors",
+        "text": [
+         "Product teams and channel organisations that want faster detection content, ticket deflection and stronger partner productivity."
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Questions about agentic cyber services",
+    "blocks": [
+     {
+      "t": "cta",
+      "labels": [
+       "Request a briefing",
+       "sales@evanssion.com",
+       "+971 58 606 1121"
+      ]
+     },
+     {
+      "t": "faq",
+      "items": [
+       {
+        "q": "What are agentic cyber services?",
+        "a": "They are AI agents that take on repetitive security work such as triage, prioritisation and drafting, inside the security tools you already run. Your analysts review and approve every change."
+       },
+       {
+        "q": "Can an agent change my systems on its own?",
+        "a": "No. Agents are read-only by default and humans approve changes before they are made."
+       },
+       {
+        "q": "Which tools do the agents work with?",
+        "a": "Microsoft Defender, Microsoft Sentinel, Microsoft Entra ID and ServiceNow."
+       },
+       {
+        "q": "Is an air-gapped deployment possible?",
+        "a": "Yes. An air-gapped option is available for environments that cannot connect to external services."
+       },
+       {
+        "q": "Are the percentage figures guaranteed?",
+        "a": "No. Baseline figures were measured before agents in an enterprise security estate. Modelled and target figures are projections, not guarantees, and results vary by estate."
+       },
+       {
+        "q": "How do we start?",
+        "a": "Request a briefing. We will walk through the agents that fit your team and agree the first workflow to scope."
+       }
+      ]
      }
     ]
    }

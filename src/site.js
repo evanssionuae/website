@@ -128,4 +128,81 @@
         });
     });
   });
+
+  /* site search: loads the index on first open, filters as you type */
+  (function () {
+    var btn = document.getElementById('search-toggle'), box = document.getElementById('search');
+    if (!btn || !box) return;
+    var input = document.getElementById('search-input'), list = document.getElementById('search-results'),
+        status = document.getElementById('search-status'), closeBtn = document.getElementById('search-close');
+    var data = null, loading = false, root = btn.getAttribute('data-root') || '/';
+    function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+    function reEsc(t) { return t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+    function load(cb) {
+      if (data) return cb();
+      if (loading) return;
+      loading = true;
+      status.textContent = 'Loading search';
+      fetch(btn.getAttribute('data-index')).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (j) { data = j; loading = false; status.textContent = ''; cb(); })
+        .catch(function () { loading = false; status.textContent = 'Search is unavailable right now. Please browse the menu instead.'; });
+    }
+    function snippet(text, terms) {
+      var low = text.toLowerCase(), at = -1, i;
+      for (i = 0; i < terms.length; i++) { at = low.indexOf(terms[i]); if (at > -1) break; }
+      if (at < 0) return text.slice(0, 140);
+      var s = Math.max(0, at - 50), e = Math.min(text.length, at + 100);
+      return (s > 0 ? '...' : '') + text.slice(s, e) + (e < text.length ? '...' : '');
+    }
+    function run() {
+      var q = input.value.trim().toLowerCase();
+      list.innerHTML = '';
+      if (q.length < 2) { status.textContent = q ? 'Keep typing' : 'Type to search vendors, solutions and articles.'; return; }
+      var terms = q.split(/\s+/).filter(Boolean), hits = [];
+      data.forEach(function (d) {
+        var t = d.t.toLowerCase(), de = d.d.toLowerCase(), x = d.x.toLowerCase(), score = 0, ok = true;
+        terms.forEach(function (w) {
+          var s = 0;
+          if (t.indexOf(w) > -1) s += 10 + (t.indexOf(w) === 0 ? 3 : 0);
+          if (de.indexOf(w) > -1) s += 4;
+          if (x.indexOf(w) > -1) s += 1;
+          if (!s) ok = false; score += s;
+        });
+        if (ok && /^(Service|Vendor|Solution|Region|Partners)$/.test(d.k)) score += 3;
+        if (ok) hits.push({ d: d, s: score });
+      });
+      hits.sort(function (a, b) { return b.s - a.s; });
+      status.textContent = hits.length ? hits.length + (hits.length === 1 ? ' result' : ' results') : 'No results for "' + input.value.trim() + '". Try a vendor, a solution or a topic.';
+      var re = new RegExp('(' + terms.map(reEsc).join('|') + ')', 'ig');
+      hits.slice(0, 12).forEach(function (h) {
+        var li = document.createElement('li');
+        li.innerHTML = '<a href="' + root + h.d.u.replace(/^\//, '') + (root !== '/' ? 'index.html' : '') + '"><span class="sr-kind">' + esc(h.d.k) + '</span><span class="sr-title">' + esc(h.d.t).replace(re, '<mark>$1</mark>') + '</span><span class="sr-snip">' + esc(snippet(h.d.d + ' ' + h.d.x, terms)).replace(re, '<mark>$1</mark>') + '</span></a>';
+        list.appendChild(li);
+      });
+    }
+    var lastFocus = null;
+    function open() {
+      lastFocus = document.activeElement;
+      box.hidden = false; btn.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden';
+      input.focus();
+      load(run);
+    }
+    function close() {
+      box.hidden = true; btn.setAttribute('aria-expanded', 'false'); document.body.style.overflow = '';
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+    btn.addEventListener('click', open);
+    closeBtn.addEventListener('click', close);
+    box.addEventListener('click', function (e) { if (e.target === box) close(); });
+    input.addEventListener('input', function () { if (data) run(); });
+    input.closest('form').addEventListener('submit', function (e) { e.preventDefault(); var a = list.querySelector('a'); if (a) a.click(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !box.hidden) { e.stopPropagation(); close(); }
+      if (e.key === 'Tab' && !box.hidden) {
+        var f = box.querySelectorAll('input, button, a[href]'); if (!f.length) return;
+        var first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    });
+  })();
 })();
