@@ -538,9 +538,10 @@ const T = {
   },
 
   legal(p) {
-    return hero(p, { actions: '', lede: ' ' }).replace('<p class="lede"> </p>', '') +
-      `<section class="sec"><div class="wrap sec-grid"><div class="sec-title"><h2>${p.URL === '/privacy/' ? 'Summary' : 'Contents'}</h2></div><div class="sec-body"><p class="notice">This is an outline. The full text is published after legal review.</p>${p.sections.flatMap((s) => s.blocks).filter((b) => b.t === 'ul').map((b) => renderBlock(b, { page: p })).join('')}</div></div></section>`;
+    return hero(p, { actions: '' }) +
+      p.sections.filter((x) => x.title).map((x) => sec(x.title, x.blocks.map((b) => renderBlock(b, { page: p })).join(''))).join('');
   },
+
 
   notFound(p) {
     return hero(p, { kicker: '404', lede: 'That page is not here. Try one of these:', actions: `<div class="actions">${btn('Vendors', '/vendors/')}${btn('Solutions', '/solutions/', 'secondary')}${btn('Partners', '/partners/', 'secondary')}${btn('Contact', '/contact/', 'secondary')}${btn('Go to home', '/', 'secondary')}</div>` });

@@ -7,7 +7,7 @@
    "Page type": "Home",
    "Title tag": "Evanssion | Cyber, AI Security & Agentic Cyber VAD, MEA",
    "Meta description": "Dubai-based value-added distributor of cybersecurity and AI security, serving partners and enterprises in the UAE, Saudi Arabia, Bahrain and across MEA.",
-   "H1": "Cyber, AI Security & Agentic Cyber Services | Specialist VAD across Middle East and Africa",
+   "H1": "Cyber, AI Security & Agentic Cyber Services, Specialist VAD across Middle East and Africa",
    "Schema": "Organization, WebSite, FAQPage",
    "Primary CTA": "Explore vendors / Become a partner"
   },
@@ -17,7 +17,7 @@
     "blocks": [
      {
       "t": "lede",
-      "text": "Evanssion is a value-added distributor of network, cloud and AI security. We find specialist vendors early, adapt them to the region, and take them to market with registered partners and directly with enterprises in the Middle East & Africa."
+      "text": "Evanssion is a value-added distributor of network, cloud and AI security. We find specialist vendors early, adapt them to the region, and take them to market with registered partners and directly with enterprises in the UAE, Saudi Arabia and Bahrain."
      },
      {
       "t": "cta",
@@ -3569,7 +3569,7 @@
    "URL": "/privacy/",
    "Page type": "Legal",
    "Title tag": "Privacy Notice | Evanssion",
-   "Meta description": "How Evanssion collects, uses and protects personal data on evanssion.com and in the partner portal.",
+   "Meta description": "How Evanssion collects, uses, shares and protects personal data on evanssion.com and the partner portal, and the choices you have.",
    "H1": "Privacy notice",
    "Schema": "WebPage",
    "Primary CTA": "None"
@@ -3579,18 +3579,145 @@
     "title": null,
     "blocks": [
      {
+      "t": "lede",
+      "text": "Last updated: 5 November 2026. This notice explains what personal data Evanssion collects through evanssion.com and our partner portal, why we use it, who we share it with and the choices you have."
+     }
+    ]
+   },
+   {
+    "title": "Who we are",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Evanssion FZCO (\"Evanssion\", \"we\", \"us\") is a company registered in Dubai Silicon Oasis, Dubai, United Arab Emirates. Our address is 201, Techno Hub 2, Dubai Silicon Oasis, Dubai, UAE. We are the controller of the personal data described in this notice."
+     },
+     {
+      "t": "p",
+      "text": "Questions about this notice or requests about your data can be sent to info@evanssion.com."
+     }
+    ]
+   },
+   {
+    "title": "What we collect",
+    "blocks": [
+     {
       "t": "ul",
       "items": [
-       "Who we are and how to contact us (data controller details). info@evanssion.com",
-       "What we collect: forms, partner applications, portal accounts, deal registration data including customer contact details, analytics.",
-       "Why we use it and the legal basis.",
-       "Who we share it with: vendors, service providers, partners where needed for a registered deal.",
-       "Where data is stored and transferred. Hosting region: Dubai, UAE",
-       "Retention periods.",
-       "Your rights and how to exercise them.",
-       "Cookies.",
-       "Changes to this notice and effective date."
+       "Enquiries and briefing requests: your name, work email, phone number, company, role, country and the message you send.",
+       "Partner and vendor applications: company details, contact details, the vendors and markets you are interested in, and anything else you include in the form.",
+       "Newsletter and event sign-ups: your work email and your consent choice.",
+       "Partner portal accounts: your name, work email, company, login details and the activity needed to run the portal.",
+       "Deal registration: details of the opportunity you register, including the end customer's company and contact details. Please register only contacts you are entitled to share.",
+       "Technical data: basic information sent by your browser when you visit the site, such as IP address, device and browser type, pages requested and the country your request comes from. We use it to keep the site secure and working."
       ]
+     }
+    ]
+   },
+   {
+    "title": "Why we use it and our legal basis",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "To reply to your enquiry, arrange a briefing or demonstration, and provide the service you asked for. Basis: taking steps at your request, and our legitimate interest in running our business.",
+       "To assess partner and vendor applications, sign agreements, run the partner programme and the portal. Basis: performance of a contract or steps before one.",
+       "To register deals, protect registered opportunities and connect the right partner, vendor and end customer. Basis: performance of a contract and our legitimate interests.",
+       "To send you articles and event invitations. Basis: your consent. You can withdraw it at any time using the unsubscribe link or by emailing us.",
+       "To protect the site against abuse and spam, including bot checks on our forms. Basis: our legitimate interest in security.",
+       "To meet legal and regulatory obligations. Basis: legal obligation."
+      ]
+     },
+     {
+      "t": "p",
+      "text": "We apply the UAE Federal Decree-Law No. 45 of 2021 on the Protection of Personal Data and other data protection laws that apply to us."
+     }
+    ]
+   },
+   {
+    "title": "Who we share it with",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "We do not sell personal data. We share it only where needed:"
+     },
+     {
+      "t": "ul",
+      "items": [
+       "Vendors we represent, when you ask about a vendor's products or register a deal that involves them.",
+       "Registered partners, where a registered deal or a customer introduction requires it.",
+       "Service providers that run our website, security and email, including Cloudflare (hosting, delivery and bot protection) and our email delivery provider. They act on our instructions.",
+       "Professional advisers, and courts, regulators or law enforcement where the law requires it."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Where data is stored and transferred",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Our website is delivered through Cloudflare's global network, and our service providers may process data in the UAE or in other countries. Where personal data leaves the UAE, we take steps to make sure it is protected in line with applicable law, for example through contractual safeguards with the provider."
+     }
+    ]
+   },
+   {
+    "title": "How long we keep it",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "We keep personal data only for as long as we need it for the purpose it was collected, including any legal, accounting or reporting requirement. Enquiry data is kept while the conversation or business relationship is active and for a reasonable period afterwards. Newsletter data is kept until you unsubscribe. Partner and deal records are kept for the length of the partner relationship and the period needed to settle any commercial or legal matter. When data is no longer needed we delete or anonymise it."
+     }
+    ]
+   },
+   {
+    "title": "Your rights",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Subject to applicable law, you can ask us to give you access to your personal data, correct it, delete it, restrict or object to how we use it, give you a copy in a portable format, and stop using it where we rely on your consent. To make a request, email info@evanssion.com. We may need to verify your identity first, and we will reply within the time the law allows. You can also complain to the data protection authority in your country if you are not satisfied with our response."
+     }
+    ]
+   },
+   {
+    "title": "Cookies and similar technologies",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Essential: we store your theme choice and your cookie choice in your browser. Our forms use Cloudflare Turnstile to tell people from automated bots. These are needed to run the site and cannot be switched off.",
+       "Analytics: we do not currently set analytics cookies. If we introduce them, they will stay off until you accept them in the cookie banner."
+      ]
+     },
+     {
+      "t": "p",
+      "text": "You can change your choice at any time with the Cookie settings link at the bottom of every page, and you can clear stored data in your browser settings."
+     }
+    ]
+   },
+   {
+    "title": "Security",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "We use technical and organisational measures to protect personal data, including encrypted connections, access controls and bot protection on our forms. No online service is completely secure, so please do not send us sensitive information that you do not need to share."
+     }
+    ]
+   },
+   {
+    "title": "Changes to this notice",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "We may update this notice from time to time. The date at the top shows when it was last changed. If we make a significant change we will say so on this page."
+     }
+    ]
+   },
+   {
+    "title": "Contact us",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Evanssion FZCO, 201, Techno Hub 2, Dubai Silicon Oasis, Dubai, UAE. Email: info@evanssion.com."
      }
     ]
    }
@@ -3603,7 +3730,7 @@
    "URL": "/terms/",
    "Page type": "Legal",
    "Title tag": "Terms of Use | Evanssion",
-   "Meta description": "Terms for using evanssion.com and the Evanssion partner portal.",
+   "Meta description": "Terms for using evanssion.com and the Evanssion partner portal: acceptable use, vendor information, intellectual property and liability.",
    "H1": "Terms of use",
    "Schema": "WebPage",
    "Primary CTA": "None"
@@ -3613,14 +3740,131 @@
     "title": null,
     "blocks": [
      {
+      "t": "lede",
+      "text": "Last updated: 5 November 2026. These terms apply when you use evanssion.com and the Evanssion partner portal. By using them you agree to these terms. If you do not agree, please do not use them."
+     }
+    ]
+   },
+   {
+    "title": "About us and these terms",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "evanssion.com is operated by Evanssion FZCO, 201, Techno Hub 2, Dubai Silicon Oasis, Dubai, UAE. If you use the partner portal under a signed partner agreement, that agreement also applies and prevails if it conflicts with these terms."
+     }
+    ]
+   },
+   {
+    "title": "Using the website",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "You may use the website for lawful business purposes. You agree not to:"
+     },
+     {
       "t": "ul",
       "items": [
-       "Acceptance and scope.",
-       "Website use and intellectual property, including vendor trademarks.",
-       "Partner portal: eligibility, accounts, confidentiality, acceptable use.",
-       "No warranties on vendor information; vendor sites govern product details.",
-       "Limitation of liability and governing law - UAE"
+       "attempt to gain unauthorised access to the site, the portal or related systems;",
+       "introduce malware, or interfere with the site's operation or security;",
+       "scrape, copy or republish the site's content at scale without our written permission;",
+       "submit false or misleading information, or details of people who have not agreed to be contacted."
       ]
+     }
+    ]
+   },
+   {
+    "title": "Information on this site",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "The site gives general information about Evanssion, the vendors we represent and the problems their products address. It is not an offer, a quotation or a commitment to supply. Product descriptions, features, availability and third-party figures come from the vendors and are labelled as vendor-stated where they are statistics or claims. Vendor websites and documentation govern product details, and you should check them before you buy. Figures on the Agentic Cyber Services page are labelled baseline, modelled or target. Baseline means measured before agents in an enterprise security estate. Modelled and target figures are projections, not guarantees, and results vary by estate."
+     }
+    ]
+   },
+   {
+    "title": "Intellectual property and trademarks",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "The content, design and layout of this site belong to Evanssion or its licensors and are protected by intellectual property law. You may view and print pages for your own business use. Vendor names, logos and product names are trademarks of their owners. They appear here only to identify the vendors we represent and do not mean that those owners endorse this site or its content."
+     }
+    ]
+   },
+   {
+    "title": "Partner portal",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Eligibility: the portal is for partners whose application we have approved. We may approve, refuse or withdraw access at our discretion.",
+       "Accounts: you are responsible for your account, keeping your login details confidential, and for what is done with them. Tell us promptly if you think your account has been misused.",
+       "Confidentiality: material in the portal, including pricing, vendor resources and deal information, is confidential and may be used only to sell and support the vendors' products through Evanssion.",
+       "Acceptable use: use the portal only for its intended purpose. Register only genuine opportunities and only contacts you are entitled to share.",
+       "Suspension: we may suspend or end access if these terms or your partner agreement are breached."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Links to other sites",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "The site links to third-party websites, including vendor sites and LinkedIn. We do not control them and are not responsible for their content or practices."
+     }
+    ]
+   },
+   {
+    "title": "No warranties",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "We work to keep the site accurate and available, but it is provided \"as is\" and \"as available\". To the fullest extent the law allows, we make no promises that it is complete, error-free or uninterrupted, and we give no warranty about vendor information."
+     }
+    ]
+   },
+   {
+    "title": "Limitation of liability",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "To the fullest extent the law allows, Evanssion is not liable for indirect or consequential loss, or for loss of profit, revenue, data or goodwill, arising from your use of the site or reliance on its content. Nothing in these terms limits liability that cannot be limited by law."
+     }
+    ]
+   },
+   {
+    "title": "Privacy",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "How we handle personal data is explained in our Privacy notice, which forms part of these terms."
+     }
+    ]
+   },
+   {
+    "title": "Changes",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "We may update these terms from time to time. The date at the top shows when they were last changed. Continuing to use the site after a change means you accept the updated terms."
+     }
+    ]
+   },
+   {
+    "title": "Governing law and disputes",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "These terms are governed by the laws of the Emirate of Dubai and the federal laws of the United Arab Emirates applicable there. The courts of Dubai have jurisdiction over any dispute, unless your partner agreement says otherwise."
+     }
+    ]
+   },
+   {
+    "title": "Contact us",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Questions about these terms: info@evanssion.com."
      }
     ]
    }
