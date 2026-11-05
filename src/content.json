@@ -7,7 +7,7 @@
    "Page type": "Home",
    "Title tag": "Evanssion | Cyber, AI Security & Agentic Cyber VAD, MEA",
    "Meta description": "Dubai-based value-added distributor of cybersecurity and AI security, serving partners and enterprises in the UAE, Saudi Arabia, Bahrain and across MEA.",
-   "H1": "Cyber Security & AI Cyber Services | Specialist VAD across Middle East and Africa",
+   "H1": "Cyber, AI Security & Agentic Cyber Services, Specialist VAD across Middle East and Africa",
    "Schema": "Organization, WebSite, FAQPage",
    "Primary CTA": "Explore vendors / Become a partner"
   },
@@ -17,7 +17,7 @@
     "blocks": [
      {
       "t": "lede",
-      "text": "Evanssion is a value-added distributor of network, cloud and AI security. We find specialist vendors early, adapt them to the region, and take them to market with registered partners and directly with enterprises in the Middle East & Africa."
+      "text": "Evanssion is a value-added distributor of network, cloud and AI security. We find specialist vendors early, adapt them to the region, and take them to market with registered partners and directly with enterprises in the UAE, Saudi Arabia and Bahrain."
      },
      {
       "t": "cta",
@@ -3606,6 +3606,7 @@
        "Enquiries and briefing requests: your name, work email, phone number, company, role, country and the message you send.",
        "Partner and vendor applications: company details, contact details, the vendors and markets you are interested in, and anything else you include in the form.",
        "Newsletter and event sign-ups: your work email and your consent choice.",
+       "Job applications: your name, email, mobile number, LinkedIn profile and the link to your CV that you send us.",
        "Partner portal accounts: your name, work email, company, login details and the activity needed to run the portal.",
        "Deal registration: details of the opportunity you register, including the end customer's company and contact details. Please register only contacts you are entitled to share.",
        "Technical data: basic information sent by your browser when you visit the site, such as IP address, device and browser type, pages requested and the country your request comes from. We use it to keep the site secure and working."
@@ -3622,6 +3623,7 @@
        "To reply to your enquiry, arrange a briefing or demonstration, and provide the service you asked for. Basis: taking steps at your request, and our legitimate interest in running our business.",
        "To assess partner and vendor applications, sign agreements, run the partner programme and the portal. Basis: performance of a contract or steps before one.",
        "To register deals, protect registered opportunities and connect the right partner, vendor and end customer. Basis: performance of a contract and our legitimate interests.",
+       "To consider your job application and contact you about it. Basis: taking steps at your request, and our legitimate interest in recruiting. We keep applications for as long as the role is open and for a reasonable period afterwards, unless you ask us to delete them.",
        "To send you articles and event invitations. Basis: your consent. You can withdraw it at any time using the unsubscribe link or by emailing us.",
        "To protect the site against abuse and spam, including bot checks on our forms. Basis: our legitimate interest in security.",
        "To meet legal and regulatory obligations. Basis: legal obligation."
@@ -4262,6 +4264,137 @@
         "q": "How do we start?",
         "a": "Request a briefing. We will walk through the agents that fit your team and agree the first workflow to scope."
        }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "n": 44,
+  "name": "Careers",
+  "spec": {
+   "URL": "/careers/",
+   "Page type": "Careers",
+   "Title tag": "Careers at Evanssion | Open Roles in UAE and KSA",
+   "Meta description": "Join Evanssion, a specialist cybersecurity and AI security distributor. Open roles: Senior Sales Manager, Regional Sales Manager and Presales Engineer.",
+   "H1": "Careers at Evanssion",
+   "Schema": "WebPage, JobPosting",
+   "Primary CTA": "Apply now"
+  },
+  "sections": [
+   {
+    "title": null,
+    "blocks": [
+     {
+      "t": "lede",
+      "text": "Help us bring specialist cybersecurity and AI security vendors to the Middle East and Africa. We are a small team with a clear job: find strong technology early, and take it to market with partners across the region."
+     },
+     {
+      "t": "cta",
+      "labels": [
+       "Apply now"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Why Evanssion",
+    "blocks": [
+     {
+      "t": "ul",
+      "items": [
+       "Work with specialist vendors that are new to the region, not only the household names.",
+       "Close contact with partners, vendors and enterprise customers across the UAE, Saudi Arabia and Bahrain.",
+       "A small team, where your work is visible and you shape how we sell and support."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Open roles",
+    "blocks": [
+     {
+      "t": "jobs",
+      "items": [
+       {
+        "title": "Senior Sales Manager",
+        "code": "EVAUAE-S-01",
+        "location": "Dubai, UAE",
+        "summary": "Lead Evanssion's sales across the UAE, taking a portfolio of specialist cybersecurity and AI security vendors to market through registered partners and directly with enterprises.",
+        "does": [
+         "Own the UAE sales plan and pipeline for the Evanssion vendor portfolio, and deliver against agreed targets.",
+         "Recruit, activate and grow resellers, systems integrators and managed security providers, and run regular business reviews with them.",
+         "Qualify opportunities with partners, support deal registration and progress deals from first briefing to close.",
+         "Work with vendors and our presales team on briefings, proofs of concept and proposals.",
+         "Forecast accurately and report on pipeline, partner performance and market feedback.",
+         "Represent Evanssion at customer meetings, events and vendor sessions across the region."
+        ],
+        "needs": [
+         "Proven record selling cybersecurity or enterprise technology through channel partners or a value-added distributor in the UAE.",
+         "Strong network among UAE resellers, integrators and enterprise security buyers.",
+         "Commercial discipline: pricing, margin, forecasting and contract basics.",
+         "Clear communication in English. Arabic is an advantage.",
+         "Comfortable working with emerging vendors and building a market from the ground up."
+        ]
+       },
+       {
+        "title": "Regional Sales Manager",
+        "code": "EVAKSA-S-02",
+        "location": "Riyadh, KSA",
+        "summary": "Build and grow Evanssion's business in Saudi Arabia, developing partners and enterprise opportunities for our portfolio of specialist cybersecurity and AI security vendors.",
+        "does": [
+         "Own the Saudi sales plan and pipeline, and deliver against agreed targets.",
+         "Identify, sign and develop channel partners and system integrators in the Kingdom.",
+         "Engage enterprise and government security teams alongside partners, and register and progress opportunities.",
+         "Understand Saudi regulatory drivers such as NCA, SAMA and PDPL, and position vendor solutions against them.",
+         "Coordinate with vendors and the presales team on briefings, demonstrations and proofs of concept.",
+         "Report on pipeline, partner performance and market trends to the leadership team."
+        ],
+        "needs": [
+         "Proven record in cybersecurity or enterprise technology sales in Saudi Arabia, ideally through partners or a distributor.",
+         "Established relationships with Saudi partners, integrators and enterprise buyers.",
+         "Working knowledge of the Saudi security market and its regulatory landscape.",
+         "Fluent English and Arabic.",
+         "Based in Riyadh, with willingness to travel within the Kingdom."
+        ]
+       },
+       {
+        "title": "Presales Engineer",
+        "code": "EVAUAE-P-01",
+        "location": "Dubai, UAE",
+        "summary": "Be the technical voice of Evanssion with partners and customers, running demonstrations, proofs of concept and enablement for our portfolio of cybersecurity and AI security vendors.",
+        "does": [
+         "Deliver product briefings and live demonstrations for partners and enterprise customers.",
+         "Plan and run proofs of concept, and help partners to design and deploy them.",
+         "Answer technical questions and security questionnaires, and support RFP responses.",
+         "Train and certify partner engineers and sales teams on vendor technology.",
+         "Work with vendor engineers and our sales team to qualify opportunities and shape solutions.",
+         "Feed field insights back to vendors to improve fit for the region."
+        ],
+        "needs": [
+         "Hands-on experience in cybersecurity: network, cloud, application or security operations.",
+         "Experience in presales, solution engineering or consulting, with confident demo and presentation skills.",
+         "Ability to learn new products quickly and explain them clearly to technical and business audiences.",
+         "Relevant certifications such as CISSP, CCSP, Security+ or vendor certifications are a plus.",
+         "Interest in AI security and agentic AI is a plus."
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "How to apply",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Press Apply now and share your name, email, mobile number, LinkedIn profile and a link to your CV. Please send a link, not a file attachment, from a service such as Google Drive, OneDrive or Dropbox, and check that the link is open for us to view. Quote the job code of the role you are applying for."
+     },
+     {
+      "t": "cta",
+      "labels": [
+       "Apply now"
       ]
      }
     ]

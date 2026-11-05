@@ -40,7 +40,7 @@ export async function onRequestPost({ request, env }) {
   const res = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ from: env.LEAD_FROM, to: [to], reply_to: email, subject: `Website ${type}: ${f['c-company'] || f['a-company'] || email}`, text: `${lines}\n\nPage: ${body.page}\nIP country: ${request.cf?.country || ''}` }),
+    body: JSON.stringify({ from: env.LEAD_FROM, to: [to], reply_to: email, subject: `Website ${type}: ${type === 'careers' ? `${f.role || 'application'} - ${f.name || email}` : (f['c-company'] || f['a-company'] || email)}`, text: `${lines}\n\nPage: ${body.page}\nIP country: ${request.cf?.country || ''}` }),
   });
   if (res.ok) return json({ ok: true });
   let detail = ''; try { detail = (await res.json()).message || ''; } catch {}

@@ -124,7 +124,7 @@ const typeOf = (p) => {
   const u = p.URL;
   if (p.glossTerm) return 'term';
   if (p.article) return 'article'; if (u === '/insights/knowledgebase/') return 'kbHub';
-  if (u === '/agentic-cyber-services/') return 'agentic';
+  if (u === '/agentic-cyber-services/') return 'agentic'; if (u === '/careers/') return 'careers';
   if (u === '/') return 'home'; if (u === '/about/') return 'about'; if (u === '/contact/') return 'contact';
   if (u === '/vendors/') return 'vendorHub'; if (u === '/vendors/become-a-vendor/') return 'becomeVendor';
   if (vendors.includes(p)) return 'vendor'; if (u === '/solutions/') return 'solutionHub'; if (solutions.includes(p)) return 'solution';
@@ -221,6 +221,7 @@ function ctaTarget(label) {
   if (/partner login/.test(l)) return PORTAL_URL;
   if (/talk to us about the region/.test(l)) return '/contact/?type=vendor';
   if (/browse all vendors|explore vendors|see our vendors|back to all vendors|vendors directory/.test(l)) return '/vendors/';
+  if (/^apply now$/.test(l)) return '#apply';
   if (/become a partner|apply|partner programme/.test(l)) return '/partners/become-a-partner/';
   if (/browse solutions|explore solutions/.test(l)) return '/solutions/';
   if (/subscribe/.test(l)) return '#subscribe';
@@ -268,9 +269,9 @@ const field = (id, label, o = {}) => `<div class="field${o.cls ? ' ' + o.cls : '
 const area = (id, label, req = false) => `<div class="field"><label for="${id}">${esc(label)}${req ? '' : ' <span class="muted">(optional)</span>'}</label><textarea id="${id}" name="${id}"${req ? ' required' : ''}></textarea></div>`;
 const select = (id, label, opts) => `<div class="field"><label for="${id}">${esc(label)}</label><select id="${id}" name="${id}" required><option value="">Select</option>${opts.map((o) => `<option>${esc(o)}</option>`).join('')}</select></div>`;
 const checks = (name, legend, opts) => `<fieldset class="field checks"><legend>${esc(legend)}</legend><div class="check-grid">${opts.map((o, i) => `<label class="check"><input type="checkbox" name="${name}" value="${esc(o)}"><span>${esc(o)}</span></label>`).join('')}</div></fieldset>`;
-const consent = (id) => `<label class="check consent-line"><input id="${id}" name="consent" type="checkbox" required><span>I agree to Evanssion contacting me about this enquiry and processing my details as described in the <a href="${href('/privacy/')}">privacy notice</a>.</span></label>`;
-const formShell = (id, type, inner, submit) =>
-  `<form class="form" id="${id}" data-lead data-type="${type}" novalidate><input type="text" name="website_url" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">${inner}${consent(id + '-consent')}${tsSlot()}<div class="form-foot"><button class="btn btn-primary" type="submit">${esc(submit)}</button><p class="form-msg" role="status" aria-live="polite"></p></div></form>`;
+const consent = (id, what = 'this enquiry') => `<label class="check consent-line"><input id="${id}" name="consent" type="checkbox" required><span>I agree to Evanssion contacting me about ${what} and processing my details as described in the <a href="${href('/privacy/')}">privacy notice</a>.</span></label>`;
+const formShell = (id, type, inner, submit, what) =>
+  `<form class="form" id="${id}" data-lead data-type="${type}" novalidate><input type="text" name="website_url" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">${inner}${consent(id + '-consent', what)}${tsSlot()}<div class="form-foot"><button class="btn btn-primary" type="submit">${esc(submit)}</button><p class="form-msg" role="status" aria-live="polite"></p></div></form>`;
 const vendorOpts = () => vendors.map((v) => v.name);
 const solutionOpts = () => solutions.map((s) => s.name);
 
@@ -295,6 +296,14 @@ ${checks('vendors', 'Vendors of interest', vendorOpts())}
 ${area('a-sectors', 'Target customer sectors and countries')}
 ${field('a-current', 'Security vendors you sell today', { req: false })}`;
   return formShell('partner-form', 'partner-application', inner, 'Submit application');
+}
+function careersForm(jobs) {
+  const inner = `<div class="field-row">${field('r-name', 'Full name', { name: 'name', ac: 'name' })}${field('r-email', 'Email address', { name: 'email', type: 'email', ac: 'email' })}</div>
+<div class="field-row">${field('r-phone', 'Mobile number', { name: 'phone', type: 'tel', ac: 'tel' })}${field('r-linkedin', 'LinkedIn profile URL', { name: 'linkedin', type: 'url' })}</div>
+${field('r-cv', 'Link to your CV (Google Drive, OneDrive, Dropbox or similar)', { name: 'cv_link', type: 'url' })}
+<p class="small muted">Please share a link, not an attachment, and make sure it is open for us to view.</p>
+<div class="field"><label for="r-role">Role</label><select id="r-role" name="role" required><option value="">Select</option>${jobs.map((j) => `<option value="${esc(j.code)}">${esc(j.title)}, ${esc(j.location)} (${esc(j.code)})</option>`).join('')}</select></div>`;
+  return formShell('careers-form', 'careers', inner, 'Send application', 'my application');
 }
 const subscribeForm = () => `<form class="form inline" id="subscribe-form" data-lead data-type="subscribe" novalidate><input type="text" name="website_url" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><div class="field"><label for="s-email">Work email</label><input id="s-email" name="email" type="email" required autocomplete="email"></div>${consent('s-consent')}${tsSlot()}<div class="form-foot"><button class="btn btn-primary" type="submit">Subscribe</button><p class="form-msg" role="status" aria-live="polite"></p></div></form>`;
 
@@ -519,6 +528,17 @@ const T = {
       endBand(p, 'See what agents could take off your team');
   },
 
+  careers(p) {
+    const jobs = findSec(p, /Open roles/).blocks.find((x) => x.t === 'jobs').items;
+    const why = findSec(p, /Why Evanssion/), how = findSec(p, /How to apply/);
+    const li = (a) => `<ul class="list">${a.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>`;
+    const card = (j) => `<article class="card job" id="${esc(j.code.toLowerCase())}"><p class="eyebrow">${esc(j.location)} · Job code ${esc(j.code)}</p><h3>${esc(j.title)}</h3><p>${esc(j.summary)}</p><h4>What you will do</h4>${li(j.does)}<h4>What we are looking for</h4>${li(j.needs)}<p class="actions"><a class="btn btn-secondary" href="#apply" data-apply="${esc(j.code)}">Apply for this role</a></p></article>`;
+    return hero(p) +
+      sec(why.title, renderBlock(why.blocks[0], { page: p })) +
+      secWide('Open roles', `<div class="grid g2 jobs">${jobs.map(card).join('')}</div>`, { alt: true, id: 'roles' }) +
+      sec(how.title, `<p class="prose">${esc(how.blocks[0].text)}</p><details class="apply-box" id="apply"><summary class="btn btn-primary">Apply now</summary><div class="apply-form">${careersForm(jobs)}</div></details>`);
+  },
+
   glossary(p) {
     const defs = terms.map((t) => `<div class="term" id="${t.slug}"><dt><a href="${href(t.URL)}">${esc(t.term)}</a></dt><dd>${esc(t.def)}</dd></div>`).join('');
     return hero(p, { actions: ctaBtns(['Explore solutions']) }) + sec('Terms', `<dl class="terms">${defs}</dl>`, { alt: true });
@@ -559,7 +579,7 @@ const NAV = [
   { label: 'Partners', to: '/partners/', links: [['Become a partner', '/partners/become-a-partner/'], ['Our partners', '/partners/our-partners/'], ['Partner portal', '/partners/portal/']], all: ['Partner programme', '/partners/'] },
   { label: 'Regions', button: true, links: regions.map((r) => [r.name, r.URL]) },
   { label: 'Blog', to: '/insights/knowledgebase/', links: [['Blog Articles', '/insights/knowledgebase/'], ['Glossary', '/insights/glossary/']] },
-  { label: 'Company', button: true, links: [['About', '/about/'], ['Events', '/events/'], ['Contact', '/contact/']] },
+  { label: 'Company', button: true, links: [['About', '/about/'], ['Careers', '/careers/'], ['Events', '/events/'], ['Contact', '/contact/']] },
 ];
 const navHtml = () => `<nav class="site-nav" id="site-nav" aria-label="Main"><ul class="nav-list">${NAV.map((n) => {
   const cur = n.to && (CUR === n.to || CUR.startsWith(n.to)) ? ' aria-current="page"' : '';
@@ -589,7 +609,7 @@ ${col('Vendors', vendors.map((v) => [v.name, v.URL]))}
 ${col('Solutions', [...solutions.map((s) => [s.name, s.URL]), ['Agentic Cyber Services', '/agentic-cyber-services/']])}
 ${col('Partners', [['Partner programme', '/partners/'], ['Become a partner', '/partners/become-a-partner/'], ['Our partners', '/partners/our-partners/'], ['Partner portal', '/partners/portal/']])}
 ${col('Regions', regions.map((r) => [r.name, r.URL]))}
-${col('Company', [['About', '/about/'], ['Blog Articles', '/insights/knowledgebase/'], ['Glossary', '/insights/glossary/'], ['Events', '/events/'], ['Contact', '/contact/'], ['Become a vendor', '/vendors/become-a-vendor/']])}
+${col('Company', [['About', '/about/'], ['Blog Articles', '/insights/knowledgebase/'], ['Glossary', '/insights/glossary/'], ['Careers', '/careers/'], ['Events', '/events/'], ['Contact', '/contact/'], ['Become a vendor', '/vendors/become-a-vendor/']])}
 </div><div class="foot-base"><p>© ${new Date().getFullYear()} Evanssion FZCO, Dubai, UAE.</p><ul><li><a href="${href('/privacy/')}">Privacy notice</a></li><li><a href="${href('/terms/')}">Terms</a></li><li><button class="linklike" type="button" id="cookie-settings">Cookie settings</button></li></ul></div></div></footer>
 <div class="search" id="search" role="dialog" aria-modal="true" aria-label="Search the site" hidden><div class="search-box"><form class="search-form" role="search" action="#"><input id="search-input" type="search" name="q" placeholder="Search vendors, solutions, articles" autocomplete="off" aria-label="Search the site" aria-controls="search-results"><button class="icon-btn" id="search-close" type="button" aria-label="Close search"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></form><p class="small muted" id="search-status" role="status" aria-live="polite"></p><ul class="search-results" id="search-results"></ul></div></div>
 <div class="consent" id="consent" role="region" aria-label="Cookie consent" hidden><p>We use essential cookies to run this site and, with your consent, analytics cookies to improve it.</p><div class="actions"><button class="btn btn-secondary btn-sm" data-choice="reject" type="button">Reject non-essential</button><button class="btn btn-primary btn-sm" data-choice="accept" type="button">Accept</button></div></div>`;
@@ -630,6 +650,10 @@ function jsonld(p, trail, type) {
       g.push({ '@type': 'Organization', '@id': ORIGIN + p.URL + '#vendor', name: p.name, logo: ORIGIN + '/assets/img/vendors/' + slugOf(p.URL) + '.png' }, { '@type': 'Service', '@id': ORIGIN + p.URL + '#service', name: `${p.name} distribution in the Middle East and Africa`, serviceType: m.what, provider: { '@id': ORIGIN + '/#org' }, brand: { '@id': ORIGIN + p.URL + '#vendor' }, areaServed: ['United Arab Emirates', 'Saudi Arabia', 'Bahrain', 'Middle East', 'Africa'] });
     }
     if (type === 'agentic') g.push({ '@type': 'Service', '@id': ORIGIN + p.URL + '#service', name: 'Agentic Cyber Services', serviceType: 'AI agents for security operations and risk management', description: p.spec['Meta description'], provider: { '@id': ORIGIN + '/#org' }, areaServed: ['United Arab Emirates', 'Saudi Arabia', 'Bahrain', 'Middle East', 'Africa'] });
+    if (type === 'careers') for (const j of findSec(p, /Open roles/).blocks.find((x) => x.t === 'jobs').items) {
+      const [city, country] = j.location.split(',').map((x) => x.trim());
+      g.push({ '@type': 'JobPosting', title: j.title, identifier: { '@type': 'PropertyValue', name: 'Job code', value: j.code }, description: `${j.summary} Responsibilities: ${j.does.join(' ')} Requirements: ${j.needs.join(' ')}`, datePosted: '2026-11-05', hiringOrganization: { '@id': ORIGIN + '/#org' }, jobLocation: { '@type': 'Place', address: { '@type': 'PostalAddress', addressLocality: city, addressCountry: country === 'KSA' ? 'SA' : 'AE' } }, directApply: false, url: ORIGIN + p.URL + '#' + j.code.toLowerCase() });
+    }
     if (type === 'region') g.push({ '@type': 'Service', name: p.spec.H1, provider: { '@id': ORIGIN + '/#org' }, areaServed: { '@type': 'Country', name: p.name === 'Africa and wider MEA' ? 'Africa' : p.name } });
     const faq = p.sections.flatMap((s) => s.blocks).find((b) => b.t === 'faq');
     if (faq) g.push({ '@type': 'FAQPage', mainEntity: faq.items.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) });
@@ -707,9 +731,10 @@ const blockText = (b) => {
   if (b.t === 'metrics') return b.items.map((m) => `${m.v} ${m.l}`);
   if (b.t === 'agents') return b.items.flatMap((a) => [a.title, a.pain, a.does]);
   if (b.t === 'chips') return b.items;
+  if (b.t === 'jobs') return b.items.flatMap((j) => [j.title, j.code, j.location, j.summary, ...j.does, ...j.needs]);
   return [];
 };
-const KIND = { vendor: 'Vendor', solution: 'Solution', region: 'Region', article: 'Blog article', term: 'Glossary', kbHub: 'Blog', glossary: 'Glossary', agentic: 'Service', partnerLanding: 'Partners', becomePartner: 'Partners', partnerDir: 'Partners', portal: 'Partners' };
+const KIND = { vendor: 'Vendor', solution: 'Solution', region: 'Region', article: 'Blog article', term: 'Glossary', kbHub: 'Blog', glossary: 'Glossary', agentic: 'Service', careers: 'Careers', partnerLanding: 'Partners', becomePartner: 'Partners', partnerDir: 'Partners', portal: 'Partners' };
 const searchIndex = indexable.map((p) => {
   const type = typeOf(p);
   let text;
@@ -724,6 +749,6 @@ fs.writeFileSync(path.join(DIST, 'assets/search-index.json'), JSON.stringify(sea
 const today = new Date().toISOString().slice(0, 10);
 fs.writeFileSync(path.join(DIST, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${indexable.map((p) => `  <url><loc>${ORIGIN}${p.URL}</loc><lastmod>${today}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 fs.writeFileSync(path.join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /thank-you/\n\n# AI crawlers are welcome\nUser-agent: GPTBot\nAllow: /\nUser-agent: ClaudeBot\nAllow: /\nUser-agent: PerplexityBot\nAllow: /\nUser-agent: Google-Extended\nAllow: /\n\nSitemap: ${ORIGIN}/sitemap.xml\n`);
-fs.writeFileSync(path.join(DIST, 'llms.txt'), `# Evanssion\n\n> Evanssion is a Dubai-based value-added distributor of cybersecurity and AI security solutions, serving partners and enterprises in the UAE, Saudi Arabia, Bahrain and across the Middle East and Africa.\n\n## Key pages\n- [Vendors](${ORIGIN}/vendors/): the ${vendors.length} vendors we distribute\n- [Solutions](${ORIGIN}/solutions/): security solutions by problem\n- [Agentic Cyber Services](${ORIGIN}/agentic-cyber-services/): AI agents for security operations and risk management\n- [Partners](${ORIGIN}/partners/): the partner programme\n- [Regions](${ORIGIN}/regions/uae/): UAE, Saudi Arabia, Bahrain, Africa and wider MEA\n- [Glossary](${ORIGIN}/insights/glossary/): definitions of security and AI security terms\n- [Contact](${ORIGIN}/contact/)\n\n## Blog\n- [Blog Articles](${ORIGIN}/insights/knowledgebase/): articles on AI security, application security and events\n${kb.map((a) => `- [${a.title}](${ORIGIN}${a.URL}): ${a.summary}`).join('\n')}\n\n## Vendors\n${vendors.map((v) => `- [${v.name}](${ORIGIN}${v.URL}): ${(vendorMeta[v.name.toLowerCase()] || {}).what || ''}`).join('\n')}\n\n## Solutions\n${solutions.map((s) => `- [${s.name}](${ORIGIN}${s.URL})`).join('\n')}\n`);
+fs.writeFileSync(path.join(DIST, 'llms.txt'), `# Evanssion\n\n> Evanssion is a Dubai-based value-added distributor of cybersecurity and AI security solutions, serving partners and enterprises in the UAE, Saudi Arabia, Bahrain and across the Middle East and Africa.\n\n## Key pages\n- [Vendors](${ORIGIN}/vendors/): the ${vendors.length} vendors we distribute\n- [Solutions](${ORIGIN}/solutions/): security solutions by problem\n- [Careers](${ORIGIN}/careers/): open roles at Evanssion\n- [Agentic Cyber Services](${ORIGIN}/agentic-cyber-services/): AI agents for security operations and risk management\n- [Partners](${ORIGIN}/partners/): the partner programme\n- [Regions](${ORIGIN}/regions/uae/): UAE, Saudi Arabia, Bahrain, Africa and wider MEA\n- [Glossary](${ORIGIN}/insights/glossary/): definitions of security and AI security terms\n- [Contact](${ORIGIN}/contact/)\n\n## Blog\n- [Blog Articles](${ORIGIN}/insights/knowledgebase/): articles on AI security, application security and events\n${kb.map((a) => `- [${a.title}](${ORIGIN}${a.URL}): ${a.summary}`).join('\n')}\n\n## Vendors\n${vendors.map((v) => `- [${v.name}](${ORIGIN}${v.URL}): ${(vendorMeta[v.name.toLowerCase()] || {}).what || ''}`).join('\n')}\n\n## Solutions\n${solutions.map((s) => `- [${s.name}](${ORIGIN}${s.URL})`).join('\n')}\n`);
 console.log(`${pages.length} pages + sitemap, robots, llms.txt -> ${DIST} (${PROD ? 'prod' : 'preview'} links)`);
 if (warn.length) console.log('WARN', warn);

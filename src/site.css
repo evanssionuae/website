@@ -348,3 +348,14 @@ picture { display: block; width: 100%; min-width: 0; }
 .nav-link { padding: 0 10px; }
 .site-header .wrap { max-width: 1320px; }
 @media (min-width: 1181px) and (max-width: 1399px) { .bar-end .hide-md { display: none; } }
+
+/* careers */
+.job { gap: 12px; }
+.job h4 { margin: 8px 0 0; font-size: 1rem; }
+.job .actions { margin-top: auto; padding-top: 8px; }
+.jobs { align-items: stretch; }
+.apply-box { margin-top: 24px; max-width: 760px; }
+.apply-box > summary { list-style: none; cursor: pointer; display: inline-flex; }
+.apply-box > summary::-webkit-details-marker { display: none; }
+.apply-box[open] > summary { margin-bottom: 20px; }
+.apply-form { padding: 24px; background: var(--alt); border-radius: var(--r-card); }

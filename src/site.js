@@ -121,8 +121,8 @@
         .then(function () { location.href = document.body.dataset.thanks || '/thank-you/'; })
         .catch(function () {
           var lines = Object.keys(body.fields).map(function (k) { return k + ': ' + [].concat(body.fields[k]).join(', '); }).join('\n');
-          var link = 'mailto:sales@evanssion.com?subject=' + encodeURIComponent('Website enquiry: ' + body.type) + '&body=' + encodeURIComponent(lines);
-          msg.className = 'form-msg err'; msg.innerHTML = 'We could not send this form from here. <a href="' + link + '">Email it to sales@evanssion.com</a> instead.';
+          var to = f.dataset.type === 'careers' ? 'info@evanssion.com' : 'sales@evanssion.com'; var link = 'mailto:' + to + '?subject=' + encodeURIComponent('Website enquiry: ' + body.type) + '&body=' + encodeURIComponent(lines);
+          msg.className = 'form-msg err'; msg.innerHTML = 'We could not send this form from here. <a href="' + link + '">Email it to ' + to + '</a> instead.';
           btn.disabled = false;
           if (window.turnstile && f.__tsId !== undefined) { try { window.turnstile.reset(f.__tsId); } catch (x) {} }
         });
@@ -204,5 +204,21 @@
         else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
       }
     });
+  })();
+
+  /* careers: open the application form from any "Apply" button, and preselect the role */
+  (function () {
+    var box = document.getElementById('apply'); if (!box || box.tagName !== 'DETAILS') return;
+    var sel = document.getElementById('r-role');
+    function openForm(code) {
+      box.open = true;
+      if (sel && code) sel.value = code;
+      var first = box.querySelector('input'); box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (first) setTimeout(function () { first.focus({ preventScroll: true }); }, 350);
+    }
+    document.querySelectorAll('a[href="#apply"]').forEach(function (a) {
+      a.addEventListener('click', function (e) { e.preventDefault(); openForm(a.getAttribute('data-apply')); });
+    });
+    if (location.hash === '#apply') openForm();
   })();
 })();
