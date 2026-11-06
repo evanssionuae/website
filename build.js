@@ -217,7 +217,7 @@ const btn = (label, to, kind = 'primary') => `<a class="btn btn-${kind}" href="$
 function ctaTarget(label) {
   const l = label.toLowerCase();
   if (/sales@/.test(l)) return 'mailto:sales@evanssion.com';
-  if (/\+971/.test(l)) return 'tel:+971586061121';
+  if (/\+971/.test(l)) return 'tel:+97143206001';
   if (/partner login/.test(l)) return PORTAL_URL;
   if (/talk to us about the region/.test(l)) return '/contact/?type=vendor';
   if (/browse all vendors|explore vendors|see our vendors|back to all vendors|vendors directory/.test(l)) return '/vendors/';
@@ -427,7 +427,7 @@ const T = {
   },
 
   contact(p) {
-    const direct = [['Email', '<a href="mailto:sales@evanssion.com">sales@evanssion.com</a>'], ['Phone', '<a href="tel:+971586061121">+971 4 320 6001</a>'], ['Website', '<a href="https://www.evanssion.com">www.evanssion.com</a>'],
+    const direct = [['Email', '<a href="mailto:sales@evanssion.com">sales@evanssion.com</a>'], ['Phone', '<a href="tel:+97143206001">+971 4 320 6001</a>'], ['Website', '<a href="https://www.evanssion.com">www.evanssion.com</a>'],
       ['Office', `${esc(ADDRESS)} (<a href="${MAPS}" target="_blank" rel="noopener">map</a>)`], ['Working hours', 'Monday to Friday, 9.00 am to 6.00 pm']];
     return hero(p, { actions: '' }) +
       `<section class="sec" id="enquiry"><div class="wrap sec-grid"><div class="sec-title"><h2>Choose your enquiry</h2></div><div class="sec-body">${contactForm()}</div></div></section>` +
@@ -620,7 +620,7 @@ ${navHtml()}
 
 const col = (title, items) => `<div><h2>${title}</h2><ul>${items.map(([l, u]) => `<li><a href="${href(u)}">${esc(l)}</a></li>`).join('')}</ul></div>`;
 const footer = () => `<footer class="site-footer"><div class="wrap"><div class="foot-grid">
-<div class="foot-brand">${LOGO()}<p>Your trusted cybersecurity and AI distribution partner across Middle East &amp; Africa.</p><p><a href="mailto:sales@evanssion.com">sales@evanssion.com</a><br><a href="tel:+971586061121">+971 4 320 6001</a><br>${esc(ADDRESS)}</p><p><a class="in-link" href="${LINKEDIN}" target="_blank" rel="noopener" aria-label="Evanssion on LinkedIn">${LI_SVG}</a></p></div>
+<div class="foot-brand">${LOGO()}<p>Your trusted cybersecurity and AI distribution partner across Middle East &amp; Africa.</p><p><a href="mailto:sales@evanssion.com">sales@evanssion.com</a><br><a href="tel:+97143206001">+971 4 320 6001</a><br>${esc(ADDRESS)}</p><p><a class="in-link" href="${LINKEDIN}" target="_blank" rel="noopener" aria-label="Evanssion on LinkedIn">${LI_SVG}</a></p></div>
 ${col('Vendors', vendors.map((v) => [v.name, v.URL]))}
 ${col('Solutions', [...solutions.map((s) => [s.name, s.URL]), ['Agentic Cyber Services', '/agentic-cyber-services/']])}
 ${col('Partners', [['Partner programme', '/partners/'], ['Become a partner', '/partners/become-a-partner/'], ['Our partners', '/partners/our-partners/'], ['Partner portal', '/partners/portal/']])}
@@ -646,10 +646,10 @@ function crumbs(p) {
 const crumbHtml = (trail) => trail.length < 2 ? '' : `<nav class="crumbs" aria-label="Breadcrumb"><div class="wrap"><ol>${trail.map((c, i) => i === trail.length - 1 ? `<li aria-current="page">${esc(c.name)}</li>` : `<li><a href="${href(c.url)}">${esc(c.name)}</a></li>`).join('')}</ol></div></nav>`;
 
 function jsonld(p, trail, type) {
-  const org = { '@type': 'Organization', '@id': ORIGIN + '/#org', name: 'Evanssion FZCO', alternateName: 'Evanssion', url: ORIGIN + '/', logo: ORIGIN + '/assets/mark.png', email: 'sales@evanssion.com', telephone: '+971586061121',
+  const org = { '@type': 'Organization', '@id': ORIGIN + '/#org', name: 'Evanssion FZCO', alternateName: 'Evanssion', url: ORIGIN + '/', logo: ORIGIN + '/assets/mark.png', email: 'sales@evanssion.com', telephone: '+97143206001',
     address: { '@type': 'PostalAddress', streetAddress: '201, Techno Hub 2, Dubai Silicon Oasis', addressLocality: 'Dubai', addressCountry: 'AE' }, sameAs: [LINKEDIN],
     areaServed: ['United Arab Emirates', 'Saudi Arabia', 'Bahrain', 'Middle East', 'Africa'], openingHours: 'Mo-Fr 09:00-18:00',
-    contactPoint: [{ '@type': 'ContactPoint', contactType: 'sales', email: 'sales@evanssion.com', telephone: '+971586061121', areaServed: ['AE', 'SA', 'BH'], availableLanguage: ['English'] }] };
+    contactPoint: [{ '@type': 'ContactPoint', contactType: 'sales', email: 'sales@evanssion.com', telephone: '+97143206001', areaServed: ['AE', 'SA', 'BH'], availableLanguage: ['English'] }] };
   const g = [org, { '@type': 'WebSite', '@id': ORIGIN + '/#site', url: ORIGIN + '/', name: 'Evanssion', publisher: { '@id': ORIGIN + '/#org' }, inLanguage: 'en' }];
   if (!p.noindex) {
     const pageType = { about: 'AboutPage', contact: 'ContactPage', vendorHub: 'CollectionPage', solutionHub: 'CollectionPage', glossary: 'CollectionPage', kbHub: 'CollectionPage', article: 'Article', events: 'CollectionPage', partnerDir: 'CollectionPage' }[type] || 'WebPage';
