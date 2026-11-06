@@ -359,3 +359,16 @@ picture { display: block; width: 100%; min-width: 0; }
 .apply-box > summary::-webkit-details-marker { display: none; }
 .apply-box[open] > summary { margin-bottom: 20px; }
 .apply-form { padding: 24px; background: var(--alt); border-radius: var(--r-card); }
+
+/* WhatsApp strip (home only) */
+.wa-strip { background: var(--bg-elev); border-bottom: 1px solid var(--hair); }
+.wa-strip .wrap { display: flex; align-items: center; justify-content: space-between; gap: 8px 20px; flex-wrap: wrap; padding-block: 10px; }
+.wa-strip p { margin: 0; font-size: .9375rem; color: var(--muted, var(--fg)); min-width: 0; }
+.wa-btn { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 16px; border-radius: var(--r-pill); background: var(--accent); color: var(--accent-fg); font-weight: 600; font-size: .9375rem; text-decoration: none; white-space: nowrap; }
+.wa-btn:hover { filter: brightness(1.08); }
+
+/* Live chat launcher (Crisp loads only after a click) */
+.chat-launch { position: fixed; z-index: 65; right: max(16px, env(safe-area-inset-right, 0px)); bottom: max(16px, env(safe-area-inset-bottom, 0px)); display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 20px; border: 0; border-radius: var(--r-pill); background: var(--accent); color: var(--accent-fg); font: inherit; font-weight: 600; font-size: .9375rem; cursor: pointer; box-shadow: var(--shadow); }
+.chat-launch:hover { filter: brightness(1.08); }
+.chat-launch[hidden] { display: none; }
+@media (max-width: 600px) { .chat-launch span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } .chat-launch { padding: 0; width: 52px; height: 52px; justify-content: center; } }

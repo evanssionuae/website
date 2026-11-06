@@ -217,7 +217,7 @@ const btn = (label, to, kind = 'primary') => `<a class="btn btn-${kind}" href="$
 function ctaTarget(label) {
   const l = label.toLowerCase();
   if (/sales@/.test(l)) return 'mailto:sales@evanssion.com';
-  if (/\+971/.test(l)) return 'tel:+971 4 320 6001';
+  if (/\+971/.test(l)) return 'tel:+971586061121';
   if (/partner login/.test(l)) return PORTAL_URL;
   if (/talk to us about the region/.test(l)) return '/contact/?type=vendor';
   if (/browse all vendors|explore vendors|see our vendors|back to all vendors|vendors directory/.test(l)) return '/vendors/';
@@ -365,6 +365,22 @@ function mdHtml(src) {
 }
 const kbCard = (a) => `<a class="card kb-card" data-group="${esc(a.tag || '')}" href="${href(a.URL)}"><img class="kb-thumb" src="${asset('img/kb/' + a.slug + '-sm.jpg')}" alt="" width="640" height="360" loading="lazy" decoding="async"><div class="kb-text"><p class="kb-meta">${a.tag ? `<span class="chip-tag">${esc(a.tag)}</span>` : ''}<time datetime="${a.date}">${fmtDate(a.date)}</time></p><h3>${esc(a.title)}</h3><p class="small muted">${esc(a.summary)}</p><span class="go">Read article →</span></div></a>`;
 
+const WA_SVG = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 1.8a8.2 8.2 0 1 1-4.2 15.3l-.3-.2-2.9.8.8-2.8-.2-.3A8.2 8.2 0 0 1 12 3.8zm-3 4.1c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.200s1 2.600 1.100 2.800c.1.200 1.900 3 4.700 4.100 2.300.9 2.800.7 3.300.7.5-.1 1.600-.7 1.800-1.300.2-.6.2-1.200.2-1.300-.1-.1-.3-.2-.6-.3l-1.800-.9c-.3-.1-.5-.1-.7.1l-.8 1c-.2.2-.3.2-.6.1-.3-.1-1.200-.4-2.200-1.400-.8-.8-1.400-1.700-1.500-2-.2-.3 0-.4.100-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.8-2c-.2-.5-.4-.5-.6-.5z"/></svg>';
+const waStrip = (p) => {
+  const num = String((p.spec || {})['WhatsApp number'] || '').replace(/\D/g, '');
+  if (num.length < 8) return '';
+  const url = 'https://wa.me/' + num + '?text=' + encodeURIComponent('Hello Evanssion, I would like to speak with your team.');
+  return `<aside class="wa-strip" aria-label="WhatsApp"><div class="wrap"><p>Prefer WhatsApp? Message our team, Monday to Friday, 9.00 am to 6.00 pm (Dubai).</p><a class="wa-btn" href="${url}" target="_blank" rel="noopener noreferrer">${WA_SVG}<span>Chat on WhatsApp</span></a></div></aside>`;
+};
+
+const CHAT_SVG = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H9l-5 4v-4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg>';
+function chatLauncher() {
+  const home = pages.find((x) => x.n === 1) || { spec: {} };
+  const id = String(process.env.CRISP_WEBSITE_ID || (home.spec || {})['Crisp website ID'] || '').trim();
+  if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)) return '';
+  return `<button class="chat-launch" id="chat-launch" type="button" data-crisp="${id}" data-fallback="${href('/contact/')}" aria-label="Chat with our team">${CHAT_SVG}<span>Chat with us</span></button>`;
+}
+
 const T = {
   home(p) {
     const s = (re) => findSec(p, re);
@@ -378,7 +394,7 @@ const T = {
     const why = s(/Why work with/);
     const where = s(/Where we work/);
     const what = s(/What does Evanssion do/);
-    return hero(p, { side: media('Hero visual', 'home-hero') }) +
+    return waStrip(p) + hero(p, { side: media('Hero visual', 'home-hero') }) +
       sec('What does Evanssion do?', what.blocks.map((b) => renderBlock(b, { page: p })).join('')) +
       secWide('Three ways to work with us', `<div class="grid g3">${three.map((c, i) => `<a class="card" href="${href(threeHref[i])}"><h3>${esc(c.title)}</h3><p>${esc(c.text.join(' '))}</p><span class="go">${threeGo[i]} →</span></a>`).join('')}</div>`, { alt: true }) +
       secWide(s(/Our portfolio/).title, Object.entries(groups).map(([g, vs]) => `<h3 class="group">${esc(g)}</h3><div class="grid g4">${vs.map(vendorTile).join('')}</div>`).join('')) +
@@ -388,7 +404,7 @@ const T = {
       sec(where.title, where.blocks.map((b) => renderBlock(b, { page: p })).join('') + `<p class="actions"><a class="btn btn-secondary" href="${href('/regions/uae/')}">UAE</a><a class="btn btn-secondary" href="${href('/regions/saudi-arabia/')}">Saudi Arabia</a><a class="btn btn-secondary" href="${href('/regions/bahrain/')}">Bahrain</a><a class="btn btn-secondary" href="${href('/regions/africa/')}">Africa and wider MEA</a></p>`) +
       secWide(s(/Latest/).title, kb.length ? `<div class="grid g3 kb-grid">${kb.slice(0, 3).map(kbCard).join('')}</div><p class="actions">${btn('See all articles', '/insights/knowledgebase/', 'secondary')}</p>` : `<a class="card wide" href="${href('/insights/knowledgebase/')}"><h3>Guides and regional analysis</h3><p class="muted">Practical guides on AI security, application security, threat intelligence and compliance in the Gulf.</p><span class="go">Read the blog →</span></a>`, { alt: true }) +
       sec('Frequently asked questions', renderBlock(faqOf(p), { page: p })) +
-      band(['Talk to us', 'sales@evanssion.com', '+971 4 320 6001'], 'Talk to us');
+      band(['Talk to us', 'sales@evanssion.com', '+971 58 606 1121'], 'Talk to us');
   },
 
   about(p) {
@@ -411,7 +427,7 @@ const T = {
   },
 
   contact(p) {
-    const direct = [['Email', '<a href="mailto:sales@evanssion.com">sales@evanssion.com</a>'], ['Phone', '<a href="tel:+97143206001">+971 4 320 6001</a>'], ['Website', '<a href="https://www.evanssion.com">www.evanssion.com</a>'],
+    const direct = [['Email', '<a href="mailto:sales@evanssion.com">sales@evanssion.com</a>'], ['Phone', '<a href="tel:+971586061121">+971 58 606 1121</a>'], ['Website', '<a href="https://www.evanssion.com">www.evanssion.com</a>'],
       ['Office', `${esc(ADDRESS)} (<a href="${MAPS}" target="_blank" rel="noopener">map</a>)`], ['Working hours', 'Monday to Friday, 9.00 am to 6.00 pm']];
     return hero(p, { actions: '' }) +
       `<section class="sec" id="enquiry"><div class="wrap sec-grid"><div class="sec-title"><h2>Choose your enquiry</h2></div><div class="sec-body">${contactForm()}</div></div></section>` +
@@ -604,7 +620,7 @@ ${navHtml()}
 
 const col = (title, items) => `<div><h2>${title}</h2><ul>${items.map(([l, u]) => `<li><a href="${href(u)}">${esc(l)}</a></li>`).join('')}</ul></div>`;
 const footer = () => `<footer class="site-footer"><div class="wrap"><div class="foot-grid">
-<div class="foot-brand">${LOGO()}<p>Your trusted cybersecurity and AI distribution partner across Middle East &amp; Africa.</p><p><a href="mailto:sales@evanssion.com">sales@evanssion.com</a><br><a href="tel:+97143206001">+971 4 320 6001</a><br>${esc(ADDRESS)}</p><p><a class="in-link" href="${LINKEDIN}" target="_blank" rel="noopener" aria-label="Evanssion on LinkedIn">${LI_SVG}</a></p></div>
+<div class="foot-brand">${LOGO()}<p>Your trusted cybersecurity and AI distribution partner across Middle East &amp; Africa.</p><p><a href="mailto:sales@evanssion.com">sales@evanssion.com</a><br><a href="tel:+971586061121">+971 58 606 1121</a><br>${esc(ADDRESS)}</p><p><a class="in-link" href="${LINKEDIN}" target="_blank" rel="noopener" aria-label="Evanssion on LinkedIn">${LI_SVG}</a></p></div>
 ${col('Vendors', vendors.map((v) => [v.name, v.URL]))}
 ${col('Solutions', [...solutions.map((s) => [s.name, s.URL]), ['Agentic Cyber Services', '/agentic-cyber-services/']])}
 ${col('Partners', [['Partner programme', '/partners/'], ['Become a partner', '/partners/become-a-partner/'], ['Our partners', '/partners/our-partners/'], ['Partner portal', '/partners/portal/']])}
@@ -612,6 +628,7 @@ ${col('Regions', regions.map((r) => [r.name, r.URL]))}
 ${col('Company', [['About', '/about/'], ['Blog Articles', '/insights/knowledgebase/'], ['Glossary', '/insights/glossary/'], ['Careers', '/careers/'], ['Events', '/events/'], ['Contact', '/contact/'], ['Become a vendor', '/vendors/become-a-vendor/']])}
 </div><div class="foot-base"><p>© ${new Date().getFullYear()} Evanssion FZCO, Dubai, UAE.</p><ul><li><a href="${href('/privacy/')}">Privacy notice</a></li><li><a href="${href('/terms/')}">Terms</a></li><li><button class="linklike" type="button" id="cookie-settings">Cookie settings</button></li></ul></div></div></footer>
 <div class="search" id="search" role="dialog" aria-modal="true" aria-label="Search the site" hidden><div class="search-box"><form class="search-form" role="search" action="#"><input id="search-input" type="search" name="q" placeholder="Search vendors, solutions, articles" autocomplete="off" aria-label="Search the site" aria-controls="search-results"><button class="icon-btn" id="search-close" type="button" aria-label="Close search"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></form><p class="small muted" id="search-status" role="status" aria-live="polite"></p><ul class="search-results" id="search-results"></ul></div></div>
+${chatLauncher()}
 <div class="consent" id="consent" role="region" aria-label="Cookie consent" hidden><p>We use essential cookies to run this site and, with your consent, analytics cookies to improve it.</p><div class="actions"><button class="btn btn-secondary btn-sm" data-choice="reject" type="button">Reject non-essential</button><button class="btn btn-primary btn-sm" data-choice="accept" type="button">Accept</button></div></div>`;
 
 function crumbs(p) {

@@ -45,6 +45,34 @@
     if (!e.target.closest('.nav-item')) document.querySelectorAll('.nav-link[aria-expanded="true"]').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
   });
 
+  /* Live chat: Crisp is loaded only after the visitor asks for it (or has done so before). */
+  var cl = document.getElementById('chat-launch');
+  if (cl) {
+    var chatLoaded = false;
+    var loadChat = function (open) {
+      if (chatLoaded) return;
+      chatLoaded = true;
+      window.$crisp = window.$crisp || [];
+      window.CRISP_WEBSITE_ID = cl.getAttribute('data-crisp');
+      var s = document.createElement('script');
+      s.src = 'https://client.crisp.chat/l.js';
+      s.async = true;
+      s.onload = function () {
+        window.$crisp.push(['set', 'session:data', [[['page', location.pathname]]]]);
+        window.$crisp.push(['do', 'chat:show']);
+        if (open) window.$crisp.push(['do', 'chat:open']);
+        cl.hidden = true;
+      };
+      s.onerror = function () { chatLoaded = false; window.location.href = cl.getAttribute('data-fallback') || '/contact/'; };
+      document.head.appendChild(s);
+    };
+    cl.addEventListener('click', function () {
+      try { localStorage.setItem('evanssion-chat', '1'); } catch (e) {}
+      loadChat(true);
+    });
+    try { if (localStorage.getItem('evanssion-chat')) loadChat(false); } catch (e) {}
+  }
+
   var consent = document.getElementById('consent');
   if (consent) {
     var seen = false;
