@@ -404,7 +404,7 @@ const T = {
       sec(where.title, where.blocks.map((b) => renderBlock(b, { page: p })).join('') + `<p class="actions"><a class="btn btn-secondary" href="${href('/regions/uae/')}">UAE</a><a class="btn btn-secondary" href="${href('/regions/saudi-arabia/')}">Saudi Arabia</a><a class="btn btn-secondary" href="${href('/regions/bahrain/')}">Bahrain</a><a class="btn btn-secondary" href="${href('/regions/africa/')}">Africa and wider MEA</a></p>`) +
       secWide(s(/Latest/).title, kb.length ? `<div class="grid g3 kb-grid">${kb.slice(0, 3).map(kbCard).join('')}</div><p class="actions">${btn('See all articles', '/insights/knowledgebase/', 'secondary')}</p>` : `<a class="card wide" href="${href('/insights/knowledgebase/')}"><h3>Guides and regional analysis</h3><p class="muted">Practical guides on AI security, application security, threat intelligence and compliance in the Gulf.</p><span class="go">Read the blog →</span></a>`, { alt: true }) +
       sec('Frequently asked questions', renderBlock(faqOf(p), { page: p })) +
-      band(['Talk to us', 'sales@evanssion.com', '+971 58 606 1121'], 'Talk to us');
+      band(['Talk to us', 'sales@evanssion.com', '+971 4 320 6001'], 'Talk to us');
   },
 
   about(p) {
@@ -427,7 +427,7 @@ const T = {
   },
 
   contact(p) {
-    const direct = [['Email', '<a href="mailto:sales@evanssion.com">sales@evanssion.com</a>'], ['Phone', '<a href="tel:+971586061121">+971 58 606 1121</a>'], ['Website', '<a href="https://www.evanssion.com">www.evanssion.com</a>'],
+    const direct = [['Email', '<a href="mailto:sales@evanssion.com">sales@evanssion.com</a>'], ['Phone', '<a href="tel:+971586061121">+971 4 320 6001</a>'], ['Website', '<a href="https://www.evanssion.com">www.evanssion.com</a>'],
       ['Office', `${esc(ADDRESS)} (<a href="${MAPS}" target="_blank" rel="noopener">map</a>)`], ['Working hours', 'Monday to Friday, 9.00 am to 6.00 pm']];
     return hero(p, { actions: '' }) +
       `<section class="sec" id="enquiry"><div class="wrap sec-grid"><div class="sec-title"><h2>Choose your enquiry</h2></div><div class="sec-body">${contactForm()}</div></div></section>` +
@@ -620,7 +620,7 @@ ${navHtml()}
 
 const col = (title, items) => `<div><h2>${title}</h2><ul>${items.map(([l, u]) => `<li><a href="${href(u)}">${esc(l)}</a></li>`).join('')}</ul></div>`;
 const footer = () => `<footer class="site-footer"><div class="wrap"><div class="foot-grid">
-<div class="foot-brand">${LOGO()}<p>Your trusted cybersecurity and AI distribution partner across Middle East &amp; Africa.</p><p><a href="mailto:sales@evanssion.com">sales@evanssion.com</a><br><a href="tel:+971586061121">+971 58 606 1121</a><br>${esc(ADDRESS)}</p><p><a class="in-link" href="${LINKEDIN}" target="_blank" rel="noopener" aria-label="Evanssion on LinkedIn">${LI_SVG}</a></p></div>
+<div class="foot-brand">${LOGO()}<p>Your trusted cybersecurity and AI distribution partner across Middle East &amp; Africa.</p><p><a href="mailto:sales@evanssion.com">sales@evanssion.com</a><br><a href="tel:+971586061121">+971 4 320 6001</a><br>${esc(ADDRESS)}</p><p><a class="in-link" href="${LINKEDIN}" target="_blank" rel="noopener" aria-label="Evanssion on LinkedIn">${LI_SVG}</a></p></div>
 ${col('Vendors', vendors.map((v) => [v.name, v.URL]))}
 ${col('Solutions', [...solutions.map((s) => [s.name, s.URL]), ['Agentic Cyber Services', '/agentic-cyber-services/']])}
 ${col('Partners', [['Partner programme', '/partners/'], ['Become a partner', '/partners/become-a-partner/'], ['Our partners', '/partners/our-partners/'], ['Partner portal', '/partners/portal/']])}
