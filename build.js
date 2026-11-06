@@ -127,9 +127,25 @@ pages.push({ n: 36.4, name: 'White Paper', URL: '/insights/white-paper/', sectio
   H1: 'Cost-Intelligent AI Adoption', Schema: 'WebPage, BreadcrumbList', 'Primary CTA': 'Request the white paper' } });
 byUrl['/insights/white-paper/'] = pages[pages.length - 1];
 
+/* Gallery: photos and captions come from src/gallery/gallery.json, managed with tools/gallery-admin.js. 18 photos a page (3 columns, 6 rows). */
+const GAL_PER_PAGE = 18;
+const galleryItems = (() => { try { return JSON.parse(fs.readFileSync(path.join(SRC, 'gallery/gallery.json'), 'utf8')); } catch (e) { return []; } })()
+  .map((g, i) => ({ ...g, _i: i }))
+  .sort((a, b2) => ((b2.date || '') > (a.date || '') ? 1 : (b2.date || '') < (a.date || '') ? -1 : b2._i - a._i));
+const galleryPageCount = Math.max(1, Math.ceil(galleryItems.length / GAL_PER_PAGE));
+for (let n = 1; n <= galleryPageCount; n++) {
+  const URL = n === 1 ? '/gallery/' : `/gallery/page/${n}/`;
+  pages.push({ n: 40 + n / 100, name: n === 1 ? 'Gallery' : `Gallery, page ${n}`, URL, galleryPage: n, sections: [], spec: {
+    URL, 'Page type': 'Gallery', 'Title tag': n === 1 ? 'Gallery: Partner and Vendor Events | Evanssion' : `Gallery, Page ${n} | Evanssion`,
+    'Meta description': 'Photos from Evanssion meetings, briefings and events with partners and vendors across the Middle East.',
+    H1: 'Gallery', Schema: 'CollectionPage, BreadcrumbList', 'Primary CTA': 'None' } });
+  byUrl[URL] = pages[pages.length - 1];
+}
+
 const typeOf = (p) => {
   const u = p.URL;
   if (p.glossTerm) return 'term';
+  if (p.galleryPage) return 'gallery';
   if (p.article) return 'article'; if (u === '/insights/knowledgebase/') return 'kbHub'; if (u === '/insights/white-paper/') return 'whitepaper';
   if (u === '/agentic-cyber-services/') return 'agentic'; if (u === '/careers/') return 'careers';
   if (u === '/') return 'home'; if (u === '/about/') return 'about'; if (u === '/contact/') return 'contact';
@@ -522,6 +538,18 @@ const T = {
       band(['Request a briefing'], 'Talk to us about your security priorities');
   },
 
+  gallery(p) {
+    const n = p.galleryPage, items = galleryItems.slice((n - 1) * GAL_PER_PAGE, n * GAL_PER_PAGE);
+    const capHtml = (t) => esc(t).replace(/\[([^\]]+)\]\((https:\/\/[^\s)]+)\)/g, (m, label, url) => `<a href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`);
+    const card = (g) => `<figure class="gal-item"><a class="gal-photo" href="${asset('img/gallery/' + g.id + '.jpg')}" target="_blank" rel="noopener"><img src="${asset('img/gallery/' + g.id + '-sm.jpg')}" alt="${esc(g.alt || String(g.caption || '').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1'))}" width="${g.sw || 800}" height="${g.sh || 600}" loading="lazy" decoding="async"></a><figcaption>${g.date ? `<time datetime="${esc(g.date)}">${fmtDate(g.date)}</time>` : ''}<p>${capHtml(g.caption || '')}</p></figcaption></figure>`;
+    const pageHref = (k) => href(k === 1 ? '/gallery/' : `/gallery/page/${k}/`);
+    const pager = galleryPageCount > 1 ? `<nav class="pager" aria-label="Gallery pages">${n > 1 ? `<a class="btn secondary" href="${pageHref(n - 1)}" rel="prev">Previous</a>` : ''}<ol>${Array.from({ length: galleryPageCount }, (_, i) => i + 1).map((k) => `<li>${k === n ? `<span aria-current="page">${k}</span>` : `<a href="${pageHref(k)}">${k}</a>`}</li>`).join('')}</ol>${n < galleryPageCount ? `<a class="btn secondary" href="${pageHref(n + 1)}" rel="next">Next</a>` : ''}</nav>` : '';
+    const grid = items.length ? `<div class="gal-grid">${items.map(card).join('')}</div>${pager}` : '<p class="prose">Photos from our meetings and events will appear here soon.</p>';
+    return hero(p, { kicker: 'Gallery', lede: 'Moments from our meetings, briefings and events with partners and vendors across the Middle East.', actions: '' }) +
+      secWide(n === 1 ? 'Events and meetings' : `Events and meetings, page ${n}`, grid, { alt: true }) +
+      band(['Become a partner', 'Talk to us'], 'Join us at the next event');
+  },
+
   whitepaper(p) {
     const cover = `<div class="wp-cover"><img src="${asset('img/whitepaper/cover.jpg')}" alt="Cover of the white paper Cost-Intelligent AI Adoption" width="720" height="930" fetchpriority="high" decoding="async"></div>`;
     return hero(p, { kicker: 'White paper', lede: 'AI spend grows with usage, not with licences. This paper shows how to place each workload on the right tier of AI, and how to see and control the cost across all of them.', actions: `<div class="actions">${btn('Request the white paper', '#request')}</div>`, side: cover }) +
@@ -613,7 +641,7 @@ const NAV = [
   { label: 'Partners', to: '/partners/', links: [['Become a partner', '/partners/become-a-partner/'], ['Our partners', '/partners/our-partners/'], ['Partner portal', '/partners/portal/']], all: ['Partner programme', '/partners/'] },
   { label: 'Regions', button: true, links: regions.map((r) => [r.name, r.URL]) },
   { label: 'Blog', to: '/insights/knowledgebase/', links: [['Blog Articles', '/insights/knowledgebase/'], ['Glossary', '/insights/glossary/'], ['White Paper', '/insights/white-paper/']] },
-  { label: 'Company', button: true, links: [['About', '/about/'], ['Careers', '/careers/'], ['Events', '/events/'], ['Contact', '/contact/']] },
+  { label: 'Company', button: true, links: [['About', '/about/'], ['Careers', '/careers/'], ['Events', '/events/'], ['Gallery', '/gallery/'], ['Contact', '/contact/']] },
 ];
 const navHtml = () => `<nav class="site-nav" id="site-nav" aria-label="Main"><ul class="nav-list">${NAV.map((n) => {
   const cur = n.to && (CUR === n.to || CUR.startsWith(n.to)) ? ' aria-current="page"' : '';
@@ -643,7 +671,7 @@ ${col('Vendors', vendors.map((v) => [v.name, v.URL]))}
 ${col('Solutions', [...solutions.map((s) => [s.name, s.URL]), ['Agentic Cyber Services', '/agentic-cyber-services/']])}
 ${col('Partners', [['Partner programme', '/partners/'], ['Become a partner', '/partners/become-a-partner/'], ['Our partners', '/partners/our-partners/'], ['Partner portal', '/partners/portal/']])}
 ${col('Regions', regions.map((r) => [r.name, r.URL]))}
-${col('Company', [['About', '/about/'], ['Blog Articles', '/insights/knowledgebase/'], ['Glossary', '/insights/glossary/'], ['White Paper', '/insights/white-paper/'], ['Careers', '/careers/'], ['Events', '/events/'], ['Contact', '/contact/'], ['Become a vendor', '/vendors/become-a-vendor/']])}
+${col('Company', [['About', '/about/'], ['Blog Articles', '/insights/knowledgebase/'], ['Glossary', '/insights/glossary/'], ['White Paper', '/insights/white-paper/'], ['Careers', '/careers/'], ['Events', '/events/'], ['Gallery', '/gallery/'], ['Contact', '/contact/'], ['Become a vendor', '/vendors/become-a-vendor/']])}
 </div><div class="foot-base"><p>© ${new Date().getFullYear()} Evanssion FZCO, Dubai, UAE.</p><ul><li><a href="${href('/privacy/')}">Privacy notice</a></li><li><a href="${href('/terms/')}">Terms</a></li><li><button class="linklike" type="button" id="cookie-settings">Cookie settings</button></li></ul></div></div></footer>
 <div class="search" id="search" role="dialog" aria-modal="true" aria-label="Search the site" hidden><div class="search-box"><form class="search-form" role="search" action="#"><input id="search-input" type="search" name="q" placeholder="Search vendors, solutions, articles" autocomplete="off" aria-label="Search the site" aria-controls="search-results"><button class="icon-btn" id="search-close" type="button" aria-label="Close search"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></form><p class="small muted" id="search-status" role="status" aria-live="polite"></p><ul class="search-results" id="search-results"></ul></div></div>
 ${chatLauncher()}
@@ -670,7 +698,7 @@ function jsonld(p, trail, type) {
     contactPoint: [{ '@type': 'ContactPoint', contactType: 'sales', email: 'sales@evanssion.com', telephone: '+97143206001', areaServed: ['AE', 'SA', 'BH'], availableLanguage: ['English'] }] };
   const g = [org, { '@type': 'WebSite', '@id': ORIGIN + '/#site', url: ORIGIN + '/', name: 'Evanssion', publisher: { '@id': ORIGIN + '/#org' }, inLanguage: 'en' }];
   if (!p.noindex) {
-    const pageType = { whitepaper: 'WebPage', about: 'AboutPage', contact: 'ContactPage', vendorHub: 'CollectionPage', solutionHub: 'CollectionPage', glossary: 'CollectionPage', kbHub: 'CollectionPage', article: 'Article', events: 'CollectionPage', partnerDir: 'CollectionPage' }[type] || 'WebPage';
+    const pageType = { gallery: 'CollectionPage', whitepaper: 'WebPage', about: 'AboutPage', contact: 'ContactPage', vendorHub: 'CollectionPage', solutionHub: 'CollectionPage', glossary: 'CollectionPage', kbHub: 'CollectionPage', article: 'Article', events: 'CollectionPage', partnerDir: 'CollectionPage' }[type] || 'WebPage';
     const node = { '@type': pageType, '@id': ORIGIN + p.URL + '#page', url: ORIGIN + p.URL, name: p.spec['Title tag'], description: p.spec['Meta description'], isPartOf: { '@id': ORIGIN + '/#site' }, about: { '@id': ORIGIN + '/#org' }, inLanguage: 'en' };
     const list = (items) => ({ '@type': 'ItemList', itemListElement: items.map((x, i) => ({ '@type': 'ListItem', position: i + 1, name: x.name, url: ORIGIN + x.URL })) });
     if (type === 'vendorHub') node.mainEntity = list(vendors);
@@ -772,7 +800,7 @@ const blockText = (b) => {
   if (b.t === 'jobs') return b.items.flatMap((j) => [j.title, j.code, j.location, j.summary, ...j.does, ...j.needs]);
   return [];
 };
-const KIND = { vendor: 'Vendor', solution: 'Solution', region: 'Region', article: 'Blog article', term: 'Glossary', kbHub: 'Blog', whitepaper: 'White paper', glossary: 'Glossary', agentic: 'Service', careers: 'Careers', partnerLanding: 'Partners', becomePartner: 'Partners', partnerDir: 'Partners', portal: 'Partners' };
+const KIND = { vendor: 'Vendor', solution: 'Solution', region: 'Region', article: 'Blog article', term: 'Glossary', kbHub: 'Blog', whitepaper: 'White paper', gallery: 'Gallery', glossary: 'Glossary', agentic: 'Service', careers: 'Careers', partnerLanding: 'Partners', becomePartner: 'Partners', partnerDir: 'Partners', portal: 'Partners' };
 const searchIndex = indexable.map((p) => {
   const type = typeOf(p);
   let text;
@@ -780,6 +808,7 @@ const searchIndex = indexable.map((p) => {
   else if (p.glossTerm) text = p.glossTerm.def;
   else if (type === 'glossary') text = terms.map((t) => t.term).join(', ');
   else if (type === 'kbHub') text = kb.map((a) => a.title).join('. ');
+  else if (type === 'gallery') text = galleryItems.slice((p.galleryPage - 1) * GAL_PER_PAGE, p.galleryPage * GAL_PER_PAGE).map((g) => String(g.caption || '').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')).join(' ');
   else text = p.sections.flatMap((sc) => [sc.title || '', ...sc.blocks.flatMap(blockText)]).join(' ').replace(/\s+/g, ' ');
   return { t: p.article ? p.article.title : p.spec.H1, u: p.URL, k: KIND[type] || 'Page', d: p.spec['Meta description'] || '', x: text.slice(0, 2400) };
 });
