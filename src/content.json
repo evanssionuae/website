@@ -150,7 +150,7 @@
       "labels": [
        "Talk to us",
        "sales@evanssion.com",
-       "+971 58 606 1121"
+       "+971 4 320 6001"
       ]
      },
      {
@@ -283,7 +283,7 @@
    "URL": "/contact/",
    "Page type": "Contact",
    "Title tag": "Contact Evanssion | Partners, Vendors, Enterprises",
-   "Meta description": "Contact Evanssion in Dubai for partner enquiries, vendor introductions and enterprise security briefings. sales@evanssion.com, +971 58 606 1121.",
+   "Meta description": "Contact Evanssion in Dubai for partner enquiries, vendor introductions and enterprise security briefings. sales@evanssion.com, +971 4 320 6001.",
    "H1": "Talk to Evanssion",
    "Schema": "ContactPage, Organization (contactPoint)",
    "Primary CTA": "Send enquiry"
@@ -333,7 +333,7 @@
       "t": "ul",
       "items": [
        "Email: sales@evanssion.com",
-       "Phone: +971 58 606 1121",
+       "Phone: +971 4 320 6001",
        "Website: www.evanssion.com",
        "Office: 201, Techno Hub 2, Dubai Silicon Oasis, Dubai, UAE.",
        "Location: https://maps.app.goo.gl/4DN5GKFSHXBSQBLT7",
@@ -2739,7 +2739,6 @@
        "Target customer sectors and countries.",
        "Current security vendors you sell.",
        "Consent to contact and to data processing. Link to privacy notice."
-       
       ]
      }
     ]
@@ -2901,7 +2900,7 @@
     "blocks": [
      {
       "t": "p",
-      "text": "Email sales@evanssion.com or call +971 58 606 1121."
+      "text": "Email sales@evanssion.com or call +971 4 320 6001."
      }
     ]
    }
@@ -3537,7 +3536,7 @@
       "items": [
        "Brand line: Your trusted cybersecurity and AI distribution partner across Middle East & Africa.",
        "Columns: Vendors (12 links), Solutions (8 links), Partners (4 links), Regions (4 links), Company (About, Blog Articles, Events, Contact).",
-       "Contact: sales@evanssion.com, +971 58 606 1121, Dubai address",
+       "Contact: sales@evanssion.com, +971 4 320 6001, Dubai address",
        "Legal: Privacy notice, Terms, Cookie settings. LinkedIn link. https://www.linkedin.com/company/evanssion/",
        "Copyright line with year and legal entity name: Evanssion FZCO, Dubai, UAE."
       ]
@@ -3611,7 +3610,7 @@
        "Job applications: your name, email, mobile number, LinkedIn profile and the link to your CV that you send us.",
        "Partner portal accounts: your name, work email, company, login details and the activity needed to run the portal.",
        "Deal registration: details of the opportunity you register, including the end customer's company and contact details. Please register only contacts you are entitled to share.",
-       "Technical data: basic information sent by your browser when you visit the site, such as IP address, device and browser type, pages requested and the country your request comes from. We use it to keep the site secure and working."
+       "Technical data: basic information sent by your browser when you visit the site, such as IP address, device and browser type, pages requested and the country your request comes from. We use it to keep the site secure and working.",
        "Live chat: if you start a chat, the messages you send, any name or email you give, and the page you were on. Chat is provided by Crisp, and it loads only after you click Chat with us."
       ]
      }
@@ -3643,14 +3642,14 @@
     "blocks": [
      {
       "t": "p",
-      "text": "We do not sell personal data. We share it only where needed:including Cloudflare (hosting, delivery and bot protection), Crisp (live chat, only if you use it) and our email delivery provider."
+      "text": "We do not sell personal data. We share it only where needed:"
      },
      {
       "t": "ul",
       "items": [
        "Vendors we represent, when you ask about a vendor's products or register a deal that involves them.",
        "Registered partners, where a registered deal or a customer introduction requires it.",
-       "Service providers that run our website, security and email, including Cloudflare (hosting, delivery and bot protection) and our email delivery provider. They act on our instructions.",
+       "Service providers that run our website, security and email, including Cloudflare (hosting, delivery and bot protection), Crisp (live chat, only if you use it) and our email delivery provider. They act on our instructions.",
        "Professional advisers, and courts, regulators or law enforcement where the law requires it."
       ]
      }
@@ -3690,7 +3689,7 @@
       "t": "ul",
       "items": [
        "Essential: we store your theme choice and your cookie choice in your browser. Our forms use Cloudflare Turnstile to tell people from automated bots. These are needed to run the site and cannot be switched off.",
-       "Analytics: we do not currently set analytics cookies. If we introduce them, they will stay off until you accept them in the cookie banner."
+       "Analytics: we do not currently set analytics cookies. If we introduce them, they will stay off until you accept them in the cookie banner.",
        "Functional: if you click Chat with us, Crisp sets cookies to keep your conversation going. These are not set unless you use chat."
       ]
      },
@@ -4238,7 +4237,7 @@
       "labels": [
        "Request a briefing",
        "sales@evanssion.com",
-       "+971 58 606 1121"
+       "+971 4 320 6001"
       ]
      },
      {
