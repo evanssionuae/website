@@ -751,6 +751,8 @@ fs.writeFileSync(path.join(DIST, 'assets/site.css'), minCss(fs.readFileSync(path
 fs.copyFileSync(path.join(SRC, 'site.js'), path.join(DIST, 'assets/site.js'));
 fs.cpSync(path.join(SRC, 'img'), path.join(DIST, 'assets/img'), { recursive: true });
 for (const f of ['mark.png', 'og.png']) fs.copyFileSync(path.join(SRC, f), path.join(DIST, 'assets', f));
+/* IndexNow ownership key: src/<key>.txt (32 hex characters, containing the same key) is served at the site root */
+for (const f of fs.readdirSync(SRC)) if (/^[a-f0-9]{32}\.txt$/.test(f)) fs.copyFileSync(path.join(SRC, f), path.join(DIST, f));
 if (fs.existsSync(path.join(SRC, '_headers'))) fs.writeFileSync(path.join(DIST, '_headers'), fs.readFileSync(path.join(SRC, '_headers'), 'utf8').split('{{HEAD_JS_HASH}}').join(HEAD_JS_HASH)); /* security headers and cache rules for Cloudflare Pages */
 for (const p of pages) {
   const out = path.join(DIST, fileOf(p.URL));
