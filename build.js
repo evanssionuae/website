@@ -716,6 +716,9 @@ ${body}
 </main>
 ${footer()}
 <script src="${asset('site.js')}" defer></script>
+${PROD ? `<!-- Cloudflare Web Analytics -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "dcce59e116b344e89b13b99f13530ada"}'></script>
+<!-- End Cloudflare Web Analytics -->` : ''}
 </body>
 </html>
 `;
