@@ -3581,7 +3581,7 @@
     "blocks": [
      {
       "t": "lede",
-      "text": "Last updated: 5 November 2026. This notice explains what personal data Evanssion collects through evanssion.com and our partner portal, why we use it, who we share it with and the choices you have."
+      "text": "Last updated: 6 November 2026. This notice explains what personal data Evanssion collects through evanssion.com and our partner portal, why we use it, who we share it with and the choices you have."
      }
     ]
    },
@@ -3607,10 +3607,11 @@
        "Enquiries and briefing requests: your name, work email, phone number, company, role, country and the message you send.",
        "Partner and vendor applications: company details, contact details, the vendors and markets you are interested in, and anything else you include in the form.",
        "Newsletter and event sign-ups: your work email and your consent choice.",
+      "White paper requests: your name, work email and, if you choose to give them, your company and job title. We use them to email you the paper and may contact you once about it.",
        "Job applications: your name, email, mobile number, LinkedIn profile and the link to your CV that you send us.",
        "Partner portal accounts: your name, work email, company, login details and the activity needed to run the portal.",
        "Deal registration: details of the opportunity you register, including the end customer's company and contact details. Please register only contacts you are entitled to share.",
-       "Technical data: basic information sent by your browser when you visit the site, such as IP address, device and browser type, pages requested and the country your request comes from. We use it to keep the site secure and working.",
+       "Technical data: basic information sent by your browser when you visit the site, such as IP address, device and browser type, pages requested and the country your request comes from. We use it to keep the site secure and working. We also use Cloudflare Web Analytics to count visits. It sets no cookies and does not track individuals across sites.",
        "Live chat: if you start a chat, the messages you send, any name or email you give, and the page you were on. Chat is provided by Crisp, and it loads only after you click Chat with us."
       ]
      }
@@ -3626,7 +3627,8 @@
        "To assess partner and vendor applications, sign agreements, run the partner programme and the portal. Basis: performance of a contract or steps before one.",
        "To register deals, protect registered opportunities and connect the right partner, vendor and end customer. Basis: performance of a contract and our legitimate interests.",
        "To consider your job application and contact you about it. Basis: taking steps at your request, and our legitimate interest in recruiting. We keep applications for as long as the role is open and for a reasonable period afterwards, unless you ask us to delete them.",
-       "To send you articles and event invitations. Basis: your consent. You can withdraw it at any time using the unsubscribe link or by emailing us.",
+       "To send you a white paper you requested. Basis: taking steps at your request.",
+      "To send you articles and event invitations. Basis: your consent. You can withdraw it at any time using the unsubscribe link or by emailing us.",
        "To protect the site against abuse and spam, including bot checks on our forms. Basis: our legitimate interest in security.",
        "To meet legal and regulatory obligations. Basis: legal obligation."
       ]

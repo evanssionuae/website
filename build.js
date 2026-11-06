@@ -120,10 +120,17 @@ if (kb.length) {
   }
 }
 
+/* White paper landing page (the PDF is not hosted here; requests arrive as a lead email and are answered by hand) */
+pages.push({ n: 36.4, name: 'White Paper', URL: '/insights/white-paper/', sections: [], spec: {
+  URL: '/insights/white-paper/', 'Page type': 'White paper', 'Title tag': 'White Paper: Cost-Intelligent AI Adoption | Evanssion',
+  'Meta description': 'A free white paper on controlling enterprise AI cost: a tri-modal strategy, an AI FinOps layer and a 90-day plan. Request your copy.',
+  H1: 'Cost-Intelligent AI Adoption', Schema: 'WebPage, BreadcrumbList', 'Primary CTA': 'Request the white paper' } });
+byUrl['/insights/white-paper/'] = pages[pages.length - 1];
+
 const typeOf = (p) => {
   const u = p.URL;
   if (p.glossTerm) return 'term';
-  if (p.article) return 'article'; if (u === '/insights/knowledgebase/') return 'kbHub';
+  if (p.article) return 'article'; if (u === '/insights/knowledgebase/') return 'kbHub'; if (u === '/insights/white-paper/') return 'whitepaper';
   if (u === '/agentic-cyber-services/') return 'agentic'; if (u === '/careers/') return 'careers';
   if (u === '/') return 'home'; if (u === '/about/') return 'about'; if (u === '/contact/') return 'contact';
   if (u === '/vendors/') return 'vendorHub'; if (u === '/vendors/become-a-vendor/') return 'becomeVendor';
@@ -305,6 +312,7 @@ ${field('r-cv', 'Link to your CV (Google Drive, OneDrive, Dropbox or similar)', 
 <div class="field"><label for="r-role">Role</label><select id="r-role" name="role" required><option value="">Select</option>${jobs.map((j) => `<option value="${esc(j.code)}">${esc(j.title)}, ${esc(j.location)} (${esc(j.code)})</option>`).join('')}</select></div>`;
   return formShell('careers-form', 'careers', inner, 'Send application', 'my application');
 }
+const whitepaperForm = () => formShell('wp-form', 'whitepaper', `${field('wp-name', 'Full name', { name: 'name', ac: 'name' })}${field('wp-email', 'Work email', { name: 'email', type: 'email', ac: 'email' })}${field('wp-company', 'Company', { name: 'company', ac: 'organization', req: false })}${field('wp-role', 'Job title', { name: 'role', ac: 'organization-title', req: false })}`, 'Request the white paper', 'this white paper request');
 const subscribeForm = () => `<form class="form inline" id="subscribe-form" data-lead data-type="subscribe" novalidate><input type="text" name="website_url" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><div class="field"><label for="s-email">Work email</label><input id="s-email" name="email" type="email" required autocomplete="email"></div>${consent('s-consent')}${tsSlot()}<div class="form-foot"><button class="btn btn-primary" type="submit">Subscribe</button><p class="form-msg" role="status" aria-live="polite"></p></div></form>`;
 
 /* ------------------------------------------------------------------ templates */
@@ -514,6 +522,16 @@ const T = {
       band(['Request a briefing'], 'Talk to us about your security priorities');
   },
 
+  whitepaper(p) {
+    const cover = `<div class="wp-cover"><img src="${asset('img/whitepaper/cover.jpg')}" alt="Cover of the white paper Cost-Intelligent AI Adoption" width="720" height="930" fetchpriority="high" decoding="async"></div>`;
+    return hero(p, { kicker: 'White paper', lede: 'AI spend grows with usage, not with licences. This paper shows how to place each workload on the right tier of AI, and how to see and control the cost across all of them.', actions: `<div class="actions">${btn('Request the white paper', '#request')}</div>`, side: cover }) +
+      secWide('Why it matters', `<dl class="stats s3"><div><dt>Forecast worldwide AI spending in 2026, according to Gartner</dt><dd>US$2.59tn</dd></div><div><dt>Expected growth in AI spending over 2025</dt><dd>47%</dd></div><div><dt>Respondents to the State of FinOps 2026 survey now working to manage AI spend, up from 63% a year earlier</dt><dd>Nearly all</dd></div></dl><p class="small muted">Sources: Gartner, 19 May 2026; FinOps Foundation, State of FinOps 2026 (1,192 respondents).</p>`) +
+      secWide('What you will learn', `<div class="grid g3"><div class="card"><h3>The tri-modal strategy</h3><p>Three tiers defined by how they are priced: SaaS AI per seat, private models on fixed capacity, premium models per token. When each one fits, and a break-even test for private capacity.</p></div><div class="card"><h3>The AI FinOps layer</h3><p>One place to see, allocate, route, limit and protect. Practical cost levers: caching, batching, model routing, context limits and agent budgets.</p></div><div class="card"><h3>A decision order that holds</h3><p>Data sensitivity first, then complexity, then volume, then a test. Includes a decision tree and a table of workload categories.</p></div></div>`, { alt: true }) +
+      sec('Inside the paper', `<ul class="list"><li>An illustrative cost allocation, before and after optimisation</li><li>Considerations for the UAE, Saudi Arabia and Bahrain: data residency and national data-protection laws</li><li>A 30, 60 and 90-day roadmap, with risks and mitigations</li><li>A one-page checklist to start the following week</li></ul><p class="small muted">17 pages, A4. Written by Mohan Krishnamurthy, General Manager, Evanssion. For CIOs, CTOs, CFOs, CISOs and heads of AI and FinOps.</p>`) +
+      sec('Request your copy', `<p class="prose">Tell us where to send it. We will email you the PDF within 1 working day.</p>${whitepaperForm()}`, { id: 'request', alt: true }) +
+      band(['Talk to us'], 'Want to discuss your AI cost and security priorities?');
+  },
+
   article(p) {
     const a = p.article, mins = Math.max(1, Math.round(a.words / 220));
     const big = jpegWidth(path.join(SRC, 'img/kb', a.slug + '.jpg'));
@@ -594,7 +612,7 @@ const NAV = [
   { label: 'Agentic Cyber Services', to: '/agentic-cyber-services/' },
   { label: 'Partners', to: '/partners/', links: [['Become a partner', '/partners/become-a-partner/'], ['Our partners', '/partners/our-partners/'], ['Partner portal', '/partners/portal/']], all: ['Partner programme', '/partners/'] },
   { label: 'Regions', button: true, links: regions.map((r) => [r.name, r.URL]) },
-  { label: 'Blog', to: '/insights/knowledgebase/', links: [['Blog Articles', '/insights/knowledgebase/'], ['Glossary', '/insights/glossary/']] },
+  { label: 'Blog', to: '/insights/knowledgebase/', links: [['Blog Articles', '/insights/knowledgebase/'], ['Glossary', '/insights/glossary/'], ['White Paper', '/insights/white-paper/']] },
   { label: 'Company', button: true, links: [['About', '/about/'], ['Careers', '/careers/'], ['Events', '/events/'], ['Contact', '/contact/']] },
 ];
 const navHtml = () => `<nav class="site-nav" id="site-nav" aria-label="Main"><ul class="nav-list">${NAV.map((n) => {
@@ -625,7 +643,7 @@ ${col('Vendors', vendors.map((v) => [v.name, v.URL]))}
 ${col('Solutions', [...solutions.map((s) => [s.name, s.URL]), ['Agentic Cyber Services', '/agentic-cyber-services/']])}
 ${col('Partners', [['Partner programme', '/partners/'], ['Become a partner', '/partners/become-a-partner/'], ['Our partners', '/partners/our-partners/'], ['Partner portal', '/partners/portal/']])}
 ${col('Regions', regions.map((r) => [r.name, r.URL]))}
-${col('Company', [['About', '/about/'], ['Blog Articles', '/insights/knowledgebase/'], ['Glossary', '/insights/glossary/'], ['Careers', '/careers/'], ['Events', '/events/'], ['Contact', '/contact/'], ['Become a vendor', '/vendors/become-a-vendor/']])}
+${col('Company', [['About', '/about/'], ['Blog Articles', '/insights/knowledgebase/'], ['Glossary', '/insights/glossary/'], ['White Paper', '/insights/white-paper/'], ['Careers', '/careers/'], ['Events', '/events/'], ['Contact', '/contact/'], ['Become a vendor', '/vendors/become-a-vendor/']])}
 </div><div class="foot-base"><p>© ${new Date().getFullYear()} Evanssion FZCO, Dubai, UAE.</p><ul><li><a href="${href('/privacy/')}">Privacy notice</a></li><li><a href="${href('/terms/')}">Terms</a></li><li><button class="linklike" type="button" id="cookie-settings">Cookie settings</button></li></ul></div></div></footer>
 <div class="search" id="search" role="dialog" aria-modal="true" aria-label="Search the site" hidden><div class="search-box"><form class="search-form" role="search" action="#"><input id="search-input" type="search" name="q" placeholder="Search vendors, solutions, articles" autocomplete="off" aria-label="Search the site" aria-controls="search-results"><button class="icon-btn" id="search-close" type="button" aria-label="Close search"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></form><p class="small muted" id="search-status" role="status" aria-live="polite"></p><ul class="search-results" id="search-results"></ul></div></div>
 ${chatLauncher()}
@@ -652,7 +670,7 @@ function jsonld(p, trail, type) {
     contactPoint: [{ '@type': 'ContactPoint', contactType: 'sales', email: 'sales@evanssion.com', telephone: '+97143206001', areaServed: ['AE', 'SA', 'BH'], availableLanguage: ['English'] }] };
   const g = [org, { '@type': 'WebSite', '@id': ORIGIN + '/#site', url: ORIGIN + '/', name: 'Evanssion', publisher: { '@id': ORIGIN + '/#org' }, inLanguage: 'en' }];
   if (!p.noindex) {
-    const pageType = { about: 'AboutPage', contact: 'ContactPage', vendorHub: 'CollectionPage', solutionHub: 'CollectionPage', glossary: 'CollectionPage', kbHub: 'CollectionPage', article: 'Article', events: 'CollectionPage', partnerDir: 'CollectionPage' }[type] || 'WebPage';
+    const pageType = { whitepaper: 'WebPage', about: 'AboutPage', contact: 'ContactPage', vendorHub: 'CollectionPage', solutionHub: 'CollectionPage', glossary: 'CollectionPage', kbHub: 'CollectionPage', article: 'Article', events: 'CollectionPage', partnerDir: 'CollectionPage' }[type] || 'WebPage';
     const node = { '@type': pageType, '@id': ORIGIN + p.URL + '#page', url: ORIGIN + p.URL, name: p.spec['Title tag'], description: p.spec['Meta description'], isPartOf: { '@id': ORIGIN + '/#site' }, about: { '@id': ORIGIN + '/#org' }, inLanguage: 'en' };
     const list = (items) => ({ '@type': 'ItemList', itemListElement: items.map((x, i) => ({ '@type': 'ListItem', position: i + 1, name: x.name, url: ORIGIN + x.URL })) });
     if (type === 'vendorHub') node.mainEntity = list(vendors);
@@ -754,7 +772,7 @@ const blockText = (b) => {
   if (b.t === 'jobs') return b.items.flatMap((j) => [j.title, j.code, j.location, j.summary, ...j.does, ...j.needs]);
   return [];
 };
-const KIND = { vendor: 'Vendor', solution: 'Solution', region: 'Region', article: 'Blog article', term: 'Glossary', kbHub: 'Blog', glossary: 'Glossary', agentic: 'Service', careers: 'Careers', partnerLanding: 'Partners', becomePartner: 'Partners', partnerDir: 'Partners', portal: 'Partners' };
+const KIND = { vendor: 'Vendor', solution: 'Solution', region: 'Region', article: 'Blog article', term: 'Glossary', kbHub: 'Blog', whitepaper: 'White paper', glossary: 'Glossary', agentic: 'Service', careers: 'Careers', partnerLanding: 'Partners', becomePartner: 'Partners', partnerDir: 'Partners', portal: 'Partners' };
 const searchIndex = indexable.map((p) => {
   const type = typeOf(p);
   let text;
@@ -769,6 +787,6 @@ fs.writeFileSync(path.join(DIST, 'assets/search-index.json'), JSON.stringify(sea
 const today = new Date().toISOString().slice(0, 10);
 fs.writeFileSync(path.join(DIST, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${indexable.map((p) => `  <url><loc>${ORIGIN}${p.URL}</loc><lastmod>${today}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 fs.writeFileSync(path.join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /thank-you/\n\n# AI crawlers are welcome\nUser-agent: GPTBot\nAllow: /\nUser-agent: ClaudeBot\nAllow: /\nUser-agent: PerplexityBot\nAllow: /\nUser-agent: Google-Extended\nAllow: /\n\nSitemap: ${ORIGIN}/sitemap.xml\n`);
-fs.writeFileSync(path.join(DIST, 'llms.txt'), `# Evanssion\n\n> Evanssion is a Dubai-based value-added distributor of cybersecurity and AI security solutions, serving partners and enterprises in the UAE, Saudi Arabia, Bahrain and across the Middle East and Africa.\n\n## Key pages\n- [Vendors](${ORIGIN}/vendors/): the ${vendors.length} vendors we distribute\n- [Solutions](${ORIGIN}/solutions/): security solutions by problem\n- [Careers](${ORIGIN}/careers/): open roles at Evanssion\n- [Agentic Cyber Services](${ORIGIN}/agentic-cyber-services/): AI agents for security operations and risk management\n- [Partners](${ORIGIN}/partners/): the partner programme\n- [Regions](${ORIGIN}/regions/uae/): UAE, Saudi Arabia, Bahrain, Africa and wider MEA\n- [Glossary](${ORIGIN}/insights/glossary/): definitions of security and AI security terms\n- [Contact](${ORIGIN}/contact/)\n\n## Blog\n- [Blog Articles](${ORIGIN}/insights/knowledgebase/): articles on AI security, application security and events\n${kb.map((a) => `- [${a.title}](${ORIGIN}${a.URL}): ${a.summary}`).join('\n')}\n\n## Vendors\n${vendors.map((v) => `- [${v.name}](${ORIGIN}${v.URL}): ${(vendorMeta[v.name.toLowerCase()] || {}).what || ''}`).join('\n')}\n\n## Solutions\n${solutions.map((s) => `- [${s.name}](${ORIGIN}${s.URL})`).join('\n')}\n`);
+fs.writeFileSync(path.join(DIST, 'llms.txt'), `# Evanssion\n\n> Evanssion is a Dubai-based value-added distributor of cybersecurity and AI security solutions, serving partners and enterprises in the UAE, Saudi Arabia, Bahrain and across the Middle East and Africa.\n\n## Key pages\n- [Vendors](${ORIGIN}/vendors/): the ${vendors.length} vendors we distribute\n- [Solutions](${ORIGIN}/solutions/): security solutions by problem\n- [Careers](${ORIGIN}/careers/): open roles at Evanssion\n- [Agentic Cyber Services](${ORIGIN}/agentic-cyber-services/): AI agents for security operations and risk management\n- [Partners](${ORIGIN}/partners/): the partner programme\n- [Regions](${ORIGIN}/regions/uae/): UAE, Saudi Arabia, Bahrain, Africa and wider MEA\n- [Glossary](${ORIGIN}/insights/glossary/): definitions of security and AI security terms\n- [White Paper](${ORIGIN}/insights/white-paper/): Cost-Intelligent AI Adoption, a free white paper on controlling enterprise AI cost\n- [Contact](${ORIGIN}/contact/)\n\n## Blog\n- [Blog Articles](${ORIGIN}/insights/knowledgebase/): articles on AI security, application security and events\n${kb.map((a) => `- [${a.title}](${ORIGIN}${a.URL}): ${a.summary}`).join('\n')}\n\n## Vendors\n${vendors.map((v) => `- [${v.name}](${ORIGIN}${v.URL}): ${(vendorMeta[v.name.toLowerCase()] || {}).what || ''}`).join('\n')}\n\n## Solutions\n${solutions.map((s) => `- [${s.name}](${ORIGIN}${s.URL})`).join('\n')}\n`);
 console.log(`${pages.length} pages + sitemap, robots, llms.txt -> ${DIST} (${PROD ? 'prod' : 'preview'} links)`);
 if (warn.length) console.log('WARN', warn);
