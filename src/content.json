@@ -2739,6 +2739,7 @@
        "Target customer sectors and countries.",
        "Current security vendors you sell.",
        "Consent to contact and to data processing. Link to privacy notice."
+       
       ]
      }
     ]
@@ -3611,6 +3612,7 @@
        "Partner portal accounts: your name, work email, company, login details and the activity needed to run the portal.",
        "Deal registration: details of the opportunity you register, including the end customer's company and contact details. Please register only contacts you are entitled to share.",
        "Technical data: basic information sent by your browser when you visit the site, such as IP address, device and browser type, pages requested and the country your request comes from. We use it to keep the site secure and working."
+       "Live chat: if you start a chat, the messages you send, any name or email you give, and the page you were on. Chat is provided by Crisp, and it loads only after you click Chat with us."
       ]
      }
     ]
@@ -3641,7 +3643,7 @@
     "blocks": [
      {
       "t": "p",
-      "text": "We do not sell personal data. We share it only where needed:"
+      "text": "We do not sell personal data. We share it only where needed:including Cloudflare (hosting, delivery and bot protection), Crisp (live chat, only if you use it) and our email delivery provider."
      },
      {
       "t": "ul",
@@ -3689,6 +3691,7 @@
       "items": [
        "Essential: we store your theme choice and your cookie choice in your browser. Our forms use Cloudflare Turnstile to tell people from automated bots. These are needed to run the site and cannot be switched off.",
        "Analytics: we do not currently set analytics cookies. If we introduce them, they will stay off until you accept them in the cookie banner."
+       "Functional: if you click Chat with us, Crisp sets cookies to keep your conversation going. These are not set unless you use chat."
       ]
      },
      {
@@ -3744,7 +3747,7 @@
     "blocks": [
      {
       "t": "lede",
-      "text": "Last updated: 5 November 2026. These terms apply when you use evanssion.com and the Evanssion partner portal. By using them you agree to these terms. If you do not agree, please do not use them."
+      "text": "Last updated: 6 November 2026. These terms apply when you use evanssion.com and the Evanssion partner portal. By using them you agree to these terms. If you do not agree, please do not use them."
      }
     ]
    },
