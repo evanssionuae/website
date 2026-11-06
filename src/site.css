@@ -372,3 +372,7 @@ picture { display: block; width: 100%; min-width: 0; }
 .chat-launch:hover { filter: brightness(1.08); }
 .chat-launch[hidden] { display: none; }
 @media (max-width: 600px) { .chat-launch span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } .chat-launch { padding: 0; width: 52px; height: 52px; justify-content: center; } }
+
+/* white paper page */
+.wp-cover { max-width: 340px; margin-inline: auto; } .wp-cover img { width: 100%; height: auto; display: block; border-radius: var(--r-card); box-shadow: var(--shadow); }
+@media (min-width: 900px) { .stats.s3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }

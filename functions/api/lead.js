@@ -3,7 +3,7 @@
 //   RESEND_API_KEY  API key from resend.com (or swap sendMail() for your provider)
 //   LEAD_FROM       verified sender, e.g. "Evanssion Website <website@evanssion.com>"
 //   LEAD_TO         default inbox, e.g. sales@evanssion.com
-//   LEAD_TO_PARTNER / LEAD_TO_VENDOR / LEAD_TO_ENTERPRISE  optional per-type inboxes
+//   LEAD_TO_PARTNER / LEAD_TO_VENDOR / LEAD_TO_ENTERPRISE / LEAD_TO_WHITEPAPER  optional per-type inboxes
 //   TURNSTILE_SECRET  Cloudflare Turnstile secret key (the public site key goes in TURNSTILE_SITEKEY, read at build time)
 const json = (o, status = 200) => new Response(JSON.stringify(o), { status, headers: { 'Content-Type': 'application/json' } });
 
@@ -40,7 +40,7 @@ export async function onRequestPost({ request, env }) {
   const res = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ from: env.LEAD_FROM, to: [to], reply_to: email, subject: `Website ${type}: ${type === 'careers' ? `${f.role || 'application'} - ${f.name || email}` : (f['c-company'] || f['a-company'] || email)}`, text: `${lines}\n\nPage: ${body.page}\nIP country: ${request.cf?.country || ''}` }),
+    body: JSON.stringify({ from: env.LEAD_FROM, to: [to], reply_to: email, subject: type === 'whitepaper' ? `White paper request: ${f.name || email}${f.company ? ' (' + f.company + ')' : ''}` : `Website ${type}: ${type === 'careers' ? `${f.role || 'application'} - ${f.name || email}` : (f['c-company'] || f['a-company'] || email)}`, text: `${lines}\n\nPage: ${body.page}\nIP country: ${request.cf?.country || ''}` }),
   });
   if (res.ok) return json({ ok: true });
   let detail = ''; try { detail = (await res.json()).message || ''; } catch {}
